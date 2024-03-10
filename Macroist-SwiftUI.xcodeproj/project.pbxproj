@@ -41,10 +41,10 @@
 		E89FE9152B9C08F4004700B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE9142B9C08F4004700B2 /* FirebaseFirestore */; };
 		E89FE9172B9C08F4004700B2 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE9162B9C08F4004700B2 /* FirebaseFirestoreSwift */; };
 		E89FE9192B9C08F4004700B2 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE9182B9C08F4004700B2 /* FirebasePerformance */; };
-		E89FE91D2B9E30A5004700B2 /* AuthDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE91C2B9E30A5004700B2 /* AuthDataWrapper.swift */; };
 		E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9232B9E4FB2004700B2 /* TapToDismissModifier.swift */; };
 		E89FE9262B9E4FEB004700B2 /* Ext_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9252B9E4FEB004700B2 /* Ext_View.swift */; };
 		E89FE92A2B9E5783004700B2 /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9292B9E5783004700B2 /* Percentage.swift */; };
+		E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9312B9E6AB7004700B2 /* EnvironmentConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,10 +71,10 @@
 		E89FE9062B9C00AC004700B2 /* ApiClientKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientKey.swift; sourceTree = "<group>"; };
 		E89FE9082B9C00D3004700B2 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		E89FE90A2B9C0251004700B2 /* DependancyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependancyValues.swift; sourceTree = "<group>"; };
-		E89FE91C2B9E30A5004700B2 /* AuthDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataWrapper.swift; sourceTree = "<group>"; };
 		E89FE9232B9E4FB2004700B2 /* TapToDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToDismissModifier.swift; sourceTree = "<group>"; };
 		E89FE9252B9E4FEB004700B2 /* Ext_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_View.swift; sourceTree = "<group>"; };
 		E89FE9292B9E5783004700B2 /* Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Percentage.swift; sourceTree = "<group>"; };
+		E89FE9312B9E6AB7004700B2 /* EnvironmentConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +121,7 @@
 			children = (
 				E89FE91E2B9E313C004700B2 /* Service */,
 				E89FE8DD2B9BCBA4004700B2 /* GoogleService-Info.plist */,
+				E89FE9322B9E6AB7004700B2 /* Configs */,
 				E89FE8D72B9BCA56004700B2 /* Coordinators */,
 				E89FE8D22B9BC9EA004700B2 /* Keys */,
 				E89FE8D12B9BC9C1004700B2 /* Features */,
@@ -164,7 +165,6 @@
 		E89FE8D02B9BC9B8004700B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E89FE91C2B9E30A5004700B2 /* AuthDataWrapper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +277,15 @@
 			path = ViewModifier;
 			sourceTree = "<group>";
 		};
+		E89FE9322B9E6AB7004700B2 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				E89FE9312B9E6AB7004700B2 /* EnvironmentConfig.swift */,
+			);
+			name = Configs;
+			path = "Macroist-SwiftUI/Configs";
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,13 +389,13 @@
 				E89FE90B2B9C0251004700B2 /* DependancyValues.swift in Sources */,
 				E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */,
 				E89FE8F42B9BDCDB004700B2 /* Home.swift in Sources */,
-				E89FE91D2B9E30A5004700B2 /* AuthDataWrapper.swift in Sources */,
 				E89FE9072B9C00AC004700B2 /* ApiClientKey.swift in Sources */,
 				E89FE9042B9BF35A004700B2 /* BorderState.swift in Sources */,
 				E89FE8EF2B9BD3F8004700B2 /* Keys.swift in Sources */,
 				E89FE8F12B9BD413004700B2 /* Sizing.swift in Sources */,
 				E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */,
 				E89FE8EB2B9BD28E004700B2 /* LoginView.swift in Sources */,
+				E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */,
 				E89FE8D42B9BCA23004700B2 /* RootView.swift in Sources */,
 				E89FE92A2B9E5783004700B2 /* Percentage.swift in Sources */,
 			);
@@ -525,6 +534,8 @@
 				DEVELOPMENT_TEAM = XGJ29R7G4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Macroist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -553,6 +564,8 @@
 				DEVELOPMENT_TEAM = XGJ29R7G4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Macroist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
