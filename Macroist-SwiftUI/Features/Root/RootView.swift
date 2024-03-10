@@ -10,11 +10,11 @@ import ComposableArchitecture
 
 public struct RootView: View {
     
-    let store: StoreOf<Root>
+    @State var store: StoreOf<Root>
     
     public var body: some View {
-        WithViewStore(store, observe: \.currentTab) { viewStore in
-            switch viewStore.state {
+        WithPerceptionTracking {
+            switch store.currentTab {
             case .login:
                 LoginView(store: store.scope(state: \.loginState, action: \.login))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -25,6 +25,7 @@ public struct RootView: View {
         }
         .tapToDismissKeyboard()
     }
+    
     
     public init(store: StoreOf<Root>) {
         self.store = store

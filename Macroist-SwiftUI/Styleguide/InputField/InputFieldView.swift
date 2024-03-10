@@ -14,29 +14,31 @@ public struct InputFieldView: View {
     @FocusState var isFocused: Bool
     
     public var body: some View {
-        HStack(spacing: .zero) {
-            TextField(text: $store.text) {
-                Text(store.placeholder)
-            }.focused($isFocused)
-            .textInputAutocapitalization(.never)
-            .font(.callout)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.vertical, Keys.Padding.dp2)
-            .padding(.horizontal, Keys.Padding.dp16)
+        WithPerceptionTracking {
+            HStack(spacing: .zero) {
+                TextField(text: $store.text) {
+                    Text(store.placeholder)
+                }.focused($isFocused)
+                    .textInputAutocapitalization(.never)
+                    .font(.callout)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.vertical, Keys.Padding.dp2)
+                    .padding(.horizontal, Keys.Padding.dp16)
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)
+                    .stroke(store.borderState.color)
+            }
+            .background {
+                RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)
+                    .fill(.white)
+            }
+            .onChange(of: isFocused) { newVal in
+                store.send(.updateBorderState(newVal ? .focus : .unfocus))
+            }
+            .frame(maxWidth: .infinity, idealHeight: Keys.Height.dp52)
+            .fixedSize(horizontal: false, vertical: true)
         }
-        .overlay {
-            RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)
-                .stroke(store.borderState.color)
-        }
-        .background {
-            RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)
-                .fill(.white)
-        }
-        .onChange(of: isFocused) { newVal in
-            store.send(.updateBorderState(newVal ? .focus : .unfocus))
-        }
-        .frame(maxWidth: .infinity, idealHeight: Keys.Height.dp52)
-        .fixedSize(horizontal: false, vertical: true)
     }
     
     public init(store: StoreOf<InputField>, isFocused: Bool = false) {

@@ -14,14 +14,16 @@ public struct HomeView: View {
     
     public var body: some View {
         // TODO: Skeleton out a ui and give all interactable things a destination
-        VStack {
-            Text("Home")
-            Button {
-                store.send(.logout)
-            } label: {
-                Text("Log Out")
+        WithPerceptionTracking {
+            VStack {
+                Text("Home")
+                Button {
+                    store.send(.logout)
+                } label: {
+                    Text("Log Out")
+                }
+                .buttonStyle(PlainButtonStyle())
             }
-            .buttonStyle(PlainButtonStyle())
         }
     }
     
