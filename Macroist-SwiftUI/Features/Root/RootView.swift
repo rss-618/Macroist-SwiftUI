@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  RootView.swift
 //  Macroist-SwiftUI
 //
 //  Created by Ryan Schildknecht on 3/8/24.
@@ -19,11 +19,10 @@ public struct RootView: View {
                 LoginView(store: store.scope(state: \.loginState, action: \.login))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             case .home:
-                MainCoordinatorView(store: store.scope(state: \.mainCoordinatorState, action: \.mainCoordinator))
+                HomeView(store: store.scope(state: \.homeState, action: \.home))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .tapToDismissKeyboard()
     }
     
     

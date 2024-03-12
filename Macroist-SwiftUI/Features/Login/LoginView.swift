@@ -68,6 +68,14 @@ public struct LoginView: View {
                 .buttonStyle(BorderedButtonStyle())
                 .foregroundStyle(Color.white)
                 .padding(.vertical, Keys.Padding.dp16)
+                
+                if EnvironmentConfig.IS_MOCKED {
+                    Button {
+                        store.send(.login)
+                    } label: {
+                        Text("skip")
+                    }
+                }
             }
             .padding(.vertical, Keys.Padding.dp16)
             .frame(maxWidth: .infinity, maxHeight: .infinity)

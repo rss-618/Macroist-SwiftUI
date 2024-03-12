@@ -13,21 +13,21 @@ public struct Root {
     
     @ObservableState
     public struct State: Equatable {
-        public var currentTab: Tab = .login
+        public var currentTab: Page = .login
         public var loginState: Login.State = .init()
-        public var mainCoordinatorState: MainCoordinator.State = .init()
+        public var homeState: Home.State = .init()
     }
 
-    public enum Tab: Equatable {
+    public enum Page: Equatable {
         case login
         case home
     }
     
     public enum Action {
         case login(Login.Action)
-        case mainCoordinator(MainCoordinator.Action)
+        case home(Home.Action)
         case logout
-        case switchTab(Tab)
+        case switchTab(Page)
     }
     
     public var body: some ReducerOf<Self> {
@@ -36,13 +36,13 @@ public struct Root {
             Login()
         }
         
-        Scope(state: \.mainCoordinatorState, action: /Action.mainCoordinator) {
-            MainCoordinator()
+        Scope(state: \.homeState, action: /Action.home) {
+            Home()
         }
         
         Reduce { state, action in
             switch action {
-            case .mainCoordinator(.logout):
+            case .home(.logout):
                 return .send(.switchTab(.login))
             case .switchTab(let tab):
                 state.currentTab = tab

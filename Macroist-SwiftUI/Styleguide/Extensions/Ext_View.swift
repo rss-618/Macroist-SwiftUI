@@ -15,4 +15,14 @@ public extension View {
         self.modifier(TapToDismissModifier())
     }
     
+    /// Creates a container view for the content that takes up entirety of availble space wtihin parent view
+    /// then aligns the content within that view as defined
+    ///  - Returns: Opaque View Type
+    /// - Parameters:
+    ///   - x: Alignment constant along the X-Axis - Default Value is `.center`
+    ///   - y: Alignment constant along the Y-Axis - Default Value is `.center`
+    func align(x: HorizontalAlignment = .center, y: VerticalAlignment = .center) -> some View {
+        self.modifier(BottomRightModifier(x: x, y: y))
+    }
+    
 }

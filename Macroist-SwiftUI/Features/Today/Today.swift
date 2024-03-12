@@ -1,33 +1,32 @@
 //
-//  Home.swift
+//  Today.swift
 //  Macroist-SwiftUI
 //
-//  Created by Ryan Schildknecht on 3/8/24.
+//  Created by Ryan Schildknecht on 3/12/24.
 //
 
 import ComposableArchitecture
-import Foundation
+import SwiftUI
 
 @Reducer
-public struct Home {
+public struct Today {
     
     @ObservableState
     public struct State: Equatable {
-        public var todayState: Today.State = .init()
-        
-        public var currentTab: Tab = .today
+        public var addFoodState: AddFoodPopover.State = .init()
+        public var isAddFoodShowing = false
     }
     
-    public enum Action: Equatable, BindableAction {
-        case logout
+    public enum Action: Equatable, BindableAction{
+        case showAddFoodPopover
+        case addFood(AddFoodPopover.Action)
         case binding(BindingAction<State>)
-        case today(Today.Action)
     }
     
     public var body: some ReducerOf<Self> {
         
-        Scope(state: \.todayState, action: /Action.today) {
-            Today()
+        Scope(state: \.addFoodState, action: /Action.addFood) {
+            AddFoodPopover()
         }
         
         BindingReducer()
@@ -41,3 +40,4 @@ public struct Home {
         }
     }
 }
+

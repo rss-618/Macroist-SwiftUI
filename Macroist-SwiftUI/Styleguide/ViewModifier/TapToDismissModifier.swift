@@ -8,6 +8,7 @@
 import SwiftUI
 
 public struct TapToDismissModifier: ViewModifier {
+    
     public func body(content: Content) -> some View {
         content
             .onTapGesture {
@@ -17,4 +18,5 @@ public struct TapToDismissModifier: ViewModifier {
                                                 for: nil)
             }
     }
+    
 }
