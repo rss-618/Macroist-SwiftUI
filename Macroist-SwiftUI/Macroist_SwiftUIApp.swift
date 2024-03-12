@@ -18,6 +18,9 @@ struct Macroist_SwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
+            WithPerceptionTracking {
+                
+            }
             RootView(store: Store(initialState: .init(), reducer: {
                 Root()
             }))

@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  RootView.swift
 //  Macroist-SwiftUI
 //
 //  Created by Ryan Schildknecht on 3/8/24.
@@ -10,21 +10,21 @@ import ComposableArchitecture
 
 public struct RootView: View {
     
-    let store: StoreOf<Root>
+    @State var store: StoreOf<Root>
     
     public var body: some View {
-        WithViewStore(store, observe: \.currentTab) { viewStore in
-            switch viewStore.state {
+        WithPerceptionTracking {
+            switch store.currentTab {
             case .login:
                 LoginView(store: store.scope(state: \.loginState, action: \.login))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             case .home:
-                MainCoordinatorView(store: store.scope(state: \.mainCoordinatorState, action: \.mainCoordinator))
+                HomeView(store: store.scope(state: \.homeState, action: \.home))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .tapToDismissKeyboard()
     }
+    
     
     public init(store: StoreOf<Root>) {
         self.store = store

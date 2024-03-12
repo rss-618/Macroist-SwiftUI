@@ -45,6 +45,18 @@
 		E89FE9262B9E4FEB004700B2 /* Ext_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9252B9E4FEB004700B2 /* Ext_View.swift */; };
 		E89FE92A2B9E5783004700B2 /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9292B9E5783004700B2 /* Percentage.swift */; };
 		E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9312B9E6AB7004700B2 /* EnvironmentConfig.swift */; };
+		E89FE9352B9E7001004700B2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9342B9E7001004700B2 /* Image.swift */; };
+		E89FE9382BA00E02004700B2 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9372BA00E02004700B2 /* Tab.swift */; };
+		E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE93C2BA00E65004700B2 /* HistoryView.swift */; };
+		E89FE93F2BA00E84004700B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE93E2BA00E84004700B2 /* SettingsView.swift */; };
+		E89FE9412BA00EAB004700B2 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9402BA00EAB004700B2 /* TodayView.swift */; };
+		E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9452BA017AA004700B2 /* FloatingButton.swift */; };
+		E89FE9482BA01B5B004700B2 /* BottomRightModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9472BA01B5B004700B2 /* BottomRightModifier.swift */; };
+		E89FE94A2BA01E8F004700B2 /* MacroFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9492BA01E8F004700B2 /* MacroFood.swift */; };
+		E89FE94D2BA02354004700B2 /* AddFoodPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94C2BA02354004700B2 /* AddFoodPopover.swift */; };
+		E89FE94F2BA02360004700B2 /* AddFoodPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94E2BA02360004700B2 /* AddFoodPopoverView.swift */; };
+		E89FE9512BA023D0004700B2 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9502BA023D0004700B2 /* Today.swift */; };
+		E89FE9532BA02862004700B2 /* GenericBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +87,18 @@
 		E89FE9252B9E4FEB004700B2 /* Ext_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_View.swift; sourceTree = "<group>"; };
 		E89FE9292B9E5783004700B2 /* Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Percentage.swift; sourceTree = "<group>"; };
 		E89FE9312B9E6AB7004700B2 /* EnvironmentConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentConfig.swift; sourceTree = "<group>"; };
+		E89FE9342B9E7001004700B2 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E89FE9372BA00E02004700B2 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		E89FE93C2BA00E65004700B2 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		E89FE93E2BA00E84004700B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E89FE9402BA00EAB004700B2 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		E89FE9452BA017AA004700B2 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		E89FE9472BA01B5B004700B2 /* BottomRightModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightModifier.swift; sourceTree = "<group>"; };
+		E89FE9492BA01E8F004700B2 /* MacroFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroFood.swift; sourceTree = "<group>"; };
+		E89FE94C2BA02354004700B2 /* AddFoodPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodPopover.swift; sourceTree = "<group>"; };
+		E89FE94E2BA02360004700B2 /* AddFoodPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodPopoverView.swift; sourceTree = "<group>"; };
+		E89FE9502BA023D0004700B2 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
+		E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,9 +170,9 @@
 		E89FE8CE2B9BC99E004700B2 /* Styleguide */ = {
 			isa = PBXGroup;
 			children = (
+				E89FE9442BA0178C004700B2 /* CustomViews */,
 				E89FE9222B9E4FA5004700B2 /* ViewModifier */,
 				E89FE9212B9E4F9F004700B2 /* Extensions */,
-				E89FE8FE2B9BE43A004700B2 /* InputField */,
 				E89FE9012B9BE537004700B2 /* Colors.swift */,
 			);
 			path = Styleguide;
@@ -165,6 +189,7 @@
 		E89FE8D02B9BC9B8004700B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E89FE9492BA01E8F004700B2 /* MacroFood.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +197,10 @@
 		E89FE8D12B9BC9C1004700B2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E89FE94B2BA02329004700B2 /* AddFoodPopover */,
+				E89FE93B2BA00E57004700B2 /* History */,
+				E89FE93A2BA00E50004700B2 /* Settings */,
+				E89FE9392BA00E49004700B2 /* Today */,
 				E89FE8F22B9BDC9D004700B2 /* Root */,
 				E89FE8D62B9BCA31004700B2 /* Home */,
 				E89FE8D52B9BCA2B004700B2 /* Login */,
@@ -185,6 +214,7 @@
 				E89FE8EE2B9BD3F8004700B2 /* Keys.swift */,
 				E89FE8F02B9BD413004700B2 /* Sizing.swift */,
 				E89FE9292B9E5783004700B2 /* Percentage.swift */,
+				E89FE9342B9E7001004700B2 /* Image.swift */,
 			);
 			path = Keys;
 			sourceTree = "<group>";
@@ -203,6 +233,7 @@
 			children = (
 				E89FE8F32B9BDCDB004700B2 /* Home.swift */,
 				E89FE8F52B9BDCE9004700B2 /* HomeView.swift */,
+				E89FE9372BA00E02004700B2 /* Tab.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -273,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				E89FE9232B9E4FB2004700B2 /* TapToDismissModifier.swift */,
+				E89FE9472BA01B5B004700B2 /* BottomRightModifier.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -285,6 +317,50 @@
 			name = Configs;
 			path = "Macroist-SwiftUI/Configs";
 			sourceTree = SOURCE_ROOT;
+		};
+		E89FE9392BA00E49004700B2 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				E89FE9402BA00EAB004700B2 /* TodayView.swift */,
+				E89FE9502BA023D0004700B2 /* Today.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		E89FE93A2BA00E50004700B2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E89FE93E2BA00E84004700B2 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E89FE93B2BA00E57004700B2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				E89FE93C2BA00E65004700B2 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		E89FE9442BA0178C004700B2 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				E89FE8FE2B9BE43A004700B2 /* InputField */,
+				E89FE9452BA017AA004700B2 /* FloatingButton.swift */,
+				E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		E89FE94B2BA02329004700B2 /* AddFoodPopover */ = {
+			isa = PBXGroup;
+			children = (
+				E89FE94C2BA02354004700B2 /* AddFoodPopover.swift */,
+				E89FE94E2BA02360004700B2 /* AddFoodPopoverView.swift */,
+			);
+			path = AddFoodPopover;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -376,23 +452,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89FE9262B9E4FEB004700B2 /* Ext_View.swift in Sources */,
+				E89FE9352B9E7001004700B2 /* Image.swift in Sources */,
+				E89FE9482BA01B5B004700B2 /* BottomRightModifier.swift in Sources */,
 				E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */,
+				E89FE94F2BA02360004700B2 /* AddFoodPopoverView.swift in Sources */,
+				E89FE9382BA00E02004700B2 /* Tab.swift in Sources */,
 				E89FE9022B9BE537004700B2 /* Colors.swift in Sources */,
 				E89FE8FB2B9BDE00004700B2 /* Path.swift in Sources */,
 				E89FE8D92B9BCAAA004700B2 /* MainCoordinator.swift in Sources */,
+				E89FE9512BA023D0004700B2 /* Today.swift in Sources */,
 				E89FE8E92B9BCE00004700B2 /* Root.swift in Sources */,
+				E89FE9532BA02862004700B2 /* GenericBackgroundView.swift in Sources */,
 				E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */,
 				E89FE8F62B9BDCE9004700B2 /* HomeView.swift in Sources */,
+				E89FE94D2BA02354004700B2 /* AddFoodPopover.swift in Sources */,
+				E89FE9412BA00EAB004700B2 /* TodayView.swift in Sources */,
 				E89FE9092B9C00D3004700B2 /* ApiClient.swift in Sources */,
 				E89FE8F92B9BDDE7004700B2 /* MainCoordinatorView.swift in Sources */,
 				E89FE8ED2B9BD294004700B2 /* Login.swift in Sources */,
+				E89FE94A2BA01E8F004700B2 /* MacroFood.swift in Sources */,
 				E89FE90B2B9C0251004700B2 /* DependancyValues.swift in Sources */,
 				E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */,
 				E89FE8F42B9BDCDB004700B2 /* Home.swift in Sources */,
 				E89FE9072B9C00AC004700B2 /* ApiClientKey.swift in Sources */,
+				E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */,
+				E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */,
 				E89FE9042B9BF35A004700B2 /* BorderState.swift in Sources */,
 				E89FE8EF2B9BD3F8004700B2 /* Keys.swift in Sources */,
 				E89FE8F12B9BD413004700B2 /* Sizing.swift in Sources */,
+				E89FE93F2BA00E84004700B2 /* SettingsView.swift in Sources */,
 				E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */,
 				E89FE8EB2B9BD28E004700B2 /* LoginView.swift in Sources */,
 				E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */,
