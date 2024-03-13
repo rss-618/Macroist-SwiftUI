@@ -16,14 +16,32 @@ public struct InputFieldView: View {
     public var body: some View {
         WithPerceptionTracking {
             HStack(spacing: .zero) {
+                // TODO: Create a secure textfield
                 TextField(text: $store.text) {
                     Text(store.placeholder)
-                }.focused($isFocused)
-                    .textInputAutocapitalization(.never)
-                    .font(.callout)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .padding(.vertical, Keys.Padding.dp2)
-                    .padding(.horizontal, Keys.Padding.dp16)
+                }
+                .focused($isFocused)
+                .textInputAutocapitalization(.never)
+                .font(.callout)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.vertical, Keys.Padding.dp2)
+                .padding(.leading, Keys.Padding.dp16)
+                // Clear Input Button
+                if store.borderState == .focus && !store.text.isEmpty {
+                    // Clear input button
+                    Button {
+                        store.send(.clearInput)
+                    } label: {
+                        Image(systemName: Keys.SystemIcon.X_CIRCLE)
+                            .resizable()
+                            .scaledToFit()
+                            .font(Font.body.weight(.light))
+                            .foregroundStyle(Color.black)
+                            .frame(maxHeight: .infinity)
+                            .padding(.horizontal, Keys.Padding.dp12)
+                            .padding(.vertical, Keys.Padding.dp16)
+                    }
+                }
             }
             .overlay {
                 RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)

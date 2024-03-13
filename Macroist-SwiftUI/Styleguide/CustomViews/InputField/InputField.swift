@@ -29,6 +29,7 @@ public struct InputField {
     
     public enum Action: Equatable, BindableAction {
         case binding(BindingAction<State>)
+        case clearInput
         case updateBorderState(BorderState)
     }
     
@@ -38,6 +39,8 @@ public struct InputField {
         
         Reduce { state, action in
             switch action {
+            case .clearInput:
+                return .send(.binding(.set(\.text, .init())))
             case .updateBorderState(let newBorderState):
                 state.borderState = newBorderState
             default:

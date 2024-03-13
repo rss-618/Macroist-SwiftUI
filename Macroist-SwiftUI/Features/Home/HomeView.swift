@@ -13,24 +13,23 @@ public struct HomeView: View {
     @State var store: StoreOf<Home>
     
     public var body: some View {
-        // TODO: Skeleton out a ui and give all interactable things a destination
         WithPerceptionTracking {
             TabView(selection: $store.currentTab) {
                 HistoryView()
                     .tabItem {
-                        Label("History", systemImage: Keys.SystemIcon.PLUS)
+                        Label("History", systemImage: Keys.SystemIcon.CLOCK)
                     }
                     .tag(Tab.history)
                 
                 TodayView(store: store.scope(state: \.todayState, action: \.today))
                     .tabItem {
-                        Label("Today", systemImage: Keys.SystemIcon.PLUS)
+                        Label("Today", systemImage: Keys.SystemIcon.CALENDAR_CIRCLE)
                     }
                     .tag(Tab.today)
                 
                 SettingsView()
                     .tabItem {
-                        Label("Settings", systemImage: Keys.SystemIcon.PLUS)
+                        Label("Settings", systemImage: Keys.SystemIcon.GEARSHAPE)
                     }
                     .tag(Tab.settings)
             }

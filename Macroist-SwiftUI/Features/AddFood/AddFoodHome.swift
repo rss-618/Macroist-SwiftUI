@@ -9,7 +9,7 @@ import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-public struct AddFoodPopover {
+public struct AddFoodHome {
     
     @ObservableState
     public struct State: Equatable {
@@ -17,7 +17,7 @@ public struct AddFoodPopover {
     }
     
     public enum Action: Equatable {
-        case dismiss // Parent Call
+        case manualEntry // Parent Call
     }
     
     public var body: some ReducerOf<Self> {

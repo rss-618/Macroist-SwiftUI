@@ -13,20 +13,20 @@ public struct Today {
     
     @ObservableState
     public struct State: Equatable {
-        public var addFoodState: AddFoodPopover.State = .init()
+        public var addFoodState: AddFoodHome.State = .init()
         public var isAddFoodShowing = false
     }
     
     public enum Action: Equatable, BindableAction{
         case showAddFoodPopover
-        case addFood(AddFoodPopover.Action)
+        case addFood(AddFoodHome.Action)
         case binding(BindingAction<State>)
     }
     
     public var body: some ReducerOf<Self> {
         
         Scope(state: \.addFoodState, action: /Action.addFood) {
-            AddFoodPopover()
+            AddFoodHome()
         }
         
         BindingReducer()
