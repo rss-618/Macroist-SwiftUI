@@ -9,6 +9,8 @@ import Foundation
 
 extension Keys {
     public struct Opactiy {
+        public static let pct10: Double = 0.10
         public static let pct33: Double = 0.33
+        public static let pct87: Double = 0.87
     }
 }
