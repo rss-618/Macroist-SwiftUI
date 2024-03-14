@@ -1,25 +1,23 @@
 //
-//  AddFoodPopover.swift
+//  Settings.swift
 //  Macroist-SwiftUI
 //
-//  Created by Ryan Schildknecht on 3/12/24.
+//  Created by Ryan Schildknecht on 3/13/24.
 //
 
 import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-public struct AddFoodHome {
-    
-    @Dependency(\.runtimeVariables) var runtimeVariables
-    
+public struct Settings {
+   
     @ObservableState
     public struct State: Equatable {
         
     }
     
     public enum Action: Equatable {
-        case manualEntry // Parent Call
+        case logout // Parent Call
     }
     
     public var body: some ReducerOf<Self> {
@@ -31,5 +29,4 @@ public struct AddFoodHome {
             return .none
         }
     }
-    
 }

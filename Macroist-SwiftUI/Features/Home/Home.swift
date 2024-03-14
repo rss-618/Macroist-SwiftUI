@@ -14,6 +14,7 @@ public struct Home {
     @ObservableState
     public struct State: Equatable {
         public var todayState: Today.State = .init()
+        public var settingsState: Settings.State = .init()
         
         public var currentTab: Tab = .today
     }
@@ -22,6 +23,7 @@ public struct Home {
         case logout
         case binding(BindingAction<State>)
         case today(Today.Action)
+        case settings(Settings.Action)
     }
     
     public var body: some ReducerOf<Self> {
@@ -30,10 +32,16 @@ public struct Home {
             Today()
         }
         
+        Scope(state: \.settingsState, action: /Action.settings) {
+            Settings()
+        }
+        
         BindingReducer()
         
         Reduce { state, action in
             switch action {
+            case .settings(.logout):
+                return .send(.logout)
             default:
                 break
             }
