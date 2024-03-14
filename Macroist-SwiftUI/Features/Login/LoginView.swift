@@ -7,6 +7,8 @@
 
 import ComposableArchitecture
 import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
 
 public struct LoginView: View {
     
@@ -99,6 +101,10 @@ public struct LoginView: View {
                 WithPerceptionTracking {
                     Text(store.genericErrorDescription)
                 }
+            }
+            .task {
+                // TODO: Make an additional view other than login for this check logic to avoid flashing view
+                await store.send(.onAppear).finish()
             }
         }
     }

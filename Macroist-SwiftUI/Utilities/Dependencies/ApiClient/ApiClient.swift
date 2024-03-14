@@ -19,6 +19,7 @@ struct ApiClient {
                      _ password: String) async throws -> AuthDataResult?
     var login: (_ email: String,
                 _ password: String) async throws -> AuthDataResult?
+    var logout: () throws ->  Void
     // -- Database --
     // TODO: Implement database things
     // --- End Firebase Calls --
@@ -26,14 +27,14 @@ struct ApiClient {
 
 // Implementaton
 extension ApiClient: DependencyKey {
-    
-    static let AUTH = Auth.auth()
-    
+
     static let liveValue: ApiClient = Self(
         createUser: { email, password in
-            return try await AUTH.createUser(withEmail: email, password: password)
+            return try await Auth.auth().createUser(withEmail: email, password: password)
         }, login: { email, password in
-            return try await AUTH.signIn(withEmail: email, password: password)
+            return try await Auth.auth().signIn(withEmail: email, password: password)
+        }, logout: {
+            return try Auth.auth().signOut()
         }
     )
     
@@ -43,6 +44,7 @@ extension ApiClient: DependencyKey {
 extension ApiClient {
   static let unimplemented = Self(
     createUser: XCTUnimplemented("APIClient.fetchUser"),
-    login: XCTUnimplemented("APIClient.login")
+    login: XCTUnimplemented("APIClient.login"),
+    logout: XCTUnimplemented("APIClient.logout")
   )
 }

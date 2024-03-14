@@ -13,7 +13,7 @@ import Foundation
 public struct Login: Reducer {
     
     @Dependency(\.apiClient) var apiClient
-    @Dependency(\.mainQueue) var mainQueue
+    @Dependency(\.runtimeVariables) var runtimeVariables
     
     @ObservableState
     public struct State: Equatable {
@@ -32,6 +32,7 @@ public struct Login: Reducer {
     }
     
     public enum Action: Equatable, BindableAction {
+        case onAppear
         case loginAttempted
         case loginAttemptResponse(AuthDataResult?)
         case loginError(AuthErrorCode)
@@ -57,6 +58,10 @@ public struct Login: Reducer {
         
         Reduce { state, action in
             switch action {
+            case .onAppear:
+                if let user = runtimeVariables.getAuthInstance().currentUser {
+                    return .send(.login)
+                }
             case .loginAttempted:
                 // Begin Call
                 state.isLoggingIn = true

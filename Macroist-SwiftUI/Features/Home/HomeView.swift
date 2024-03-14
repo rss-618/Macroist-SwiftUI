@@ -7,6 +7,8 @@
 
 import ComposableArchitecture
 import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
 
 public struct HomeView: View {
     
@@ -27,7 +29,7 @@ public struct HomeView: View {
                     }
                     .tag(Tab.today)
                 
-                SettingsView()
+                SettingsView(store: store.scope(state: \.settingsState, action: \.settings))
                     .tabItem {
                         Label("Settings", systemImage: Keys.SystemIcon.GEARSHAPE)
                     }
