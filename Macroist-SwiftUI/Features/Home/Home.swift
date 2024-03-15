@@ -13,6 +13,7 @@ public struct Home {
     
     @ObservableState
     public struct State: Equatable {
+        public var historyState: History.State = .init()
         public var todayState: Today.State = .init()
         public var settingsState: Settings.State = .init()
         
@@ -22,11 +23,16 @@ public struct Home {
     public enum Action: Equatable, BindableAction {
         case logout
         case binding(BindingAction<State>)
+        case history(History.Action)
         case today(Today.Action)
         case settings(Settings.Action)
     }
     
     public var body: some ReducerOf<Self> {
+        
+        Scope(state: \.historyState, action: /Action.history) {
+            History()
+        }
         
         Scope(state: \.todayState, action: /Action.today) {
             Today()
