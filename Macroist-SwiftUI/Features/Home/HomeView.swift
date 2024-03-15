@@ -17,7 +17,7 @@ public struct HomeView: View {
     public var body: some View {
         WithPerceptionTracking {
             TabView(selection: $store.currentTab) {
-                HistoryView()
+                HistoryView(store: store.scope(state: \.historyState, action: \.history))
                     .tabItem {
                         Label("History", systemImage: Keys.SystemIcon.CLOCK)
                     }

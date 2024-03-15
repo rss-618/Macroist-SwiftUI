@@ -9,6 +9,7 @@ import ComposableArchitecture
 import Foundation
 import XCTestDynamicOverlay
 import FirebaseAuth
+import FirebaseFirestore
 
 // Protocol
 struct ApiClient {
@@ -21,7 +22,8 @@ struct ApiClient {
                 _ password: String) async throws -> AuthDataResult?
     var logout: () throws ->  Void
     // -- Database --
-    // TODO: Implement database things
+    var getMonthMeals: (Date) async throws -> [MacroFood]?
+    var addMeal: (_ food: MacroFood) async throws -> Void
     // --- End Firebase Calls --
 }
 
@@ -35,6 +37,39 @@ extension ApiClient: DependencyKey {
             return try await Auth.auth().signIn(withEmail: email, password: password)
         }, logout: {
             return try Auth.auth().signOut()
+        }, getMonthMeals: { date in
+            let task = Task { () throws -> [MacroFood] in
+                let documents = try await Firestore.firestore()
+                    .collection(Keys.ID.DB)
+                    .document(Auth.auth().currentUser!.uid)
+                    .collection(DateUtil.getMonthYearEntryKey(date))
+                    .getDocuments()
+                    .documents
+                
+                var meals: [MacroFood] = .init()
+                
+                for document in documents {
+                    meals.append(try document.data(as: MacroFood.self))
+                }
+                
+                return meals
+            }
+            return try await task.result.get()
+        }, addMeal: { food in
+            let task = Task { () throws -> Void in
+                let data = try JSONEncoder().encode(food)
+                guard let dictionary = try JSONSerialization.jsonObject(with: data,
+                                                                        options: .allowFragments) as? [String: Any] else {
+                    throw NSError()
+                }
+                let ref = Firestore.firestore()
+                    .collection(Keys.ID.DB)
+                    .document(Auth.auth().currentUser!.uid)
+                    .collection(DateUtil.getMonthYearEntryKey())
+                    .addDocument(data: dictionary)
+                return
+            }
+            return try await task.result.get()
         }
     )
     
@@ -45,6 +80,8 @@ extension ApiClient {
   static let unimplemented = Self(
     createUser: XCTUnimplemented("APIClient.fetchUser"),
     login: XCTUnimplemented("APIClient.login"),
-    logout: XCTUnimplemented("APIClient.logout")
+    logout: XCTUnimplemented("APIClient.logout"),
+    getMonthMeals: XCTUnimplemented("APIClient.getMonthMeals"),
+    addMeal: XCTUnimplemented("APIClient.addMeal")
   )
 }
