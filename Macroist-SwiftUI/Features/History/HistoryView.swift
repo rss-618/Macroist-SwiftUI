@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct HistoryView: View {
     
-    @State var store: StoreOf<History>
+    @Perception.Bindable var store: StoreOf<History>
     
     public var body: some View {
         WithPerceptionTracking {

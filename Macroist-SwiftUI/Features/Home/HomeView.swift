@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 public struct HomeView: View {
     
-    @State var store: StoreOf<Home>
+    @Perception.Bindable var store: StoreOf<Home>
     
     public var body: some View {
         WithPerceptionTracking {

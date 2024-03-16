@@ -15,12 +15,12 @@ public struct History {
     
     @ObservableState
     public struct State: Equatable {
-        public var meals: [MacroFood]?
+        public var meals: [MacroMeal]?
     }
     
     public enum Action: Equatable {
         case loadFood
-        case loadFoodResponse([MacroFood]?)
+        case loadFoodResponse([MacroMeal]?)
     }
     
     public var body: some ReducerOf<Self> {

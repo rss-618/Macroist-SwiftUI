@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct FoodPopoverCoordinatorView: View {
     
-    @State var store: StoreOf<FoodPopoverCoordinator>
+    @Perception.Bindable var store: StoreOf<FoodPopoverCoordinator>
 
     public var body: some View {
         WithPerceptionTracking {
@@ -19,7 +19,7 @@ public struct FoodPopoverCoordinatorView: View {
                     path: $store.scope(state: \.path, action: \.path)
                 ) {
                     // Root view of the navigation stack
-                    AddFoodHomeView(store: store.scope(state: \.home, action: \.home))
+                    AddMealHomeView(store: store.scope(state: \.home, action: \.home))
                 } destination: { store in
                     switch store.state {
                     case .manualEntry:

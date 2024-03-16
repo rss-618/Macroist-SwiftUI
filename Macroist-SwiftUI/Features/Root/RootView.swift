@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 public struct RootView: View {
     
-    @State var store: StoreOf<Root>
+    @Perception.Bindable var store: StoreOf<Root>
     
     public var body: some View {
         WithPerceptionTracking {

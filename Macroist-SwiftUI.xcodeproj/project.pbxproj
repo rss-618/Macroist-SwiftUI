@@ -18,6 +18,10 @@
 		E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF7A2BA3FB9C00441247 /* Ids.swift */; };
 		E848CF7D2BA40E2F00441247 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF7C2BA40E2F00441247 /* DateUtil.swift */; };
 		E848CF802BA40F0300441247 /* Ext_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF7F2BA40F0300441247 /* Ext_Date.swift */; };
+		E848CF822BA53C1900441247 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF812BA53C1900441247 /* Ingredient.swift */; };
+		E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF832BA5405F00441247 /* IngredientEntryCardView.swift */; };
+		E848CF872BA541EC00441247 /* IngredientEntryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF862BA541EC00441247 /* IngredientEntryCard.swift */; };
+		E848CF892BA5439100441247 /* Ext_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF882BA5439100441247 /* Ext_String.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
 		E89FE8C82B9BC97E004700B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C72B9BC97E004700B2 /* Preview Assets.xcassets */; };
@@ -61,10 +65,10 @@
 		E89FE93F2BA00E84004700B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE93E2BA00E84004700B2 /* SettingsView.swift */; };
 		E89FE9412BA00EAB004700B2 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9402BA00EAB004700B2 /* TodayView.swift */; };
 		E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9452BA017AA004700B2 /* FloatingButton.swift */; };
-		E89FE9482BA01B5B004700B2 /* BottomRightModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9472BA01B5B004700B2 /* BottomRightModifier.swift */; };
-		E89FE94A2BA01E8F004700B2 /* MacroFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9492BA01E8F004700B2 /* MacroFood.swift */; };
-		E89FE94D2BA02354004700B2 /* AddFoodHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94C2BA02354004700B2 /* AddFoodHome.swift */; };
-		E89FE94F2BA02360004700B2 /* AddFoodHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94E2BA02360004700B2 /* AddFoodHomeView.swift */; };
+		E89FE9482BA01B5B004700B2 /* AlignModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9472BA01B5B004700B2 /* AlignModifier.swift */; };
+		E89FE94A2BA01E8F004700B2 /* MacroMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9492BA01E8F004700B2 /* MacroMeal.swift */; };
+		E89FE94D2BA02354004700B2 /* AddMealHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94C2BA02354004700B2 /* AddMealHome.swift */; };
+		E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */; };
 		E89FE9512BA023D0004700B2 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9502BA023D0004700B2 /* Today.swift */; };
 		E89FE9532BA02862004700B2 /* GenericBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +85,10 @@
 		E848CF7A2BA3FB9C00441247 /* Ids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ids.swift; sourceTree = "<group>"; };
 		E848CF7C2BA40E2F00441247 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		E848CF7F2BA40F0300441247 /* Ext_Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Date.swift; sourceTree = "<group>"; };
+		E848CF812BA53C1900441247 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		E848CF832BA5405F00441247 /* IngredientEntryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEntryCardView.swift; sourceTree = "<group>"; };
+		E848CF862BA541EC00441247 /* IngredientEntryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEntryCard.swift; sourceTree = "<group>"; };
+		E848CF882BA5439100441247 /* Ext_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_String.swift; sourceTree = "<group>"; };
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,10 +121,10 @@
 		E89FE93E2BA00E84004700B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E89FE9402BA00EAB004700B2 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		E89FE9452BA017AA004700B2 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
-		E89FE9472BA01B5B004700B2 /* BottomRightModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightModifier.swift; sourceTree = "<group>"; };
-		E89FE9492BA01E8F004700B2 /* MacroFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroFood.swift; sourceTree = "<group>"; };
-		E89FE94C2BA02354004700B2 /* AddFoodHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodHome.swift; sourceTree = "<group>"; };
-		E89FE94E2BA02360004700B2 /* AddFoodHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodHomeView.swift; sourceTree = "<group>"; };
+		E89FE9472BA01B5B004700B2 /* AlignModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignModifier.swift; sourceTree = "<group>"; };
+		E89FE9492BA01E8F004700B2 /* MacroMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroMeal.swift; sourceTree = "<group>"; };
+		E89FE94C2BA02354004700B2 /* AddMealHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealHome.swift; sourceTree = "<group>"; };
+		E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealHomeView.swift; sourceTree = "<group>"; };
 		E89FE9502BA023D0004700B2 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +155,7 @@
 		E848CF632BA1642700441247 /* ManualEntry */ = {
 			isa = PBXGroup;
 			children = (
+				E848CF852BA541D400441247 /* IngredientEntryCard */,
 				E848CF642BA1643600441247 /* ManualEntryView.swift */,
 				E848CF662BA1643C00441247 /* ManualEntry.swift */,
 			);
@@ -194,8 +203,18 @@
 			isa = PBXGroup;
 			children = (
 				E848CF7F2BA40F0300441247 /* Ext_Date.swift */,
+				E848CF882BA5439100441247 /* Ext_String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E848CF852BA541D400441247 /* IngredientEntryCard */ = {
+			isa = PBXGroup;
+			children = (
+				E848CF832BA5405F00441247 /* IngredientEntryCardView.swift */,
+				E848CF862BA541EC00441247 /* IngredientEntryCard.swift */,
+			);
+			path = IngredientEntryCard;
 			sourceTree = "<group>";
 		};
 		E89FE8B42B9BC97D004700B2 = {
@@ -263,7 +282,8 @@
 		E89FE8D02B9BC9B8004700B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E89FE9492BA01E8F004700B2 /* MacroFood.swift */,
+				E89FE9492BA01E8F004700B2 /* MacroMeal.swift */,
+				E848CF812BA53C1900441247 /* Ingredient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,7 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				E89FE9232B9E4FB2004700B2 /* TapToDismissModifier.swift */,
-				E89FE9472BA01B5B004700B2 /* BottomRightModifier.swift */,
+				E89FE9472BA01B5B004700B2 /* AlignModifier.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -434,8 +454,8 @@
 			isa = PBXGroup;
 			children = (
 				E848CF632BA1642700441247 /* ManualEntry */,
-				E89FE94C2BA02354004700B2 /* AddFoodHome.swift */,
-				E89FE94E2BA02360004700B2 /* AddFoodHomeView.swift */,
+				E89FE94C2BA02354004700B2 /* AddMealHome.swift */,
+				E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */,
 			);
 			path = AddFood;
 			sourceTree = "<group>";
@@ -532,21 +552,24 @@
 				E89FE9262B9E4FEB004700B2 /* Ext_View.swift in Sources */,
 				E848CF7D2BA40E2F00441247 /* DateUtil.swift in Sources */,
 				E89FE9352B9E7001004700B2 /* Image.swift in Sources */,
-				E89FE9482BA01B5B004700B2 /* BottomRightModifier.swift in Sources */,
+				E89FE9482BA01B5B004700B2 /* AlignModifier.swift in Sources */,
+				E848CF822BA53C1900441247 /* Ingredient.swift in Sources */,
 				E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */,
-				E89FE94F2BA02360004700B2 /* AddFoodHomeView.swift in Sources */,
+				E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */,
 				E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */,
 				E89FE9382BA00E02004700B2 /* Tab.swift in Sources */,
+				E848CF872BA541EC00441247 /* IngredientEntryCard.swift in Sources */,
 				E89FE9022B9BE537004700B2 /* Colors.swift in Sources */,
 				E848CF652BA1643600441247 /* ManualEntryView.swift in Sources */,
 				E89FE8FB2B9BDE00004700B2 /* Path.swift in Sources */,
 				E89FE8D92B9BCAAA004700B2 /* FoodPopoverCoordinator.swift in Sources */,
+				E848CF892BA5439100441247 /* Ext_String.swift in Sources */,
 				E89FE9512BA023D0004700B2 /* Today.swift in Sources */,
 				E89FE8E92B9BCE00004700B2 /* Root.swift in Sources */,
 				E89FE9532BA02862004700B2 /* GenericBackgroundView.swift in Sources */,
 				E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */,
 				E89FE8F62B9BDCE9004700B2 /* HomeView.swift in Sources */,
-				E89FE94D2BA02354004700B2 /* AddFoodHome.swift in Sources */,
+				E89FE94D2BA02354004700B2 /* AddMealHome.swift in Sources */,
 				E848CF6D2BA2965700441247 /* RuntimeVariables.swift in Sources */,
 				E89FE9412BA00EAB004700B2 /* TodayView.swift in Sources */,
 				E848CF772BA2A59500441247 /* Settings.swift in Sources */,
@@ -557,10 +580,11 @@
 				E89FE8F92B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift in Sources */,
 				E848CF722BA297DD00441247 /* DependancyValues.swift in Sources */,
 				E89FE8ED2B9BD294004700B2 /* Login.swift in Sources */,
-				E89FE94A2BA01E8F004700B2 /* MacroFood.swift in Sources */,
+				E89FE94A2BA01E8F004700B2 /* MacroMeal.swift in Sources */,
 				E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */,
 				E89FE8F42B9BDCDB004700B2 /* Home.swift in Sources */,
 				E89FE9072B9C00AC004700B2 /* ApiClientKey.swift in Sources */,
+				E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */,
 				E848CF792BA3F32600441247 /* History.swift in Sources */,
 				E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */,
 				E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */,

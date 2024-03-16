@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct TodayView: View {
     
-    @State var store: StoreOf<Today>
+    @Perception.Bindable var store: StoreOf<Today>
     
     public var body: some View {
         WithPerceptionTracking {
