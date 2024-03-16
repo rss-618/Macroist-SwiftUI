@@ -22,8 +22,8 @@ struct ApiClient {
                 _ password: String) async throws -> AuthDataResult?
     var logout: () throws ->  Void
     // -- Database --
-    var getMonthMeals: (Date) async throws -> [MacroFood]?
-    var addMeal: (_ food: MacroFood) async throws -> Void
+    var getMonthMeals: (Date) async throws -> [MacroMeal]?
+    var addMeal: (_ food: MacroMeal) async throws -> Void
     // --- End Firebase Calls --
 }
 
@@ -38,7 +38,7 @@ extension ApiClient: DependencyKey {
         }, logout: {
             return try Auth.auth().signOut()
         }, getMonthMeals: { date in
-            let task = Task { () throws -> [MacroFood] in
+            let task = Task { () throws -> [MacroMeal] in
                 let documents = try await Firestore.firestore()
                     .collection(Keys.ID.DB)
                     .document(Auth.auth().currentUser!.uid)
@@ -46,10 +46,10 @@ extension ApiClient: DependencyKey {
                     .getDocuments()
                     .documents
                 
-                var meals: [MacroFood] = .init()
+                var meals: [MacroMeal] = .init()
                 
                 for document in documents {
-                    meals.append(try document.data(as: MacroFood.self))
+                    meals.append(try document.data(as: MacroMeal.self))
                 }
                 
                 return meals

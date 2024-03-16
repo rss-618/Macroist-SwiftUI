@@ -22,6 +22,7 @@ extension Keys {
         public static let dp48: CGFloat = 48
         public static let dp52: CGFloat = 52
         public static let dp100: CGFloat = 100
+        public static let dp300: CGFloat = 300
     }
     
     public struct Width {

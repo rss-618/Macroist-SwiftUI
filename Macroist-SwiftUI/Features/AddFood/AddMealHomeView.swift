@@ -1,5 +1,5 @@
 //
-//  AddFoodHomeView.swift
+//  AddMealHomeView.swift
 //  Macroist-SwiftUI
 //
 //  Created by Ryan Schildknecht on 3/12/24.
@@ -8,10 +8,10 @@
 import ComposableArchitecture
 import SwiftUI
 
-public struct AddFoodHomeView: View {
+public struct AddMealHomeView: View {
     
     @Environment(\.dismiss) var dismiss
-    @State var store: StoreOf<AddFoodHome>
+    @Perception.Bindable var store: StoreOf<AddMealHome>
     
     let columns = [
         GridItem(.flexible()),
@@ -33,7 +33,7 @@ public struct AddFoodHomeView: View {
             .padding(.horizontal, Keys.Padding.dp16)
             .padding(.vertical, Keys.Padding.dp32)
         }
-        .navigationTitle("Add Food")
+        .navigationTitle("Add Meal")
         .toolbar {
             Button("Cancel") {
                 dismiss()
@@ -42,7 +42,7 @@ public struct AddFoodHomeView: View {
         }
     }
     
-    public init(store: StoreOf<AddFoodHome>) {
+    public init(store: StoreOf<AddMealHome>) {
         self.store = store
     }
 }

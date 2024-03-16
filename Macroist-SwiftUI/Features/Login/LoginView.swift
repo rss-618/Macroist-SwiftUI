@@ -14,7 +14,7 @@ public struct LoginView: View {
     
     @Dependency(\.apiClient) var apiClient
 
-    @State var store: StoreOf<Login>
+    @Perception.Bindable var store: StoreOf<Login>
     @FocusState var currentInput: Input?
     
     enum Input: Hashable {

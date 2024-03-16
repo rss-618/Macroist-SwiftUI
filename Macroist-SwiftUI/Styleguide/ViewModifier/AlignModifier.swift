@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct BottomRightModifier: ViewModifier {
+public struct AlignModifier: ViewModifier {
     
     let x: HorizontalAlignment
     let y: VerticalAlignment
@@ -25,10 +25,14 @@ public struct BottomRightModifier: ViewModifier {
                 if x == .leading || x == .center {
                     Spacer()
                 }
+            }.background {
+                Color.clear
             }
             if y == .top || y == .center {
                 Spacer()
             }
+        }.background {
+            Color.clear
         }
     }
     

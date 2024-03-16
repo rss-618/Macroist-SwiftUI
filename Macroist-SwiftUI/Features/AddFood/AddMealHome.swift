@@ -1,5 +1,5 @@
 //
-//  AddFoodPopover.swift
+//  AddMealHome.swift
 //  Macroist-SwiftUI
 //
 //  Created by Ryan Schildknecht on 3/12/24.
@@ -9,7 +9,7 @@ import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-public struct AddFoodHome {
+public struct AddMealHome {
     
     @Dependency(\.runtimeVariables) var runtimeVariables
     

@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct InputFieldView: View {
     
-    @State var store: StoreOf<InputField>
+    @Perception.Bindable var store: StoreOf<InputField>
     @FocusState var isFocused: Bool
     
     public var body: some View {

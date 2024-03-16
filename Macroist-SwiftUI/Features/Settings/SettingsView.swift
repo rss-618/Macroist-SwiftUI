@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct SettingsView: View {
     
-    @State var store: StoreOf<Settings>
+    @Perception.Bindable var store: StoreOf<Settings>
     
     @Dependency(\.apiClient) var apiClient
     

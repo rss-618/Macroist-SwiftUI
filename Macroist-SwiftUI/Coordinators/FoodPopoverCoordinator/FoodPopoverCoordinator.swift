@@ -14,18 +14,18 @@ public struct FoodPopoverCoordinator {
     @ObservableState
     public struct State {
         public var path = StackState<Path.State>()
-        public var home: AddFoodHome.State = .init()
+        public var home: AddMealHome.State = .init()
     }
     
     public enum Action {
         case path(StackAction<Path.State, Path.Action>)
-        case home(AddFoodHome.Action)
+        case home(AddMealHome.Action)
     }
     
     public var body: some ReducerOf<Self> {
         
         Scope(state: \.home, action: /Action.home) {
-            AddFoodHome()
+            AddMealHome()
         }
         
         Reduce { state, action in
