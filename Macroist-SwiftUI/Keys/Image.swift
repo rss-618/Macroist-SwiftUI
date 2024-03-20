@@ -16,5 +16,7 @@ extension Keys {
         public static var PLUS = "plus"
         public static var PENCIL_SLASH = "pencil.slash"
         public static var X_CIRCLE = "x.circle"
+        public static var EYE_CICLE = "eye.circle"
+        public static var EYE_SLASH_CIRCLE = "eye.slash.circle"
     }
 }

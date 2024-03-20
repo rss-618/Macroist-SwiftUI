@@ -13,6 +13,7 @@ extension Keys {
         public static let dp2: CGFloat = 2
         public static let dp8: CGFloat = 8
         public static let dp12: CGFloat = 12
+        public static let dp13: CGFloat = 13
         public static let dp16: CGFloat = 16
         public static let dp32: CGFloat = 32
     }

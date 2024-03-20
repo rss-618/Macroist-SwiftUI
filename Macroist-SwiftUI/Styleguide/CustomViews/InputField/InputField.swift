@@ -11,17 +11,27 @@ import SwiftUI
 @Reducer
 public struct InputField {
     
+    public enum Field: Equatable, Hashable {
+        case insecure
+        case secure
+    }
+    
     @ObservableState
     public struct State: Equatable {
-        
-        public var borderState: BorderState
+        public var inputState: InputState
         public var text: String = .init()
         public var placeholder: String = .init()
+        public var type: Field
+        // Secure only variables
+        public var isSecured = true
         
-        public init(borderState: BorderState = .unfocus,
+        public init(type: Field = .insecure,
+                    inputState: InputState = .unfocus,
                     text: String = .init(),
                     placeholder: String) {
-            self.borderState = borderState
+            self.type = type
+            self.isSecured = type == .secure
+            self.inputState = inputState
             self.text = text
             self.placeholder = placeholder
         }
@@ -30,7 +40,8 @@ public struct InputField {
     public enum Action: Equatable, BindableAction {
         case binding(BindingAction<State>)
         case clearInput
-        case updateBorderState(BorderState)
+        case setFocused(Field)
+        case updateInputState(InputState)
     }
     
     public var body: some ReducerOf<Self> {
@@ -41,8 +52,8 @@ public struct InputField {
             switch action {
             case .clearInput:
                 return .send(.binding(.set(\.text, .init())))
-            case .updateBorderState(let newBorderState):
-                state.borderState = newBorderState
+            case .updateInputState(let newInputState):
+                state.inputState = newInputState
             default:
                 break
             }
