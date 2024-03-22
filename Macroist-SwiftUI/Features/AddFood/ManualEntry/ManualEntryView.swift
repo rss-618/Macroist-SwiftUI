@@ -32,7 +32,6 @@ public struct ManualEntryView: View {
                 }
                 .scrollContentBackground(.hidden)
                 .formStyle(.grouped)
-                .listRowBackground(Color.blue)
                 
                 Button {
                     store.send(.addIngredient)

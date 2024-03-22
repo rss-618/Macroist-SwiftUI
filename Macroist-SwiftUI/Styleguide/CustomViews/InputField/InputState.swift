@@ -1,5 +1,5 @@
 //
-//  BorderState.swift
+//  InputState.swift
 //  Macroist-SwiftUI
 //
 //  Created by Ryan Schildknecht on 3/8/24.
@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-public enum BorderState: Equatable {
-    
+public enum InputState: Equatable {
     case focus
     case unfocus
     case error
     
-    public var color: Color {
+    public var borderColor: Color {
         switch self {
         case .focus:
             return .blue

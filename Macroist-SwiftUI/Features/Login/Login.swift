@@ -19,7 +19,7 @@ public struct Login: Reducer {
     public struct State: Equatable {
         // Child States
         public var emailState: InputField.State = .init(placeholder: "Email")
-        public var passwordState: InputField.State = .init(placeholder: "Password")
+        public var passwordState: InputField.State = .init(type: .secure, placeholder: "Password")
         
         // Alert Conditionals and Values
         public var isNetworkError = false

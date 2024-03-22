@@ -19,10 +19,13 @@ extension String {
     /// Will return nil if non-number
     /// - Returns: Optional CGFloat Value
     func toCGFloat() -> CGFloat? {
-        guard let doubleValue = Double(self) else {
+        if self.trimWhiteSpaceAndNewline().isEmpty {
+            return .zero
+        } else if let doubleValue = Double(self) {
+            return CGFloat(doubleValue)
+        } else {
             return nil
         }
-        return CGFloat(doubleValue)
     }
     
 }

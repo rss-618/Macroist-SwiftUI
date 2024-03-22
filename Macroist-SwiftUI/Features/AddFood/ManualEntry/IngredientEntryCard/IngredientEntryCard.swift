@@ -17,11 +17,11 @@ public struct IngredientEntryCard {
         public var id = UUID()
         
         public var hasError: Bool {
-            name.borderState == .error
-            || calories.borderState == .error
-            || carbs.borderState == .error
-            || protein.borderState == .error
-            || fat.borderState == .error
+            name.inputState == .error
+            || calories.inputState == .error
+            || carbs.inputState == .error
+            || protein.inputState == .error
+            || fat.inputState == .error
         }
         
         var name: InputField.State = .init(placeholder: "Ingredient Name (Optional)")
@@ -74,25 +74,25 @@ public struct IngredientEntryCard {
                    let val = state.calories.text.trimWhiteSpaceAndNewline().toCGFloat() {
                     calories = val
                 } else {
-                    state.calories.borderState = .error
+                    state.calories.inputState = .error
                 }
                 // Carbs
                 if let val = state.carbs.text.trimWhiteSpaceAndNewline().toCGFloat() {
                     carbs = val
                 } else {
-                    state.carbs.borderState = .error
+                    state.carbs.inputState = .error
                 }
                 // Protein
                 if let val = state.protein.text.trimWhiteSpaceAndNewline().toCGFloat() {
                     protein = val
                 } else {
-                    state.protein.borderState = .error
+                    state.protein.inputState = .error
                 }
                 // Fat
                 if let val = state.fat.text.trimWhiteSpaceAndNewline().toCGFloat() {
                     fat = val
                 } else {
-                    state.fat.borderState = .error
+                    state.fat.inputState = .error
                 }
                 
                 if !state.hasError {

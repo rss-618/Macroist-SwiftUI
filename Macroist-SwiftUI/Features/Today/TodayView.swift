@@ -19,8 +19,23 @@ public struct TodayView: View {
                 GenericBackgroundView()
                 
                 // Content
-                VStack {
-                    Text("Today View")
+                ScrollView {
+                    VStack {
+                        // TOOD: needs real UI
+                        if store.areMealsLoading {
+                            ProgressView()
+                                .align()
+                        } else {
+                            ForEach(store.meals, id: \.self) { meal in
+                                VStack {
+                                    Text(meal.mealName)
+                                    Text("Calories \(meal.calories)")
+                                }
+                                .frame(maxWidth: .infinity)
+                            }
+                        }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 
                 // Floating Icon
@@ -30,10 +45,20 @@ public struct TodayView: View {
                 .padding(Keys.Padding.dp32)
                 .align(x: .trailing, y: .bottom)
             }
+            .navigationTitle("Today")
             .popover(isPresented: $store.isAddFoodShowing) {
                 FoodPopoverCoordinatorView(store: Store(initialState: FoodPopoverCoordinator.State()) {
                     FoodPopoverCoordinator()
                 })
+            }
+            .task {
+                store.send(.loadMeals)
+            }
+            .onChange(of: store.isAddFoodShowing) { new in
+                // TODO: Figure out how to listen to this in the reducer with the new style things
+                if !new {
+                    store.send(.loadMeals)
+                }
             }
         }
     }
