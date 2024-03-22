@@ -15,14 +15,12 @@ public struct HistoryView: View {
     public var body: some View {
         WithPerceptionTracking {
             ZStack {
-                // Background View
-                GenericBackgroundView()
-                
                 // Content
                 VStack {
                     Text("History View")
                     Text("Meals for \(DateUtil.getMonthYearEntryKey())")
                     if let meals = store.meals {
+                        // TOOD: needs real UI
                         ForEach(meals, id: \.self) { food in
                             Text(food.mealName)
                         }
@@ -30,8 +28,10 @@ public struct HistoryView: View {
                         ProgressView()
                     }
                 }
-                
-            }.task {
+            }
+            .navigationTitle("History")
+            .task {
+                print("loading history")
                 store.send(.loadFood)
             }
         }

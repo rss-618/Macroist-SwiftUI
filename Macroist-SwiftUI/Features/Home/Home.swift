@@ -14,17 +14,17 @@ public struct Home {
     @ObservableState
     public struct State: Equatable {
         public var historyState: History.State = .init()
-        public var todayState: Today.State = .init()
+        public var todayState: TodayCoordinator.State = .init()
         public var settingsState: Settings.State = .init()
         
         public var currentTab: Tab = .today
     }
     
-    public enum Action: Equatable, BindableAction {
+    public enum Action: BindableAction {
         case logout
         case binding(BindingAction<State>)
         case history(History.Action)
-        case today(Today.Action)
+        case today(TodayCoordinator.Action)
         case settings(Settings.Action)
     }
     
@@ -35,7 +35,7 @@ public struct Home {
         }
         
         Scope(state: \.todayState, action: /Action.today) {
-            Today()
+            TodayCoordinator()
         }
         
         Scope(state: \.settingsState, action: /Action.settings) {

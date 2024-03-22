@@ -23,7 +23,7 @@ public struct HomeView: View {
                     }
                     .tag(Tab.history)
                 
-                TodayView(store: store.scope(state: \.todayState, action: \.today))
+                TodayCoordinatorView(store: store.scope(state: \.todayState, action: \.today))
                     .tabItem {
                         Label("Today", systemImage: Keys.SystemIcon.CALENDAR_CIRCLE)
                     }

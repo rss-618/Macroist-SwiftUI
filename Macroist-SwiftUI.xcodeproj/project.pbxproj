@@ -22,6 +22,10 @@
 		E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF832BA5405F00441247 /* IngredientEntryCardView.swift */; };
 		E848CF872BA541EC00441247 /* IngredientEntryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF862BA541EC00441247 /* IngredientEntryCard.swift */; };
 		E848CF892BA5439100441247 /* Ext_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF882BA5439100441247 /* Ext_String.swift */; };
+		E848CF912BAD491C00441247 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF902BAD491C00441247 /* AppError.swift */; };
+		E848CF942BAD4A6400441247 /* TodayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF932BAD4A6400441247 /* TodayCoordinator.swift */; };
+		E848CF962BAD4A8F00441247 /* TodayPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF952BAD4A8F00441247 /* TodayPath.swift */; };
+		E848CF982BAD4B0800441247 /* TodayCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF972BAD4B0800441247 /* TodayCoordinatorView.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
 		E89FE8C82B9BC97E004700B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C72B9BC97E004700B2 /* Preview Assets.xcassets */; };
@@ -41,7 +45,7 @@
 		E89FE8F42B9BDCDB004700B2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8F32B9BDCDB004700B2 /* Home.swift */; };
 		E89FE8F62B9BDCE9004700B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8F52B9BDCE9004700B2 /* HomeView.swift */; };
 		E89FE8F92B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8F82B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift */; };
-		E89FE8FB2B9BDE00004700B2 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8FA2B9BDE00004700B2 /* Path.swift */; };
+		E89FE8FB2B9BDE00004700B2 /* FoodPopoverPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8FA2B9BDE00004700B2 /* FoodPopoverPath.swift */; };
 		E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8FC2B9BE42B004700B2 /* InputField.swift */; };
 		E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8FF2B9BE44C004700B2 /* InputFieldView.swift */; };
 		E89FE9022B9BE537004700B2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9012B9BE537004700B2 /* Colors.swift */; };
@@ -89,6 +93,10 @@
 		E848CF832BA5405F00441247 /* IngredientEntryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEntryCardView.swift; sourceTree = "<group>"; };
 		E848CF862BA541EC00441247 /* IngredientEntryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEntryCard.swift; sourceTree = "<group>"; };
 		E848CF882BA5439100441247 /* Ext_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_String.swift; sourceTree = "<group>"; };
+		E848CF902BAD491C00441247 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		E848CF932BAD4A6400441247 /* TodayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCoordinator.swift; sourceTree = "<group>"; };
+		E848CF952BAD4A8F00441247 /* TodayPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPath.swift; sourceTree = "<group>"; };
+		E848CF972BAD4B0800441247 /* TodayCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCoordinatorView.swift; sourceTree = "<group>"; };
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,7 +112,7 @@
 		E89FE8F32B9BDCDB004700B2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E89FE8F52B9BDCE9004700B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E89FE8F82B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPopoverCoordinatorView.swift; sourceTree = "<group>"; };
-		E89FE8FA2B9BDE00004700B2 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		E89FE8FA2B9BDE00004700B2 /* FoodPopoverPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPopoverPath.swift; sourceTree = "<group>"; };
 		E89FE8FC2B9BE42B004700B2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		E89FE8FF2B9BE44C004700B2 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		E89FE9012B9BE537004700B2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -220,8 +228,19 @@
 		E848CF8A2BA57F8800441247 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
+				E848CF902BAD491C00441247 /* AppError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		E848CF922BAD49E900441247 /* TodayCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E848CF932BAD4A6400441247 /* TodayCoordinator.swift */,
+				E848CF952BAD4A8F00441247 /* TodayPath.swift */,
+				E848CF972BAD4B0800441247 /* TodayCoordinatorView.swift */,
+			);
+			path = TodayCoordinator;
 			sourceTree = "<group>";
 		};
 		E89FE8B42B9BC97D004700B2 = {
@@ -344,6 +363,7 @@
 		E89FE8D72B9BCA56004700B2 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				E848CF922BAD49E900441247 /* TodayCoordinator */,
 				E89FE8F72B9BDDD6004700B2 /* FoodPopoverCoordinator */,
 			);
 			path = Coordinators;
@@ -363,7 +383,7 @@
 			children = (
 				E89FE8D82B9BCAAA004700B2 /* FoodPopoverCoordinator.swift */,
 				E89FE8F82B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift */,
-				E89FE8FA2B9BDE00004700B2 /* Path.swift */,
+				E89FE8FA2B9BDE00004700B2 /* FoodPopoverPath.swift */,
 			);
 			path = FoodPopoverCoordinator;
 			sourceTree = "<group>";
@@ -562,6 +582,7 @@
 				E89FE9352B9E7001004700B2 /* Image.swift in Sources */,
 				E89FE9482BA01B5B004700B2 /* AlignModifier.swift in Sources */,
 				E848CF822BA53C1900441247 /* Ingredient.swift in Sources */,
+				E848CF942BAD4A6400441247 /* TodayCoordinator.swift in Sources */,
 				E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */,
 				E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */,
 				E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */,
@@ -569,7 +590,7 @@
 				E848CF872BA541EC00441247 /* IngredientEntryCard.swift in Sources */,
 				E89FE9022B9BE537004700B2 /* Colors.swift in Sources */,
 				E848CF652BA1643600441247 /* ManualEntryView.swift in Sources */,
-				E89FE8FB2B9BDE00004700B2 /* Path.swift in Sources */,
+				E89FE8FB2B9BDE00004700B2 /* FoodPopoverPath.swift in Sources */,
 				E89FE8D92B9BCAAA004700B2 /* FoodPopoverCoordinator.swift in Sources */,
 				E848CF892BA5439100441247 /* Ext_String.swift in Sources */,
 				E89FE9512BA023D0004700B2 /* Today.swift in Sources */,
@@ -592,13 +613,16 @@
 				E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */,
 				E89FE8F42B9BDCDB004700B2 /* Home.swift in Sources */,
 				E89FE9072B9C00AC004700B2 /* ApiClientKey.swift in Sources */,
+				E848CF962BAD4A8F00441247 /* TodayPath.swift in Sources */,
 				E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */,
 				E848CF792BA3F32600441247 /* History.swift in Sources */,
 				E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */,
 				E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */,
 				E89FE9042B9BF35A004700B2 /* InputState.swift in Sources */,
+				E848CF982BAD4B0800441247 /* TodayCoordinatorView.swift in Sources */,
 				E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */,
 				E89FE8EF2B9BD3F8004700B2 /* Keys.swift in Sources */,
+				E848CF912BAD491C00441247 /* AppError.swift in Sources */,
 				E89FE8F12B9BD413004700B2 /* Sizing.swift in Sources */,
 				E89FE93F2BA00E84004700B2 /* SettingsView.swift in Sources */,
 				E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */,

@@ -25,13 +25,15 @@ public struct AlignModifier: ViewModifier {
                 if x == .leading || x == .center {
                     Spacer()
                 }
-            }.background {
+            }
+            .background {
                 Color.clear
             }
             if y == .top || y == .center {
                 Spacer()
             }
-        }.background {
+        }
+        .background {
             Color.clear
         }
     }
