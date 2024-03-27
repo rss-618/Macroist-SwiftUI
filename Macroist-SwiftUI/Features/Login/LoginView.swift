@@ -12,8 +12,6 @@ import FirebaseFirestore
 
 public struct LoginView: View {
     
-    @Dependency(\.apiClient) var apiClient
-
     @Perception.Bindable var store: StoreOf<Login>
     @FocusState var currentInput: Input?
     
@@ -71,16 +69,16 @@ public struct LoginView: View {
                 .foregroundStyle(Color.white)
                 .padding(.vertical, Keys.Padding.dp16)
                 
-                if EnvironmentConfig.IS_MOCKED {
-                    Button {
-                        store.send(.login)
-                    } label: {
-                        Text("skip")
-                    }
+                Button {
+                    store.send(.register)
+                } label: {
+                    Text("Create Account")
                 }
+
+                Spacer()
             }
-            .padding(.vertical, Keys.Padding.dp16)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.top, Keys.Padding.dp100)
+            .maxFrame()
             .background {
                 Color.blue.opacity(Keys.Opactiy.pct33).ignoresSafeArea(.all)
             }
@@ -101,6 +99,9 @@ public struct LoginView: View {
                 WithPerceptionTracking {
                     Text(store.genericErrorDescription)
                 }
+            }
+            .popover(isPresented: $store.showRegisterPopover) {
+                RegistrationView(store: store.scope(state: \.registration, action: \.registration))
             }
             .task {
                 // TODO: Make an additional view other than login for this check logic to avoid flashing view

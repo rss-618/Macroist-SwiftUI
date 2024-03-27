@@ -17,10 +17,10 @@ public struct RootView: View {
             switch store.currentTab {
             case .login:
                 LoginView(store: store.scope(state: \.loginState, action: \.login))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .maxFrame()
             case .home:
                 HomeView(store: store.scope(state: \.homeState, action: \.home))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .maxFrame()
             }
         }
     }

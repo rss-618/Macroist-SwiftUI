@@ -15,7 +15,9 @@ extension Keys {
         public static let dp12: CGFloat = 12
         public static let dp13: CGFloat = 13
         public static let dp16: CGFloat = 16
+        public static let dp24: CGFloat = 24
         public static let dp32: CGFloat = 32
+        public static let dp100: CGFloat = 100
     }
     
     public struct Height {

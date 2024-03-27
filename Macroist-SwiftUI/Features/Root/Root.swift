@@ -28,6 +28,7 @@ public struct Root {
         case home(Home.Action)
         case logout
         case switchTab(Page)
+        case resetStates
     }
     
     public var body: some ReducerOf<Self> {
@@ -43,11 +44,16 @@ public struct Root {
         Reduce { state, action in
             switch action {
             case .home(.logout):
-                return .send(.switchTab(.login))
+                return .concatenate(.send(.resetStates),
+                                    .send(.switchTab(.login)))
+            case .login(.login):
+                return .concatenate(.send(.resetStates),
+                                    .send(.switchTab(.home)))
             case .switchTab(let tab):
                 state.currentTab = tab
-            case .login(.login):
-                return .send(.switchTab(.home))
+            case .resetStates:
+                state.loginState = .init()
+                state.homeState = .init()
             default:
                 break
             }

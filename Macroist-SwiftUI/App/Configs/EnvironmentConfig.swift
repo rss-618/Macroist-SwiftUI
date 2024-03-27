@@ -8,5 +8,6 @@
 import Foundation
 
 public struct EnvironmentConfig {
-    public static let IS_MOCKED = ProcessInfo.processInfo.environment["MOCK_NETWORK"] == "true"
+    // Keeping this commented out so i dont have to google later when i make a real environment var
+//    public static let IS_MOCKED = ProcessInfo.processInfo.environment["MOCK_NETWORK"] == "true"
 }
