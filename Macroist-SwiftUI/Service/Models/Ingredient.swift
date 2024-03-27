@@ -8,17 +8,21 @@
 import Foundation
 
 public struct Ingredient: Codable, Equatable, Hashable {
+    
+    public private(set) var id: UUID
     public var name: String
     public var calories: CGFloat
     public var protein: CGFloat
     public var carbs: CGFloat
     public var fat: CGFloat
     
-    public init(name: String = .init(),
+    public init(id: UUID = .init(),
+                name: String = .init(),
                 calories: CGFloat = .zero,
                 protein: CGFloat = .zero,
                 carbs: CGFloat = .zero,
                 fat: CGFloat = .zero) {
+        self.id = id
         self.name = name
         self.calories = calories
         self.protein = protein

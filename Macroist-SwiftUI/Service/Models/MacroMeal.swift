@@ -20,13 +20,17 @@ public struct MacroMeal: Equatable, Hashable, Codable {
     }
     
     // Computed Values
+    public private(set) var id: UUID
     public private(set) var timeStamp: Timestamp = .init()
     public private(set) var calories: CGFloat = .zero
     public private(set) var protein: CGFloat = .zero
     public private(set) var carbs: CGFloat = .zero
     public private(set) var fat: CGFloat = .zero
     
-    public init(mealName: String, ingredients: [Ingredient] = [.init()]) {
+    public init(id: UUID = .init(),
+                mealName: String,
+                ingredients: [Ingredient] = [.init()]) {
+        self.id = id
         self.mealName = mealName
         self.ingredients = ingredients
         self.calculateFields(ingredients)
