@@ -20,12 +20,16 @@ public struct Login: Reducer {
         // Child States
         public var emailState: InputField.State = .init(placeholder: "Email")
         public var passwordState: InputField.State = .init(type: .secure, placeholder: "Password")
+        public var registration: Registration.State = .init()
         
         // Alert Conditionals and Values
         public var isNetworkError = false
         public var isLoginError = false
         public var isGenericError = false
         public var genericErrorDescription: String = .init()
+        
+        // Popover Conditional
+        public var showRegisterPopover = false
         
         // Logic Values
         public var isLoggingIn = false
@@ -37,9 +41,11 @@ public struct Login: Reducer {
         case loginAttemptResponse(AuthDataResult?)
         case loginError(AuthErrorCode)
         case login
+        case register
         case email(InputField.Action)
         case password(InputField.Action)
         case binding(BindingAction<State>)
+        case registration(Registration.Action)
     }
     
     public var body: some ReducerOf<Self> {
@@ -47,19 +53,28 @@ public struct Login: Reducer {
         BindingReducer()
         
         //  -- Child Reducers --
-        Scope(state: \.emailState, action: /Action.email) {
+        Scope(state: \.emailState, action: \.email) {
             InputField()
         }
         
-        Scope(state: \.passwordState, action: /Action.password) {
+        Scope(state: \.passwordState, action: \.password) {
             InputField()
+        }
+        
+        Scope(state: \.registration, action: \.registration) {
+            Registration()
         }
         // -- End Chld Reducers --
         
         Reduce { state, action in
             switch action {
+            case .register:
+                state.showRegisterPopover = true
+            case .registration(.login):
+                state.showRegisterPopover = false
+                return .send(.login)
             case .onAppear:
-                if let user = runtimeVariables.getAuthInstance().currentUser {
+                if let _ = runtimeVariables.getAuthInstance().currentUser {
                     return .send(.login)
                 }
             case .loginAttempted:

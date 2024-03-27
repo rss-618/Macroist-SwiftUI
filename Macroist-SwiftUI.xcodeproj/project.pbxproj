@@ -29,6 +29,8 @@
 		E848CF9B2BAEA3E800441247 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9A2BAEA3E800441247 /* CustomTabBarView.swift */; };
 		E848CF9D2BAEA51400441247 /* CustomTabBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9C2BAEA51400441247 /* CustomTabBarModifier.swift */; };
 		E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9E2BAEA74900441247 /* Ext_TabView.swift */; };
+		E848CFA32BB3DFF200441247 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA22BB3DFF200441247 /* RegistrationView.swift */; };
+		E848CFA52BB3DFFE00441247 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA42BB3DFFE00441247 /* Registration.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
 		E89FE8C82B9BC97E004700B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C72B9BC97E004700B2 /* Preview Assets.xcassets */; };
@@ -103,6 +105,8 @@
 		E848CF9A2BAEA3E800441247 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		E848CF9C2BAEA51400441247 /* CustomTabBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarModifier.swift; sourceTree = "<group>"; };
 		E848CF9E2BAEA74900441247 /* Ext_TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_TabView.swift; sourceTree = "<group>"; };
+		E848CFA22BB3DFF200441247 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		E848CFA42BB3DFFE00441247 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,6 +268,15 @@
 			path = TodayMealCard;
 			sourceTree = "<group>";
 		};
+		E848CFA12BB3DFE500441247 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				E848CFA22BB3DFF200441247 /* RegistrationView.swift */,
+				E848CFA42BB3DFFE00441247 /* Registration.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		E89FE8B42B9BC97D004700B2 = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +379,7 @@
 		E89FE8D52B9BCA2B004700B2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E848CFA12BB3DFE500441247 /* Registration */,
 				E89FE8EA2B9BD28E004700B2 /* LoginView.swift */,
 				E89FE8EC2B9BD294004700B2 /* Login.swift */,
 			);
@@ -618,6 +632,7 @@
 				E89FE9022B9BE537004700B2 /* Colors.swift in Sources */,
 				E848CF652BA1643600441247 /* ManualEntryView.swift in Sources */,
 				E89FE8FB2B9BDE00004700B2 /* FoodPopoverPath.swift in Sources */,
+				E848CFA52BB3DFFE00441247 /* Registration.swift in Sources */,
 				E89FE8D92B9BCAAA004700B2 /* FoodPopoverCoordinator.swift in Sources */,
 				E848CF892BA5439100441247 /* Ext_String.swift in Sources */,
 				E89FE9512BA023D0004700B2 /* Today.swift in Sources */,
@@ -653,6 +668,7 @@
 				E848CF912BAD491C00441247 /* AppError.swift in Sources */,
 				E89FE8F12B9BD413004700B2 /* Sizing.swift in Sources */,
 				E89FE93F2BA00E84004700B2 /* SettingsView.swift in Sources */,
+				E848CFA32BB3DFF200441247 /* RegistrationView.swift in Sources */,
 				E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */,
 				E89FE8EB2B9BD28E004700B2 /* LoginView.swift in Sources */,
 				E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */,
