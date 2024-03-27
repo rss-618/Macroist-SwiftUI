@@ -26,6 +26,9 @@
 		E848CF942BAD4A6400441247 /* TodayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF932BAD4A6400441247 /* TodayCoordinator.swift */; };
 		E848CF962BAD4A8F00441247 /* TodayPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF952BAD4A8F00441247 /* TodayPath.swift */; };
 		E848CF982BAD4B0800441247 /* TodayCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF972BAD4B0800441247 /* TodayCoordinatorView.swift */; };
+		E848CF9B2BAEA3E800441247 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9A2BAEA3E800441247 /* CustomTabBarView.swift */; };
+		E848CF9D2BAEA51400441247 /* CustomTabBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9C2BAEA51400441247 /* CustomTabBarModifier.swift */; };
+		E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9E2BAEA74900441247 /* Ext_TabView.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
 		E89FE8C82B9BC97E004700B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C72B9BC97E004700B2 /* Preview Assets.xcassets */; };
@@ -97,6 +100,9 @@
 		E848CF932BAD4A6400441247 /* TodayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCoordinator.swift; sourceTree = "<group>"; };
 		E848CF952BAD4A8F00441247 /* TodayPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPath.swift; sourceTree = "<group>"; };
 		E848CF972BAD4B0800441247 /* TodayCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCoordinatorView.swift; sourceTree = "<group>"; };
+		E848CF9A2BAEA3E800441247 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		E848CF9C2BAEA51400441247 /* CustomTabBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarModifier.swift; sourceTree = "<group>"; };
+		E848CF9E2BAEA74900441247 /* Ext_TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_TabView.swift; sourceTree = "<group>"; };
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -243,6 +249,21 @@
 			path = TodayCoordinator;
 			sourceTree = "<group>";
 		};
+		E848CF992BAEA3D700441247 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E848CF9A2BAEA3E800441247 /* CustomTabBarView.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		E848CFA02BB3DF3C00441247 /* TodayMealCard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TodayMealCard;
+			sourceTree = "<group>";
+		};
 		E89FE8B42B9BC97D004700B2 = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +307,7 @@
 		E89FE8CE2B9BC99E004700B2 /* Styleguide */ = {
 			isa = PBXGroup;
 			children = (
+				E848CF992BAEA3D700441247 /* CustomTabBar */,
 				E848CF682BA16B6800441247 /* ButtonStyles */,
 				E89FE9442BA0178C004700B2 /* CustomViews */,
 				E89FE9222B9E4FA5004700B2 /* ViewModifier */,
@@ -419,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				E89FE9252B9E4FEB004700B2 /* Ext_View.swift */,
+				E848CF9E2BAEA74900441247 /* Ext_TabView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +451,7 @@
 			children = (
 				E89FE9232B9E4FB2004700B2 /* TapToDismissModifier.swift */,
 				E89FE9472BA01B5B004700B2 /* AlignModifier.swift */,
+				E848CF9C2BAEA51400441247 /* CustomTabBarModifier.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -444,6 +468,7 @@
 		E89FE9392BA00E49004700B2 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				E848CFA02BB3DF3C00441247 /* TodayMealCard */,
 				E89FE9402BA00EAB004700B2 /* TodayView.swift */,
 				E89FE9502BA023D0004700B2 /* Today.swift */,
 			);
@@ -578,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89FE9262B9E4FEB004700B2 /* Ext_View.swift in Sources */,
+				E848CF9D2BAEA51400441247 /* CustomTabBarModifier.swift in Sources */,
 				E848CF7D2BA40E2F00441247 /* DateUtil.swift in Sources */,
 				E89FE9352B9E7001004700B2 /* Image.swift in Sources */,
 				E89FE9482BA01B5B004700B2 /* AlignModifier.swift in Sources */,
@@ -586,6 +612,7 @@
 				E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */,
 				E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */,
 				E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */,
+				E848CF9B2BAEA3E800441247 /* CustomTabBarView.swift in Sources */,
 				E89FE9382BA00E02004700B2 /* Tab.swift in Sources */,
 				E848CF872BA541EC00441247 /* IngredientEntryCard.swift in Sources */,
 				E89FE9022B9BE537004700B2 /* Colors.swift in Sources */,
@@ -621,6 +648,7 @@
 				E89FE9042B9BF35A004700B2 /* InputState.swift in Sources */,
 				E848CF982BAD4B0800441247 /* TodayCoordinatorView.swift in Sources */,
 				E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */,
+				E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */,
 				E89FE8EF2B9BD3F8004700B2 /* Keys.swift in Sources */,
 				E848CF912BAD491C00441247 /* AppError.swift in Sources */,
 				E89FE8F12B9BD413004700B2 /* Sizing.swift in Sources */,
