@@ -17,9 +17,6 @@ public struct SettingsView: View {
     public var body: some View {
         WithPerceptionTracking {
             ZStack {
-                // Background View
-                GenericBackgroundView()
-                
                 // Content
                 VStack {
                     Text("Settings View")

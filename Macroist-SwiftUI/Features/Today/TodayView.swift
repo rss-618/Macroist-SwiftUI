@@ -15,12 +15,10 @@ public struct TodayView: View {
     public var body: some View {
         WithPerceptionTracking {
             ZStack {
-                // Background View
-                GenericBackgroundView()
-                
-                // Content
                 ScrollView {
                     VStack {
+                        Text("Today's Food")
+                            .font(.largeTitle)
                         // TOOD: needs real UI
                         if store.areMealsLoading {
                             ProgressView()
@@ -35,7 +33,7 @@ public struct TodayView: View {
                             }
                         }
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding()
                 }
                 
                 // Floating Icon
@@ -45,7 +43,6 @@ public struct TodayView: View {
                 .padding(Keys.Padding.dp32)
                 .align(x: .trailing, y: .bottom)
             }
-            .navigationTitle("Today")
             .popover(isPresented: $store.isAddFoodShowing) {
                 FoodPopoverCoordinatorView(store: Store(initialState: FoodPopoverCoordinator.State()) {
                     FoodPopoverCoordinator()

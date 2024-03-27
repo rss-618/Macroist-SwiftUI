@@ -19,22 +19,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D0FCA676-DF98-4729-AFA0-377D67A37731"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/Macroist-SwiftUI-drsxfqcfvdxxdbadcerqqspuillo/SourcePackages/checkouts/swift-perception/Sources/Perception/PerceptionRegistrar.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "perceptionCheck(file:line:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C976663B-F07B-4340-BBA1-6F4CF698756E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -62,6 +46,50 @@
             endingLineNumber = "65"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "17ADAB1F-C5A6-42D6-967C-75F35F31544E - 6c5cec1055040ddd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (inout Macroist_SwiftUI.ManualEntry.State, Macroist_SwiftUI.ManualEntry.Action) -&gt; ComposableArchitecture.Effect&lt;Macroist_SwiftUI.ManualEntry.Action&gt; in Macroist_SwiftUI.ManualEntry.body.getter : some"
+                  moduleName = "Macroist-SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryanschildknecht/git/Macroist-SwiftUI/Macroist-SwiftUI/Features/AddFood/ManualEntry/ManualEntry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65">
+               </Location>
+               <Location
+                  uuid = "17ADAB1F-C5A6-42D6-967C-75F35F31544E - b85095785d813175"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (ComposableArchitecture.Send&lt;Macroist_SwiftUI.ManualEntry.Action&gt;) async -&gt; () in closure #2 (inout Macroist_SwiftUI.ManualEntry.State, Macroist_SwiftUI.ManualEntry.Action) -&gt; ComposableArchitecture.Effect&lt;Macroist_SwiftUI.ManualEntry.Action&gt; in Macroist_SwiftUI.ManualEntry.body.getter : some"
+                  moduleName = "Macroist-SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryanschildknecht/git/Macroist-SwiftUI/Macroist-SwiftUI/Features/AddFood/ManualEntry/ManualEntry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65">
+               </Location>
+               <Location
+                  uuid = "17ADAB1F-C5A6-42D6-967C-75F35F31544E - 886a88004ca057ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;Macroist_SwiftUI.ManualEntry.Action&gt;) async -&gt; () in closure #2 (inout Macroist_SwiftUI.ManualEntry.State, Macroist_SwiftUI.ManualEntry.Action) -&gt; ComposableArchitecture.Effect&lt;Macroist_SwiftUI.ManualEntry.Action&gt; in Macroist_SwiftUI.ManualEntry.body.getter : some"
+                  moduleName = "Macroist-SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryanschildknecht/git/Macroist-SwiftUI/Macroist-SwiftUI/Features/AddFood/ManualEntry/ManualEntry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
