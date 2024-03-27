@@ -17,7 +17,7 @@ public struct CustomTabBarView: View {
             } label: {
                 Label("History", systemImage: Keys.SystemIcon.CLOCK)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .maxFrame()
             .foregroundStyle(currentTab == .history ? Color.blue: Color.black)
             
             Button {

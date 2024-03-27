@@ -24,4 +24,8 @@ public extension View {
     func align(x: HorizontalAlignment = .center, y: VerticalAlignment = .center) -> some View {
         self.modifier(AlignModifier(x: x, y: y))
     }
+    
+    func maxFrame() -> some View {
+        return self.frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
 }

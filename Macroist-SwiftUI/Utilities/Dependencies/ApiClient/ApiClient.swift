@@ -17,7 +17,7 @@ struct ApiClient {
     // Included within a dependancy for testing and abstraction purposes\
     // -- Auth --
     var createUser: (_ email: String,
-                     _ password: String) async throws -> AuthDataResult?
+                     _ password: String) async throws -> AuthDataResult
     var login: (_ email: String,
                 _ password: String) async throws -> AuthDataResult?
     var logout: () throws ->  Void
@@ -31,7 +31,7 @@ struct ApiClient {
 // Implementaton
 extension ApiClient: DependencyKey {
     
-    private static func createUser(_ email: String, _ password: String) async throws -> AuthDataResult? {
+    private static func createUser(_ email: String, _ password: String) async throws -> AuthDataResult {
         return try await Auth.auth().createUser(withEmail: email, password: password)
     }
     

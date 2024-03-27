@@ -24,7 +24,7 @@ struct Macroist_SwiftUIApp: App {
             RootView(store: Store(initialState: .init(), reducer: {
                 Root()
             }))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .maxFrame()
         }
     }
 }
