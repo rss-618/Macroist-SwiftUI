@@ -15,38 +15,39 @@ public struct TodayView: View {
     public var body: some View {
         WithPerceptionTracking {
             ZStack {
-                ScrollView {
-                    VStack {
-                        Text("Today's Food")
-                            .font(.largeTitle)
-                        // TOOD: needs real UI
-                        if store.areMealsLoading {
-                            ProgressView()
-                                .align()
-                        } else {
-                            ForEach(store.meals, id: \.self) { meal in
-                                VStack {
-                                    Text(meal.mealName)
-                                    Text("Calories \(meal.calories)")
-                                }
-                                .frame(maxWidth: .infinity)
+                VStack {
+                    Text("Today's Food")
+                        .font(.largeTitle)
+                    
+                    ScrollView {
+                        VStack {
+                            ForEachStore(store.scope(state: \.meals, action: \.meals)) { store in
+                                TodayMealCardView(store: store)
                             }
-                        }
-                    }
-                    .padding()
+                            .opacity(store.areMealsLoading ? .zero : Keys.Opactiy.pct100)
+                        } // End VStack
+                        .maxFrame()
+                        .padding()
+                        
+                    } // End Scroll View
+                    .background(Color.white)
                 }
                 
+                // Loading Icon
+                ProgressView()
+                    .controlSize(.large)
+                    .align()
+                    .maxFrame()
+                    .opacity(store.areMealsLoading ? Keys.Opactiy.pct100 : .zero)
                 // Floating Icon
                 FloatingButton(iconName: Keys.SystemIcon.PLUS) {
-                    store.send(.binding(.set(\.isAddFoodShowing, true)))
+                    store.send(.showFoodPopover)
                 }
                 .padding(Keys.Padding.dp32)
                 .align(x: .trailing, y: .bottom)
             }
             .popover(isPresented: $store.isAddFoodShowing) {
-                FoodPopoverCoordinatorView(store: Store(initialState: FoodPopoverCoordinator.State()) {
-                    FoodPopoverCoordinator()
-                })
+                FoodPopoverCoordinatorView(store: store.scope(state: \.foodPopover, action: \.foodPopover))
             }
             .task {
                 store.send(.loadMeals)
@@ -58,6 +59,8 @@ public struct TodayView: View {
                 }
             }
         }
+        .animation(.easeIn, value: store.areMealsLoading)
+        .animation(.default, value: store.meals)
     }
     
     public init(store: StoreOf<Today>) {

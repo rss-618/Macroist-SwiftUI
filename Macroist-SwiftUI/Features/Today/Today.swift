@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import SwiftUI
+import FirebaseCore
 
 @Reducer
 public struct Today {
@@ -15,31 +16,37 @@ public struct Today {
     
     @ObservableState
     public struct State: Equatable {
-        public var addFoodState: AddMealHome.State = .init()
+        public var foodPopover: FoodPopoverCoordinator.State = .init()
         public var isAddFoodShowing = false
         public var areMealsLoading = false
-        public var meals: [MacroMeal] = .init()
+        public var meals: IdentifiedArrayOf<TodayMealCard.State> = .init()
     }
     
     public enum Action: BindableAction {
-        case showAddFoodPopover
-        case addFood(AddMealHome.Action)
         case binding(BindingAction<State>)
         case loadMeals
-        case loadMealsResponse([MacroMeal]?)
+        case loadMealsResponse([MacroMeal])
         case error(Error)
+        case meals(IdentifiedActionOf<TodayMealCard>)
+        case foodPopover(FoodPopoverCoordinator.Action)
+        case showFoodPopover
     }
     
     public var body: some ReducerOf<Self> {
         
-        Scope(state: \.addFoodState, action: /Action.addFood) {
-            AddMealHome()
+        Scope(state: \.foodPopover, action: \.foodPopover) {
+            FoodPopoverCoordinator()
         }
-        
+
         BindingReducer()
         
         Reduce { state, action in
             switch action {
+            case .showFoodPopover:
+                state.foodPopover = .init()
+                state.isAddFoodShowing = true
+            case .foodPopover(.dismiss):
+                state.isAddFoodShowing = false
             case .loadMeals:
                 state.areMealsLoading = true
                 return .run { send in
@@ -51,14 +58,19 @@ public struct Today {
                 }
             case .loadMealsResponse(let meals):
                 state.areMealsLoading = false
-                state.meals = meals ?? []
+                state.meals = IdentifiedArray(uniqueElements: meals.map {
+                    TodayMealCard.State(meal: $0)
+                })
             case .error(let error):
                 state.areMealsLoading = false
                 print(error)
+                break
             default:
                 break
             }
             return .none
+        }.forEach(\.meals, action: \.meals) {
+            TodayMealCard()
         }
     }
 }

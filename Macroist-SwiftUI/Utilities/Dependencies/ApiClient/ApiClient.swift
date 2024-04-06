@@ -22,8 +22,8 @@ struct ApiClient {
                 _ password: String) async throws -> AuthDataResult?
     var logout: () throws ->  Void
     // -- Database --
-    var getMonthMeals: (Date) async throws -> [MacroMeal]?
-    var getDayMeals: (Date) async throws -> [MacroMeal]?
+    var getMonthMeals: (Date) async throws -> [MacroMeal]
+    var getDayMeals: (Date) async throws -> [MacroMeal]
     var addMeal: (_ food: MacroMeal) async throws -> Void
     // --- End Firebase Calls --
 }
@@ -43,7 +43,7 @@ extension ApiClient: DependencyKey {
         return try Auth.auth().signOut()
     }
     
-    public static func getMonthMeals(_ date: Date) async throws -> [MacroMeal]? {
+    public static func getMonthMeals(_ date: Date) async throws -> [MacroMeal] {
         let task = Task { () throws -> [MacroMeal] in
             guard let uid = Auth.auth().currentUser?.uid else {
                 throw AppError.authenticationError
@@ -66,14 +66,17 @@ extension ApiClient: DependencyKey {
         return try await task.result.get()
     }
 
-    public static func getDayMeals(_ date: Date) async throws -> [MacroMeal]? {
+    public static func getDayMeals(_ date: Date) async throws -> [MacroMeal] {
         let task = Task { () throws -> [MacroMeal] in
             let calender = Calendar(identifier: .iso8601)
             // TODO: Evaluate if I need a more efficient way over getting day values
-            let dayMeals = try await ApiClient.getMonthMeals(date)?.filter {
+            var dayMeals = try await ApiClient.getMonthMeals(date).filter {
                 calender.isDate(date, equalTo: $0.timeStamp.dateValue(), toGranularity: .day)
             }
-            return dayMeals ?? []
+            dayMeals.sort {
+                $0.timeStamp.dateValue() > $1.timeStamp.dateValue()
+            }
+            return dayMeals
         }
         return try await task.result.get()
     }

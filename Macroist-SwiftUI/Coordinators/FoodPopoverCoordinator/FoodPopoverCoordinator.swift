@@ -10,9 +10,9 @@ import Foundation
 
 @Reducer
 public struct FoodPopoverCoordinator {
-    
+        
     @ObservableState
-    public struct State {
+    public struct State: Equatable {
         public var path = StackState<Path.State>()
         public var home: AddMealHome.State = .init()
     }
@@ -20,6 +20,7 @@ public struct FoodPopoverCoordinator {
     public enum Action {
         case path(StackAction<Path.State, Path.Action>)
         case home(AddMealHome.Action)
+        case dismiss
     }
     
     public var body: some ReducerOf<Self> {
@@ -32,6 +33,8 @@ public struct FoodPopoverCoordinator {
             switch action {
             case .home(.manualEntry):
                 state.path.append(.manualEntry(.init()))
+            case .path(.element(_, .manualEntry(.saved))):
+                return .send(.dismiss)
             default:
                 break
             }

@@ -31,6 +31,10 @@
 		E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9E2BAEA74900441247 /* Ext_TabView.swift */; };
 		E848CFA32BB3DFF200441247 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA22BB3DFF200441247 /* RegistrationView.swift */; };
 		E848CFA52BB3DFFE00441247 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA42BB3DFFE00441247 /* Registration.swift */; };
+		E848CFA72BC0E56A00441247 /* TodayMealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */; };
+		E848CFA92BC0E58100441247 /* TodayMealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA82BC0E58100441247 /* TodayMealCard.swift */; };
+		E848CFAB2BC0EDBB00441247 /* Ext_Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */; };
+		E848CFAD2BC0EEB400441247 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAC2BC0EEB400441247 /* Count.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
 		E89FE8C82B9BC97E004700B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C72B9BC97E004700B2 /* Preview Assets.xcassets */; };
@@ -107,6 +111,10 @@
 		E848CF9E2BAEA74900441247 /* Ext_TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_TabView.swift; sourceTree = "<group>"; };
 		E848CFA22BB3DFF200441247 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		E848CFA42BB3DFFE00441247 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMealCardView.swift; sourceTree = "<group>"; };
+		E848CFA82BC0E58100441247 /* TodayMealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMealCard.swift; sourceTree = "<group>"; };
+		E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Float.swift; sourceTree = "<group>"; };
+		E848CFAC2BC0EEB400441247 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,6 +230,7 @@
 			children = (
 				E848CF7F2BA40F0300441247 /* Ext_Date.swift */,
 				E848CF882BA5439100441247 /* Ext_String.swift */,
+				E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +273,8 @@
 		E848CFA02BB3DF3C00441247 /* TodayMealCard */ = {
 			isa = PBXGroup;
 			children = (
+				E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */,
+				E848CFA82BC0E58100441247 /* TodayMealCard.swift */,
 			);
 			path = TodayMealCard;
 			sourceTree = "<group>";
@@ -372,6 +383,7 @@
 				E89FE9292B9E5783004700B2 /* Percentage.swift */,
 				E89FE9342B9E7001004700B2 /* Image.swift */,
 				E848CF7A2BA3FB9C00441247 /* Ids.swift */,
+				E848CFAC2BC0EEB400441247 /* Count.swift */,
 			);
 			path = Keys;
 			sourceTree = "<group>";
@@ -624,8 +636,10 @@
 				E848CF822BA53C1900441247 /* Ingredient.swift in Sources */,
 				E848CF942BAD4A6400441247 /* TodayCoordinator.swift in Sources */,
 				E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */,
+				E848CFA92BC0E58100441247 /* TodayMealCard.swift in Sources */,
 				E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */,
 				E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */,
+				E848CFAD2BC0EEB400441247 /* Count.swift in Sources */,
 				E848CF9B2BAEA3E800441247 /* CustomTabBarView.swift in Sources */,
 				E89FE9382BA00E02004700B2 /* Tab.swift in Sources */,
 				E848CF872BA541EC00441247 /* IngredientEntryCard.swift in Sources */,
@@ -642,6 +656,8 @@
 				E89FE8F62B9BDCE9004700B2 /* HomeView.swift in Sources */,
 				E89FE94D2BA02354004700B2 /* AddMealHome.swift in Sources */,
 				E848CF6D2BA2965700441247 /* RuntimeVariables.swift in Sources */,
+				E848CFA72BC0E56A00441247 /* TodayMealCardView.swift in Sources */,
+				E848CFAB2BC0EDBB00441247 /* Ext_Float.swift in Sources */,
 				E89FE9412BA00EAB004700B2 /* TodayView.swift in Sources */,
 				E848CF772BA2A59500441247 /* Settings.swift in Sources */,
 				E89FE9092B9C00D3004700B2 /* ApiClient.swift in Sources */,

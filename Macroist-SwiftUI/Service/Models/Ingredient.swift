@@ -9,7 +9,7 @@ import Foundation
 
 public struct Ingredient: Codable, Equatable, Hashable {
     
-    public private(set) var id: UUID
+    public let id: UUID
     public var name: String
     public var calories: CGFloat
     public var protein: CGFloat
