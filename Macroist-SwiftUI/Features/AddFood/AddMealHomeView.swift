@@ -20,7 +20,7 @@ public struct AddMealHomeView: View {
     
     public var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: Keys.Padding.dp16) {
+            LazyVGrid(columns: columns, spacing: Keys.Padding.px16) {
                 // Manual Entry Button
                 Button {
                     store.send(.manualEntry)
@@ -28,10 +28,10 @@ public struct AddMealHomeView: View {
                     Label("Manual Entry", systemImage: Keys.SystemIcon.PENCIL_SLASH)
                 }
                 .buttonStyle(CardButtonStyle())
-                .frame(idealHeight: Keys.Height.dp100)
+                .frame(idealHeight: Keys.Height.px100)
             }
-            .padding(.horizontal, Keys.Padding.dp16)
-            .padding(.vertical, Keys.Padding.dp32)
+            .padding(.horizontal, Keys.Padding.px16)
+            .padding(.vertical, Keys.Padding.px32)
         }
         .navigationTitle("Add Meal")
         .toolbar {

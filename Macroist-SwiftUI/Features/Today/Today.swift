@@ -18,7 +18,8 @@ public struct Today {
     public struct State: Equatable {
         public var foodPopover: FoodPopoverCoordinator.State = .init()
         public var isAddFoodShowing = false
-        public var areMealsLoading = false
+        public var areMealsLoading = true
+        public var hasError = false
         public var meals: IdentifiedArrayOf<TodayMealCard.State> = .init()
     }
     
@@ -45,10 +46,12 @@ public struct Today {
             case .showFoodPopover:
                 state.foodPopover = .init()
                 state.isAddFoodShowing = true
-            case .foodPopover(.dismiss):
+            case .foodPopover(.path(.element(_, .manualEntry(.saved)))):
                 state.isAddFoodShowing = false
+                return .send(.loadMeals)
             case .loadMeals:
                 state.areMealsLoading = true
+                state.hasError = false
                 return .run { send in
                     do {
                         try await send(.loadMealsResponse(apiClient.getDayMeals(.init())))
@@ -61,10 +64,9 @@ public struct Today {
                 state.meals = IdentifiedArray(uniqueElements: meals.map {
                     TodayMealCard.State(meal: $0)
                 })
-            case .error(let error):
+            case .error:
                 state.areMealsLoading = false
-                print(error)
-                break
+                state.hasError = true
             default:
                 break
             }

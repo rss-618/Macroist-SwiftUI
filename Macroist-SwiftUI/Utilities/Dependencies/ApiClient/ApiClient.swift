@@ -32,6 +32,7 @@ struct ApiClient {
 extension ApiClient: DependencyKey {
     
     private static func createUser(_ email: String, _ password: String) async throws -> AuthDataResult {
+        // TODO: Decide if we need a response for register or if a success response code is enough.
         return try await Auth.auth().createUser(withEmail: email, password: password)
     }
     
@@ -91,7 +92,7 @@ extension ApiClient: DependencyKey {
                                                                     options: .allowFragments) as? [String: Any] else {
                 throw AppError.technicalError
             }
-            let ref = Firestore.firestore()
+            let _ = Firestore.firestore()
                 .collection(Keys.ID.DB)
                 .document(uid)
                 .collection(DateUtil.getMonthYearEntryKey())

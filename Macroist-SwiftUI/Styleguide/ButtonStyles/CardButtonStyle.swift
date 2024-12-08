@@ -12,11 +12,11 @@ struct CardButtonStyle: ButtonStyle {
         configuration.label
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background {
-                RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)
+                RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
                     .fill(Color.gray.opacity(Keys.Opactiy.pct10))
             }
             .overlay {
-                RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)
+                RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
                     .stroke(Color.black.opacity(Keys.Opactiy.pct33))
             }
             .foregroundStyle(Color.black.opacity(Keys.Opactiy.pct87))

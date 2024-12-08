@@ -19,14 +19,14 @@ public struct FloatingButton: View {
             Image(systemName: iconName)
                 .resizable()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding(Keys.Padding.dp12)
+                .padding(Keys.Padding.px12)
                 .foregroundStyle(.white)
         }.background {
             Circle()
                 .fill(.blue)
         }
-        .frame(width: Keys.Width.dp52, height: Keys.Height.dp52)
-        .shadow(radius: Keys.CornerRadius.dp10, x: Keys.Offset.dp2, y: Keys.Offset.dp2)
+        .frame(width: Keys.Width.px52, height: Keys.Height.px52)
+        .shadow(radius: Keys.CornerRadius.px10, x: Keys.Offset.px2, y: Keys.Offset.px2)
     }
     
     public init(iconName: String, action: @escaping () -> Void) {

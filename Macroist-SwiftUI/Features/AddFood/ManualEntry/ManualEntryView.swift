@@ -28,7 +28,7 @@ public struct ManualEntryView: View {
                     }
                     
                     Spacer()
-                        .frame(height: Keys.Height.dp100) // TOOD: Get Keyboard height calculated here too
+                        .frame(height: Keys.Height.px100) // TOOD: Get Keyboard height calculated here too
                 }
                 .scrollContentBackground(.hidden)
                 .formStyle(.grouped)
@@ -38,7 +38,7 @@ public struct ManualEntryView: View {
                 } label: {
                     Text("Add Ingredient")
                 }
-                .padding(Keys.Padding.dp32)
+                .padding(Keys.Padding.px32)
                 .buttonStyle(BorderedButtonStyle())
                 .align(x: .center, y: .bottom)
             }

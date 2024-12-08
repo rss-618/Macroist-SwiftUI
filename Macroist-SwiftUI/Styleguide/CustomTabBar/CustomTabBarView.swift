@@ -12,36 +12,27 @@ public struct CustomTabBarView: View {
     
     public var body: some View {
         HStack {
-            Button {
-                currentTab = .history
-            } label: {
-                Label("History", systemImage: Keys.SystemIcon.CLOCK)
+            ForEach(Tab.allCases, id: \.hashValue) {
+                tabButton(tab: $0)
             }
-            .maxFrame()
-            .foregroundStyle(currentTab == .history ? Color.blue: Color.black)
-            
-            Button {
-                currentTab = .today
-            } label: {
-                Label("Today", systemImage: Keys.SystemIcon.CALENDAR_CIRCLE)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .foregroundStyle(currentTab == .today ? Color.blue: Color.black)
-            
-            Button {
-                currentTab = .settings
-            } label: {
-                Label("Settings", systemImage: Keys.SystemIcon.GEARSHAPE)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .foregroundStyle(currentTab == .settings ? Color.blue: Color.black)
         }
-        .frame(maxWidth: .infinity, idealHeight: Keys.Height.dp52)
+        .frame(maxWidth: .infinity, idealHeight: Keys.Height.px52)
         .fixedSize(horizontal: false, vertical: true)
         .background {
             Color.gray
                 .opacity(Keys.Opactiy.pct10)
                 .ignoresSafeArea(.all, edges: .bottom)
         }
+    }
+    
+    @ViewBuilder
+    private func tabButton(tab: Tab) -> some View {
+        Button {
+            currentTab = tab
+        } label: {
+            Label(tab.text, systemImage: tab.iconName)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .foregroundStyle(currentTab == tab ? Color.blue: Color.black)
     }
 }

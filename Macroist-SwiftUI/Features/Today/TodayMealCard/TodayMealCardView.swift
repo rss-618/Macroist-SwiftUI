@@ -18,42 +18,41 @@ public struct TodayMealCardView: View {
                 store.send(.openMeal)
             } label: {
                 VStack {
-                    Text(store.meal.mealName)
-                        .font(.title2)
+                    title
+                    
                     HStack {
-                        VStack {
-                            Text("Calories")
-                                .font(.subheadline)
-                            Text(store.meal.calories.roundToString(Keys.Points.p2))
-                                .font(.body)
-                        }
+                        textBlock(title: "Calories",
+                                  body: store.meal.calories.roundToString(Keys.Points.p2))
                         
-                        VStack {
-                            Text("Protein")
-                                .font(.subheadline)
-                            Text(store.meal.protein.roundToString(Keys.Points.p2))
-                                .font(.body)
-                        }
+                        textBlock(title: "Protein",
+                                  body: store.meal.protein.roundToString(Keys.Points.p2))
                         
-                        VStack {
-                            Text("Carbs")
-                                .font(.subheadline)
-                            Text(store.meal.carbs.roundToString(Keys.Points.p2))
-                                .font(.body)
-                        }
+                        textBlock(title: "Carbs",
+                                  body: store.meal.carbs.roundToString(Keys.Points.p2))
                         
-                        VStack {
-                            Text("Fat")
-                                .font(.subheadline)
-                            Text(store.meal.fat.roundToString(Keys.Points.p2))
-                                .font(.body)
-                        }
+                        textBlock(title: "Fat",
+                                  body: store.meal.fat.roundToString(Keys.Points.p2))
                     }
                 }
-                .padding(Keys.Padding.dp8)
+                .padding(Keys.Padding.px8)
             }
             .frame(maxWidth: .infinity)
             .buttonStyle(CardButtonStyle())
+        }
+    }
+    
+    private var title: some View {
+        Text(store.meal.mealName)
+            .font(.title2)
+    }
+    
+    @ViewBuilder
+    private func textBlock(title: String, body: String) -> some View {
+        VStack {
+            Text(title)
+                .font(.subheadline)
+            Text(body)
+                .font(.body)
         }
     }
 }
