@@ -37,7 +37,6 @@
 		E848CFAD2BC0EEB400441247 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAC2BC0EEB400441247 /* Count.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
-		E89FE8C82B9BC97E004700B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C72B9BC97E004700B2 /* Preview Assets.xcassets */; };
 		E89FE8D42B9BCA23004700B2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8D32B9BCA23004700B2 /* RootView.swift */; };
 		E89FE8D92B9BCAAA004700B2 /* FoodPopoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8D82B9BCAAA004700B2 /* FoodPopoverCoordinator.swift */; };
 		E89FE8DC2B9BCB6A004700B2 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE8DB2B9BCB6A004700B2 /* ComposableArchitecture */; };
@@ -118,7 +117,6 @@
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E89FE8C72B9BC97E004700B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E89FE8D32B9BCA23004700B2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E89FE8D82B9BCAAA004700B2 /* FoodPopoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPopoverCoordinator.swift; sourceTree = "<group>"; };
 		E89FE8DD2B9BCBA4004700B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -315,17 +313,8 @@
 				E89FE8D12B9BC9C1004700B2 /* Features */,
 				E89FE8CF2B9BC9A8004700B2 /* Utilities */,
 				E89FE8CE2B9BC99E004700B2 /* Styleguide */,
-				E89FE8C62B9BC97E004700B2 /* Preview Content */,
 			);
 			path = "Macroist-SwiftUI";
-			sourceTree = "<group>";
-		};
-		E89FE8C62B9BC97E004700B2 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				E89FE8C72B9BC97E004700B2 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		E89FE8CE2B9BC99E004700B2 /* Styleguide */ = {
@@ -615,7 +604,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E89FE8C82B9BC97E004700B2 /* Preview Assets.xcassets in Resources */,
 				E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */,
 				E89FE8DE2B9BCBA4004700B2 /* GoogleService-Info.plist in Resources */,
 			);
@@ -836,7 +824,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rss-618.Macroist-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -870,7 +858,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rss-618.Macroist-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

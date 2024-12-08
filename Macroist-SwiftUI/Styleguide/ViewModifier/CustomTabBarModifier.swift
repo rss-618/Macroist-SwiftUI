@@ -16,7 +16,7 @@ public struct CustomTabBarModifier: ViewModifier {
             content
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(.easeIn, value: currentTab)
-//                .transition(.slide)
+                .transition(.slide)
             
             CustomTabBarView(currentTab: $currentTab)
         }
