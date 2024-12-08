@@ -14,16 +14,16 @@ public struct FoodPopoverCoordinatorView: View {
 
     public var body: some View {
         WithPerceptionTracking {
-            VStack {
-                NavigationStack(
-                    path: $store.scope(state: \.path, action: \.path)
-                ) {
-                    // Root view of the navigation stack
-                    AddMealHomeView(store: store.scope(state: \.home, action: \.home))
-                } destination: { store in
-                    switch store.state {
-                    case .manualEntry:
-                        ManualEntryView(store: store.scope(state: \.manualEntry, action: \.manualEntry))
+            NavigationStack(
+                path: $store.scope(state: \.path, action: \.path)
+            ) {
+                // Root view of the navigation stack
+                AddMealHomeView(store: store.scope(state: \.home, action: \.home))
+            } destination: { store in
+                switch store.state {
+                case .manualEntry:
+                    if let manualEntryStore = store.scope(state: \.manualEntry, action: \.manualEntry) {
+                        ManualEntryView(store: manualEntryStore)
                     }
                 }
             }

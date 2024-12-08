@@ -64,7 +64,7 @@ public struct Registration {
                         await send.callAsFunction(.error(.init(.networkError)))
                     }
                 }
-            case .registerResponse(let response):
+            case .registerResponse:
                 state.showSuccess = true
             case .error(let error):
                 state.isRegistering = false

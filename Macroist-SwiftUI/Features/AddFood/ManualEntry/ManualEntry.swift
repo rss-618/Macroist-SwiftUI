@@ -27,6 +27,8 @@ public struct ManualEntry {
         case validateInput
         case createMeal
         case attemptSave(MacroMeal)
+        case saved
+        case error
     }
     
     public var body: some ReducerOf<Self> {
@@ -62,14 +64,18 @@ public struct ManualEntry {
                                           ingredients: ingredients)
                 return .send(.attemptSave(macroFood))
             case .attemptSave(let meal):
-                return .run { _ in
+                return .run { send in
                     do {
                         try await apiClient.addMeal(meal)
-                        print("saved it")
+                        await send(.saved)
                     } catch {
-                        print("couldnt")
+                        await send(.error)
                     }
                 }
+            case .saved:
+                print("saved it")
+            case .error:
+                print("couldnt")
             default:
                 break
             }

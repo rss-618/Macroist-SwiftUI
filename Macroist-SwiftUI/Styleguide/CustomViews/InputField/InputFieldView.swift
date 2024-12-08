@@ -15,6 +15,7 @@ public struct InputFieldView: View {
     
     public var body: some View {
         WithPerceptionTracking {
+            // TODO: Degross all of this bloat in the view body
             HStack(spacing: .zero) {
                 Group {
                     if store.isSecured {
@@ -32,8 +33,8 @@ public struct InputFieldView: View {
                 .textInputAutocapitalization(.never)
                 .font(.callout)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding(.vertical, Keys.Padding.dp2)
-                .padding(.horizontal, Keys.Padding.dp12)
+                .padding(.vertical, Keys.Padding.px2)
+                .padding(.horizontal, Keys.Padding.px12)
                 // Clear Input Button
                 if store.inputState == .focus && !store.text.isEmpty {
                     // Clear input button
@@ -46,8 +47,8 @@ public struct InputFieldView: View {
                             .font(Font.body.weight(.light))
                             .foregroundStyle(Color.black)
                             .frame(maxHeight: .infinity)
-                            .padding(.trailing, Keys.Padding.dp12)
-                            .padding(.vertical, Keys.Padding.dp13)
+                            .padding(.trailing, Keys.Padding.px12)
+                            .padding(.vertical, Keys.Padding.px13)
                     }
                 }
                 // Toggle Security Button (secure only)
@@ -69,24 +70,27 @@ public struct InputFieldView: View {
                             .font(Font.body.weight(.light))
                             .foregroundStyle(Color.black)
                             .frame(maxHeight: .infinity)
-                            .padding(.trailing, Keys.Padding.dp12)
-                            .padding(.vertical, Keys.Padding.dp13)
+                            .padding(.trailing, Keys.Padding.px12)
+                            .padding(.vertical, Keys.Padding.px13)
                     }
                 }
             }
             .overlay {
-                RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)
+                RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
                     .stroke(store.inputState.borderColor)
             }
             .background {
-                RoundedRectangle(cornerRadius: Keys.CornerRadius.dp10)
+                RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
                     .fill(.white)
+            }
+            .onTapGesture {
+                self.focusedField = store.type
             }
             .onChange(of: focusedField) { newVal in
                 let state: InputState = (newVal != .none) ? .focus : .unfocus
                 store.send(.updateInputState(state))
             }
-            .frame(maxWidth: .infinity, idealHeight: Keys.Height.dp52)
+            .frame(maxWidth: .infinity, idealHeight: Keys.Height.px52)
             .fixedSize(horizontal: false, vertical: true)
         }
     }

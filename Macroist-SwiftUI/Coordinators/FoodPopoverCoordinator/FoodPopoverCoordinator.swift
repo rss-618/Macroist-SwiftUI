@@ -10,9 +10,9 @@ import Foundation
 
 @Reducer
 public struct FoodPopoverCoordinator {
-    
+        
     @ObservableState
-    public struct State {
+    public struct State: Equatable {
         public var path = StackState<Path.State>()
         public var home: AddMealHome.State = .init()
     }

@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import SwiftUI
+import FirebaseCore
 
 @Reducer
 public struct Today {
@@ -15,33 +16,42 @@ public struct Today {
     
     @ObservableState
     public struct State: Equatable {
-        public var addFoodState: AddMealHome.State = .init()
+        public var foodPopover: FoodPopoverCoordinator.State = .init()
         public var isAddFoodShowing = false
-        public var areMealsLoading = false
-        public var meals: [MacroMeal] = .init()
+        public var areMealsLoading = true
+        public var hasError = false
+        public var meals: IdentifiedArrayOf<TodayMealCard.State> = .init()
     }
     
     public enum Action: BindableAction {
-        case showAddFoodPopover
-        case addFood(AddMealHome.Action)
         case binding(BindingAction<State>)
         case loadMeals
-        case loadMealsResponse([MacroMeal]?)
+        case loadMealsResponse([MacroMeal])
         case error(Error)
+        case meals(IdentifiedActionOf<TodayMealCard>)
+        case foodPopover(FoodPopoverCoordinator.Action)
+        case showFoodPopover
     }
     
     public var body: some ReducerOf<Self> {
         
-        Scope(state: \.addFoodState, action: /Action.addFood) {
-            AddMealHome()
+        Scope(state: \.foodPopover, action: \.foodPopover) {
+            FoodPopoverCoordinator()
         }
-        
+
         BindingReducer()
         
         Reduce { state, action in
             switch action {
+            case .showFoodPopover:
+                state.foodPopover = .init()
+                state.isAddFoodShowing = true
+            case .foodPopover(.path(.element(_, .manualEntry(.saved)))):
+                state.isAddFoodShowing = false
+                return .send(.loadMeals)
             case .loadMeals:
                 state.areMealsLoading = true
+                state.hasError = false
                 return .run { send in
                     do {
                         try await send(.loadMealsResponse(apiClient.getDayMeals(.init())))
@@ -51,14 +61,18 @@ public struct Today {
                 }
             case .loadMealsResponse(let meals):
                 state.areMealsLoading = false
-                state.meals = meals ?? []
-            case .error(let error):
+                state.meals = IdentifiedArray(uniqueElements: meals.map {
+                    TodayMealCard.State(meal: $0)
+                })
+            case .error:
                 state.areMealsLoading = false
-                print(error)
+                state.hasError = true
             default:
                 break
             }
             return .none
+        }.forEach(\.meals, action: \.meals) {
+            TodayMealCard()
         }
     }
 }

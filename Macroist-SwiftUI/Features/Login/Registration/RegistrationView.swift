@@ -32,15 +32,15 @@ public struct RegistrationView: View {
                 Text("Create your Account")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .padding(.vertical, Keys.Padding.dp12)
+                    .padding(.vertical, Keys.Padding.px12)
                 Text("Enter your email and password in order to create your Macroist account.")
                     .font(.headline)
                     .fontWeight(.light)
                     .multilineTextAlignment(.center)
-                    .padding(.bottom, Keys.Padding.dp12)
+                    .padding(.bottom, Keys.Padding.px12)
                 
                 // Input Fields
-                VStack(spacing: Keys.Padding.dp8) {
+                VStack(spacing: Keys.Padding.px8) {
                     // Username Field
                     InputFieldView(store: store.scope(state: \.email, action: \.email))
                         .focused($currentInput, equals: .email)
@@ -56,7 +56,7 @@ public struct RegistrationView: View {
                             store.send(.registerAttempted)
                         }
                 }
-                .padding(.horizontal, Keys.Padding.dp16)
+                .padding(.horizontal, Keys.Padding.px16)
                 
                 // Login Button
                 Button {
@@ -65,7 +65,7 @@ public struct RegistrationView: View {
                 } label: {
                     Text("Register")
                         .font(.title3)
-                        .frame(width: Keys.Width.dp100, height: Keys.Height.dp44)
+                        .frame(width: Keys.Width.px100, height: Keys.Height.px44)
                 }
                 .disabled(store.isRegistering)
                 .overlay {
@@ -75,12 +75,12 @@ public struct RegistrationView: View {
                 }
                 .buttonStyle(BorderedButtonStyle())
                 .foregroundStyle(store.isRegistering ? Color.gray: Color.black)
-                .padding(.vertical, Keys.Padding.dp16)
+                .padding(.vertical, Keys.Padding.px16)
                 
                 Spacer()
             }
             .background(Color.white)
-            .padding(Keys.Padding.dp24)
+            .padding(Keys.Padding.px24)
             .maxFrame()
             .tapToDismissKeyboard()
             .alert("Uh Oh!", isPresented: $store.isGenericError) {

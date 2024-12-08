@@ -12,5 +12,6 @@ extension Keys {
         public static let pct10: Double = 0.10
         public static let pct33: Double = 0.33
         public static let pct87: Double = 0.87
+        public static let pct100: Double = 1
     }
 }

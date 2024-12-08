@@ -28,11 +28,11 @@ public struct LoginView: View {
                 Text("Macroist")
                     .font(.largeTitle)
                     .fontWeight(.medium)
-                    .padding(Keys.Padding.dp16)
+                    .padding(Keys.Padding.px16)
                     .foregroundStyle(Color.white)
                 
                 // Input Fields
-                VStack(spacing: Keys.Padding.dp8) {
+                VStack(spacing: Keys.Padding.px8) {
                     // Username Field
                     InputFieldView(store: store.scope(state: \.emailState, action: \.email))
                         .focused($currentInput, equals: .email)
@@ -48,7 +48,7 @@ public struct LoginView: View {
                             store.send(.loginAttempted)
                         }
                 }
-                .padding(.horizontal, Keys.Padding.dp16)
+                .padding(.horizontal, Keys.Padding.px16)
                 
                 // Login Button
                 Button {
@@ -57,7 +57,7 @@ public struct LoginView: View {
                 } label: {
                     Text("Login")
                         .font(.title3)
-                        .frame(width: Keys.Width.dp100, height: Keys.Height.dp44)
+                        .frame(width: Keys.Width.px100, height: Keys.Height.px44)
                 }
                 .disabled(store.isLoggingIn)
                 .overlay {
@@ -67,7 +67,7 @@ public struct LoginView: View {
                 }
                 .buttonStyle(BorderedButtonStyle())
                 .foregroundStyle(Color.white)
-                .padding(.vertical, Keys.Padding.dp16)
+                .padding(.vertical, Keys.Padding.px16)
                 
                 Button {
                     store.send(.register)
@@ -77,7 +77,7 @@ public struct LoginView: View {
 
                 Spacer()
             }
-            .padding(.top, Keys.Padding.dp100)
+            .padding(.top, Keys.Padding.px100)
             .maxFrame()
             .background {
                 Color.blue.opacity(Keys.Opactiy.pct33).ignoresSafeArea(.all)
