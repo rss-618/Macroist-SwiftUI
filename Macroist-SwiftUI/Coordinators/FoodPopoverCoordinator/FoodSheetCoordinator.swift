@@ -9,7 +9,7 @@ import ComposableArchitecture
 import Foundation
 
 @Reducer
-public struct FoodPopoverCoordinator {
+public struct FoodSheetCoordinator {
         
     @ObservableState
     public struct State: Equatable {

@@ -14,7 +14,7 @@ extension TodayCoordinator {
     public struct Path {
         
         @ObservableState
-        public enum State: Equatable {
+        public struct State: Equatable {
         }
         
         public enum Action {

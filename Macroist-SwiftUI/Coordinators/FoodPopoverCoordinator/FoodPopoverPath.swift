@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import Foundation
 
-extension FoodPopoverCoordinator {
+extension FoodSheetCoordinator {
     
     @Reducer
     public struct Path {

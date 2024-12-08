@@ -16,33 +16,42 @@ public struct Today {
     
     @ObservableState
     public struct State: Equatable {
-        public var foodPopover: FoodPopoverCoordinator.State = .init()
+        public var foodPopover: FoodSheetCoordinator.State = .init()
+        public var updateMeal: UpdateMealSheet.State?
+        
         public var isAddFoodShowing = false
         public var areMealsLoading = true
         public var hasError = false
-        public var meals: IdentifiedArrayOf<TodayMealCard.State> = .init()
+        public var meals: [MacroMeal] = .init()
     }
     
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case selectMeal(MacroMeal)
         case loadMeals
         case loadMealsResponse([MacroMeal])
         case error(Error)
-        case meals(IdentifiedActionOf<TodayMealCard>)
-        case foodPopover(FoodPopoverCoordinator.Action)
+        case updateMeal(UpdateMealSheet.Action)
+        case foodPopover(FoodSheetCoordinator.Action)
         case showFoodPopover
     }
     
     public var body: some ReducerOf<Self> {
         
         Scope(state: \.foodPopover, action: \.foodPopover) {
-            FoodPopoverCoordinator()
+            FoodSheetCoordinator()
         }
 
         BindingReducer()
         
         Reduce { state, action in
             switch action {
+            case .selectMeal(let meal):
+                // Present Sheet
+                state.updateMeal = .init(meal: meal)
+            case .updateMeal(.saved):
+                // Dismiss Sheet
+                state.updateMeal = nil
             case .showFoodPopover:
                 state.foodPopover = .init()
                 state.isAddFoodShowing = true
@@ -61,9 +70,7 @@ public struct Today {
                 }
             case .loadMealsResponse(let meals):
                 state.areMealsLoading = false
-                state.meals = IdentifiedArray(uniqueElements: meals.map {
-                    TodayMealCard.State(meal: $0)
-                })
+                state.meals = meals
             case .error:
                 state.areMealsLoading = false
                 state.hasError = true
@@ -71,8 +78,9 @@ public struct Today {
                 break
             }
             return .none
-        }.forEach(\.meals, action: \.meals) {
-            TodayMealCard()
+        }
+        .ifLet(\.updateMeal, action: \.updateMeal) {
+            UpdateMealSheet()
         }
     }
 }

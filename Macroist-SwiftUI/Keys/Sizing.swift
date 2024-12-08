@@ -42,4 +42,9 @@ extension Keys {
         public static let px2: CGFloat = 2
     }
     
+    public struct Scale {
+        public static let pct95: CGFloat = 0.95
+        public static let pct100: CGFloat = 1
+    }
+    
 }

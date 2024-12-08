@@ -32,13 +32,12 @@
 		E848CFA32BB3DFF200441247 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA22BB3DFF200441247 /* RegistrationView.swift */; };
 		E848CFA52BB3DFFE00441247 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA42BB3DFFE00441247 /* Registration.swift */; };
 		E848CFA72BC0E56A00441247 /* TodayMealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */; };
-		E848CFA92BC0E58100441247 /* TodayMealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA82BC0E58100441247 /* TodayMealCard.swift */; };
 		E848CFAB2BC0EDBB00441247 /* Ext_Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */; };
 		E848CFAD2BC0EEB400441247 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAC2BC0EEB400441247 /* Count.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
 		E89FE8D42B9BCA23004700B2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8D32B9BCA23004700B2 /* RootView.swift */; };
-		E89FE8D92B9BCAAA004700B2 /* FoodPopoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8D82B9BCAAA004700B2 /* FoodPopoverCoordinator.swift */; };
+		E89FE8D92B9BCAAA004700B2 /* FoodSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8D82B9BCAAA004700B2 /* FoodSheetCoordinator.swift */; };
 		E89FE8DC2B9BCB6A004700B2 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE8DB2B9BCB6A004700B2 /* ComposableArchitecture */; };
 		E89FE8DE2B9BCBA4004700B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8DD2B9BCBA4004700B2 /* GoogleService-Info.plist */; };
 		E89FE8E12B9BCC42004700B2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE8E02B9BCC42004700B2 /* FirebaseAnalytics */; };
@@ -52,7 +51,7 @@
 		E89FE8F12B9BD413004700B2 /* Sizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8F02B9BD413004700B2 /* Sizing.swift */; };
 		E89FE8F42B9BDCDB004700B2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8F32B9BDCDB004700B2 /* Home.swift */; };
 		E89FE8F62B9BDCE9004700B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8F52B9BDCE9004700B2 /* HomeView.swift */; };
-		E89FE8F92B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8F82B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift */; };
+		E89FE8F92B9BDDE7004700B2 /* FoodSheetCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8F82B9BDDE7004700B2 /* FoodSheetCoordinatorView.swift */; };
 		E89FE8FB2B9BDE00004700B2 /* FoodPopoverPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8FA2B9BDE00004700B2 /* FoodPopoverPath.swift */; };
 		E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8FC2B9BE42B004700B2 /* InputField.swift */; };
 		E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8FF2B9BE44C004700B2 /* InputFieldView.swift */; };
@@ -83,6 +82,8 @@
 		E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */; };
 		E89FE9512BA023D0004700B2 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9502BA023D0004700B2 /* Today.swift */; };
 		E89FE9532BA02862004700B2 /* GenericBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */; };
+		E8EC25002D059BDB00822B2F /* UpdateMealSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EC24FF2D059BD500822B2F /* UpdateMealSheet.swift */; };
+		E8EC25022D059BE600822B2F /* UpdateMealSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EC25012D059BDF00822B2F /* UpdateMealSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,14 +112,13 @@
 		E848CFA22BB3DFF200441247 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		E848CFA42BB3DFFE00441247 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMealCardView.swift; sourceTree = "<group>"; };
-		E848CFA82BC0E58100441247 /* TodayMealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMealCard.swift; sourceTree = "<group>"; };
 		E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Float.swift; sourceTree = "<group>"; };
 		E848CFAC2BC0EEB400441247 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E89FE8D32B9BCA23004700B2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		E89FE8D82B9BCAAA004700B2 /* FoodPopoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPopoverCoordinator.swift; sourceTree = "<group>"; };
+		E89FE8D82B9BCAAA004700B2 /* FoodSheetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSheetCoordinator.swift; sourceTree = "<group>"; };
 		E89FE8DD2B9BCBA4004700B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E89FE8E82B9BCE00004700B2 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		E89FE8EA2B9BD28E004700B2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		E89FE8F02B9BD413004700B2 /* Sizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizing.swift; sourceTree = "<group>"; };
 		E89FE8F32B9BDCDB004700B2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E89FE8F52B9BDCE9004700B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E89FE8F82B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPopoverCoordinatorView.swift; sourceTree = "<group>"; };
+		E89FE8F82B9BDDE7004700B2 /* FoodSheetCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSheetCoordinatorView.swift; sourceTree = "<group>"; };
 		E89FE8FA2B9BDE00004700B2 /* FoodPopoverPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPopoverPath.swift; sourceTree = "<group>"; };
 		E89FE8FC2B9BE42B004700B2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		E89FE8FF2B9BE44C004700B2 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
@@ -151,6 +151,8 @@
 		E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealHomeView.swift; sourceTree = "<group>"; };
 		E89FE9502BA023D0004700B2 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericBackgroundView.swift; sourceTree = "<group>"; };
+		E8EC24FF2D059BD500822B2F /* UpdateMealSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMealSheet.swift; sourceTree = "<group>"; };
+		E8EC25012D059BDF00822B2F /* UpdateMealSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMealSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,15 +270,6 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
-		E848CFA02BB3DF3C00441247 /* TodayMealCard */ = {
-			isa = PBXGroup;
-			children = (
-				E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */,
-				E848CFA82BC0E58100441247 /* TodayMealCard.swift */,
-			);
-			path = TodayMealCard;
-			sourceTree = "<group>";
-		};
 		E848CFA12BB3DFE500441247 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +346,7 @@
 		E89FE8D12B9BC9C1004700B2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E8EC24FE2D059BCE00822B2F /* UpdateFood */,
 				E89FE94B2BA02329004700B2 /* AddFood */,
 				E89FE93B2BA00E57004700B2 /* History */,
 				E89FE93A2BA00E50004700B2 /* Settings */,
@@ -418,8 +412,8 @@
 		E89FE8F72B9BDDD6004700B2 /* FoodPopoverCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				E89FE8D82B9BCAAA004700B2 /* FoodPopoverCoordinator.swift */,
-				E89FE8F82B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift */,
+				E89FE8D82B9BCAAA004700B2 /* FoodSheetCoordinator.swift */,
+				E89FE8F82B9BDDE7004700B2 /* FoodSheetCoordinatorView.swift */,
 				E89FE8FA2B9BDE00004700B2 /* FoodPopoverPath.swift */,
 			);
 			path = FoodPopoverCoordinator;
@@ -483,7 +477,7 @@
 		E89FE9392BA00E49004700B2 /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				E848CFA02BB3DF3C00441247 /* TodayMealCard */,
+				E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */,
 				E89FE9402BA00EAB004700B2 /* TodayView.swift */,
 				E89FE9502BA023D0004700B2 /* Today.swift */,
 			);
@@ -526,6 +520,15 @@
 				E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */,
 			);
 			path = AddFood;
+			sourceTree = "<group>";
+		};
+		E8EC24FE2D059BCE00822B2F /* UpdateFood */ = {
+			isa = PBXGroup;
+			children = (
+				E8EC25012D059BDF00822B2F /* UpdateMealSheetView.swift */,
+				E8EC24FF2D059BD500822B2F /* UpdateMealSheet.swift */,
+			);
+			path = UpdateFood;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -624,7 +627,6 @@
 				E848CF822BA53C1900441247 /* Ingredient.swift in Sources */,
 				E848CF942BAD4A6400441247 /* TodayCoordinator.swift in Sources */,
 				E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */,
-				E848CFA92BC0E58100441247 /* TodayMealCard.swift in Sources */,
 				E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */,
 				E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */,
 				E848CFAD2BC0EEB400441247 /* Count.swift in Sources */,
@@ -635,7 +637,7 @@
 				E848CF652BA1643600441247 /* ManualEntryView.swift in Sources */,
 				E89FE8FB2B9BDE00004700B2 /* FoodPopoverPath.swift in Sources */,
 				E848CFA52BB3DFFE00441247 /* Registration.swift in Sources */,
-				E89FE8D92B9BCAAA004700B2 /* FoodPopoverCoordinator.swift in Sources */,
+				E89FE8D92B9BCAAA004700B2 /* FoodSheetCoordinator.swift in Sources */,
 				E848CF892BA5439100441247 /* Ext_String.swift in Sources */,
 				E89FE9512BA023D0004700B2 /* Today.swift in Sources */,
 				E89FE8E92B9BCE00004700B2 /* Root.swift in Sources */,
@@ -652,7 +654,7 @@
 				E848CF672BA1643C00441247 /* ManualEntry.swift in Sources */,
 				E848CF6A2BA16B7400441247 /* CardButtonStyle.swift in Sources */,
 				E848CF802BA40F0300441247 /* Ext_Date.swift in Sources */,
-				E89FE8F92B9BDDE7004700B2 /* FoodPopoverCoordinatorView.swift in Sources */,
+				E89FE8F92B9BDDE7004700B2 /* FoodSheetCoordinatorView.swift in Sources */,
 				E848CF722BA297DD00441247 /* DependancyValues.swift in Sources */,
 				E89FE8ED2B9BD294004700B2 /* Login.swift in Sources */,
 				E89FE94A2BA01E8F004700B2 /* MacroMeal.swift in Sources */,
@@ -662,10 +664,12 @@
 				E848CF962BAD4A8F00441247 /* TodayPath.swift in Sources */,
 				E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */,
 				E848CF792BA3F32600441247 /* History.swift in Sources */,
+				E8EC25002D059BDB00822B2F /* UpdateMealSheet.swift in Sources */,
 				E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */,
 				E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */,
 				E89FE9042B9BF35A004700B2 /* InputState.swift in Sources */,
 				E848CF982BAD4B0800441247 /* TodayCoordinatorView.swift in Sources */,
+				E8EC25022D059BE600822B2F /* UpdateMealSheetView.swift in Sources */,
 				E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */,
 				E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */,
 				E89FE8EF2B9BD3F8004700B2 /* Keys.swift in Sources */,
@@ -810,7 +814,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Macroist-SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = XGJ29R7G4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -844,7 +847,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Macroist-SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = XGJ29R7G4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

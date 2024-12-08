@@ -25,8 +25,10 @@ public struct TodayView: View {
                         } else if store.hasError {
                             retrySection
                         } else if !store.meals.isEmpty {
-                            ForEachStore(store.scope(state: \.meals, action: \.meals)) { store in
-                                TodayMealCardView(store: store)
+                            ForEach(store.meals, id: \.self) { meal in
+                                TodayMealCardView(meal: meal) {
+                                    store.send(.selectMeal(meal))
+                                }
                             }
                         } else {
                             emptyText
@@ -46,8 +48,13 @@ public struct TodayView: View {
         .overlay {
             floatingButtonOverlay
         }
-        .popover(isPresented: $store.isAddFoodShowing) {
-            FoodPopoverCoordinatorView(store: store.scope(state: \.foodPopover, action: \.foodPopover))
+        .sheet(isPresented: $store.isAddFoodShowing) {
+            FoodSheetCoordinatorView(store: store.scope(state: \.foodPopover, action: \.foodPopover))
+        }
+        .sheet(item: $store.updateMeal) { _ in
+            IfLetStore(store.scope(state: \.updateMeal, action: \.updateMeal)) { store in
+                UpdateMealSheetView(store: store)
+            }
         }
         .task {
             // Pull new meals on initial load (is okay if niche cases call an additional call)
