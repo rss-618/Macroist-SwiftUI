@@ -22,6 +22,8 @@ struct ApiClient {
                 _ password: String) async throws -> AuthDataResult?
     var logout: () throws ->  Void
     // -- Database --
+    var deleteMeal: (Date, UUID) async throws -> Void
+    var deleteTodaysMeal: (UUID) async throws -> Void
     var getMonthMeals: (Date) async throws -> [MacroMeal]
     var getDayMeals: (Date) async throws -> [MacroMeal]
     var addMeal: (_ food: MacroMeal) async throws -> Void
@@ -44,7 +46,39 @@ extension ApiClient: DependencyKey {
         return try Auth.auth().signOut()
     }
     
-    public static func getMonthMeals(_ date: Date) async throws -> [MacroMeal] {
+    private static func deleteMeal(_ date: Date, _ id: UUID) async throws {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            throw AppError.authenticationError
+        }
+        
+        // Get Document Id if exists
+        guard let documentId = try await Firestore.firestore()
+            .collection(Keys.ID.DB)
+            .document(uid)
+            .collection(DateUtil.getMonthYearEntryKey(date))
+            .whereField(Keys.ID.ID, isEqualTo: id.uuidString)
+            .getDocuments()
+            .documents
+            .first?
+            .documentID else {
+            // ID doesnt exist
+            throw AppError.technicalError
+        }
+        
+        // Attempt to delete
+        try await Firestore.firestore()
+            .collection(Keys.ID.DB)
+            .document(uid)
+            .collection(DateUtil.getMonthYearEntryKey(date))
+            .document(documentId)
+            .delete()
+    }
+    
+    private static func deleteTodaysMeal(_ id: UUID) async throws {
+        return try await deleteMeal(Date(), id)
+    }
+    
+    private static func getMonthMeals(_ date: Date) async throws -> [MacroMeal] {
         let task = Task { () throws -> [MacroMeal] in
             guard let uid = Auth.auth().currentUser?.uid else {
                 throw AppError.authenticationError
@@ -67,7 +101,7 @@ extension ApiClient: DependencyKey {
         return try await task.result.get()
     }
 
-    public static func getDayMeals(_ date: Date) async throws -> [MacroMeal] {
+    private static func getDayMeals(_ date: Date) async throws -> [MacroMeal] {
         let task = Task { () throws -> [MacroMeal] in
             let calender = Calendar(identifier: .iso8601)
             // TODO: Evaluate if I need a more efficient way over getting day values
@@ -82,7 +116,7 @@ extension ApiClient: DependencyKey {
         return try await task.result.get()
     }
     
-    public static func addMeal(_ food: MacroMeal) async throws -> Void {
+    private static func addMeal(_ food: MacroMeal) async throws -> Void {
         let task = Task { () throws -> Void in
             let data = try JSONEncoder().encode(food)
             guard let uid = Auth.auth().currentUser?.uid else {
@@ -109,6 +143,10 @@ extension ApiClient: DependencyKey {
             try await ApiClient.login($0, $1)
         }, logout: {
             try ApiClient.logout()
+        }, deleteMeal: {
+            try await ApiClient.deleteMeal($0, $1)
+        }, deleteTodaysMeal: {
+            try await ApiClient.deleteTodaysMeal($0)
         }, getMonthMeals: {
             try await ApiClient.getMonthMeals($0)
         }, getDayMeals: {
@@ -126,6 +164,8 @@ extension ApiClient {
     createUser: XCTUnimplemented("APIClient.fetchUser"),
     login: XCTUnimplemented("APIClient.login"),
     logout: XCTUnimplemented("APIClient.logout"),
+    deleteMeal: XCTUnimplemented("APIClient.deleteMeal"),
+    deleteTodaysMeal: XCTUnimplemented("APIClient.deleteTodaysMeal"),
     getMonthMeals: XCTUnimplemented("APIClient.getMonthMeals"),
     getDayMeals: XCTUnimplemented("APIClient.getMonthMeals"),
     addMeal: XCTUnimplemented("APIClient.addMeal")

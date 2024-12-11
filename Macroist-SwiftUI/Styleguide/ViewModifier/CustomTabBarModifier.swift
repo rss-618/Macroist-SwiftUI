@@ -14,9 +14,7 @@ public struct CustomTabBarModifier: ViewModifier {
     public func body(content: Content) -> some View {
         VStack(spacing: .zero) {
             content
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .animation(.easeIn, value: currentTab)
-                .transition(.slide)
+                .maxFrame()
             
             CustomTabBarView(currentTab: $currentTab)
         }

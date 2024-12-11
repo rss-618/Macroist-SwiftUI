@@ -33,6 +33,6 @@ public struct CustomTabBarView: View {
             Label(tab.text, systemImage: tab.iconName)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .foregroundStyle(currentTab == tab ? Color.blue: Color.black)
+        .foregroundStyle(currentTab == tab ? Color.blue: Color.gray)
     }
 }

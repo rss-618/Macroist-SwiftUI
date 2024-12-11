@@ -21,6 +21,7 @@ extension Keys {
     }
     
     public struct Height {
+        public static let px20: CGFloat = 20
         public static let px44: CGFloat = 44
         public static let px48: CGFloat = 48
         public static let px52: CGFloat = 52
@@ -29,6 +30,7 @@ extension Keys {
     }
     
     public struct Width {
+        public static let px20: CGFloat = 20
         public static let px48: CGFloat = 48
         public static let px52: CGFloat = 52
         public static let px100: CGFloat = 100

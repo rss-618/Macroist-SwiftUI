@@ -18,5 +18,7 @@ extension Keys {
         public static var X_CIRCLE = "x.circle"
         public static var EYE_CICLE = "eye.circle"
         public static var EYE_SLASH_CIRCLE = "eye.slash.circle"
+        public static var TRASH = "trash"
+        public static var MINUS_CIRCLE_FILL = "minus.circle.fill"
     }
 }

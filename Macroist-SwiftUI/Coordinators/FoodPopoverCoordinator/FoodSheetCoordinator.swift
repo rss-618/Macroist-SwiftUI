@@ -13,8 +13,8 @@ public struct FoodSheetCoordinator {
         
     @ObservableState
     public struct State: Equatable {
-        public var path = StackState<Path.State>()
-        public var home: AddMealHome.State = .init()
+        var path = StackState<Path.State>()
+        var home: AddMealHome.State = .init()
     }
     
     public enum Action {
@@ -31,7 +31,7 @@ public struct FoodSheetCoordinator {
         Reduce { state, action in
             switch action {
             case .home(.manualEntry):
-                state.path.append(.manualEntry(.init()))
+                state.path.append(.manualEntry(.init(variant: .new)))
             default:
                 break
             }

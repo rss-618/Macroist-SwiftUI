@@ -22,12 +22,39 @@ public struct Today {
         public var isAddFoodShowing = false
         public var areMealsLoading = true
         public var hasError = false
-        public var meals: [MacroMeal] = .init()
+        var _meals: [MacroMeal] = .init()
+        private var pendingDeletions: [UUID] = .init()
+        
+        public var meals: [MacroMeal] {
+            _meals.filter { !pendingDeletions.contains($0.id) }
+        }
+        
+        mutating func pendingDelete(_ uuid: UUID) {
+            pendingDeletions.append(uuid)
+        }
+        
+        mutating func deleteFailure(_ uuid: UUID) {
+            pendingDeletions.removeAll {
+                $0 == uuid
+            }
+        }
+        
+        mutating func deleteSuccess(_ uuid: UUID) {
+            pendingDeletions.removeAll {
+                $0 == uuid
+            }
+            _meals.removeAll {
+                $0.id == uuid
+            }
+        }
     }
     
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
         case selectMeal(MacroMeal)
+        case deleteMeal(UUID)
+        case deleteFailure(UUID)
+        case deleteSuccess(UUID)
         case loadMeals
         case loadMealsResponse([MacroMeal])
         case error(Error)
@@ -49,6 +76,20 @@ public struct Today {
             case .selectMeal(let meal):
                 // Present Sheet
                 state.updateMeal = .init(meal: meal)
+            case .deleteMeal(let uuid):
+                state.pendingDelete(uuid)
+                return .run { send in
+                    do {
+                        try await apiClient.deleteTodaysMeal(uuid)
+                        await send(.deleteSuccess(uuid))
+                    } catch {
+                        await send(.deleteFailure(uuid))
+                    }
+                }
+            case .deleteSuccess(let uuid):
+                state.deleteSuccess(uuid)
+            case .deleteFailure(let uuid):
+                state.deleteFailure(uuid)
             case .updateMeal(.saved):
                 // Dismiss Sheet
                 state.updateMeal = nil
@@ -70,7 +111,7 @@ public struct Today {
                 }
             case .loadMealsResponse(let meals):
                 state.areMealsLoading = false
-                state.meals = meals
+                state._meals = meals
             case .error:
                 state.areMealsLoading = false
                 state.hasError = true

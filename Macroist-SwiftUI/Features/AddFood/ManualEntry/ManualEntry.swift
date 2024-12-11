@@ -13,10 +13,29 @@ public struct ManualEntry {
     
     @Dependency(\.apiClient) var apiClient
     
+    public enum Variant: Equatable {
+        case new
+        case edit(MealEdit)
+    }
+    
+    public struct MealEdit: Equatable {
+        var isReadOnly = true
+        var meal: MacroMeal
+    }
+    
     @ObservableState
     public struct State: Equatable {
+        var variant: Variant
         var mealNameInput: InputField.State = .init(placeholder: "Meal Name")
-        var ingredientCards: IdentifiedArrayOf<IngredientEntryCard.State> = [.init()]
+        var ingredientCards: IdentifiedArrayOf<IngredientEntryCard.State> = [.init(variant: .edit)]
+        
+        public mutating func getIngredients() throws -> [Ingredient] {
+            var ingredients: [Ingredient] = .init()
+            for index in ingredientCards.indices {
+                try ingredients.append(ingredientCards[index].getIngredient())
+            }
+            return ingredients
+        }
     }
     
     public enum Action: Equatable {
@@ -24,9 +43,6 @@ public struct ManualEntry {
         case ingredientCards(IdentifiedActionOf<IngredientEntryCard>)
         case addIngredient
         case savePressed
-        case validateInput
-        case createMeal
-        case attemptSave(MacroMeal)
         case saved
         case error
     }
@@ -40,42 +56,34 @@ public struct ManualEntry {
         Reduce { state, action in
             switch action {
             case .addIngredient:
-                state.ingredientCards.append(.init())
+                state.ingredientCards.append(.init(variant: .edit))
             case .savePressed:
-                return .send(.validateInput)
-            case .validateInput:
-                return .run { [state] send in
-                    for id in state.ingredientCards.ids {
-                        // Process all ingredients
-                        await send.callAsFunction(.ingredientCards(.element(id: id, action: .process)))
+                do {
+                    // Attempt to build meal
+                    let meal = try MacroMeal(mealName: state.mealNameInput.text,
+                                              ingredients: state.getIngredients())
+                    // Build is successful
+                    return .run { send in
+                        do {
+                            try await apiClient.addMeal(meal)
+                            await send(.saved)
+                        } catch {
+                            // API Error
+                            await send(.error)
+                        }
                     }
-                    
-                    await send.callAsFunction(.createMeal)
-                }
-            case .createMeal:
-                var ingredients: [Ingredient] = .init()
-                for cardState in state.ingredientCards.elements {
-                    guard let ingredient = cardState.ingredient, !cardState.hasError else {
-                        return .none // TODO: Create Error Alert
-                    }
-                    ingredients.append(ingredient)
-                }
-                let macroFood = MacroMeal(mealName: state.mealNameInput.text.trimWhiteSpaceAndNewline(),
-                                          ingredients: ingredients)
-                return .send(.attemptSave(macroFood))
-            case .attemptSave(let meal):
-                return .run { send in
-                    do {
-                        try await apiClient.addMeal(meal)
-                        await send(.saved)
-                    } catch {
-                        await send(.error)
-                    }
+                } catch {
+                    // Parsing Error
+                    return .send(.error)
                 }
             case .saved:
                 print("saved it")
             case .error:
                 print("couldnt")
+            case .ingredientCards(.element(let id, action: .remove)):
+                state.ingredientCards.removeAll {
+                    $0.id == id
+                }
             default:
                 break
             }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8184E6F2D0925D500A8ACDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */; };
+		E8184E712D0927AA00A8ACDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */; };
+		E8184E732D095A5200A8ACDD /* AddFoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8184E722D095A4C00A8ACDD /* AddFoodCardView.swift */; };
 		E848CF652BA1643600441247 /* ManualEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF642BA1643600441247 /* ManualEntryView.swift */; };
 		E848CF672BA1643C00441247 /* ManualEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF662BA1643C00441247 /* ManualEntry.swift */; };
 		E848CF6A2BA16B7400441247 /* CardButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF692BA16B7400441247 /* CardButtonStyle.swift */; };
@@ -23,9 +26,6 @@
 		E848CF872BA541EC00441247 /* IngredientEntryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF862BA541EC00441247 /* IngredientEntryCard.swift */; };
 		E848CF892BA5439100441247 /* Ext_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF882BA5439100441247 /* Ext_String.swift */; };
 		E848CF912BAD491C00441247 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF902BAD491C00441247 /* AppError.swift */; };
-		E848CF942BAD4A6400441247 /* TodayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF932BAD4A6400441247 /* TodayCoordinator.swift */; };
-		E848CF962BAD4A8F00441247 /* TodayPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF952BAD4A8F00441247 /* TodayPath.swift */; };
-		E848CF982BAD4B0800441247 /* TodayCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF972BAD4B0800441247 /* TodayCoordinatorView.swift */; };
 		E848CF9B2BAEA3E800441247 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9A2BAEA3E800441247 /* CustomTabBarView.swift */; };
 		E848CF9D2BAEA51400441247 /* CustomTabBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9C2BAEA51400441247 /* CustomTabBarModifier.swift */; };
 		E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF9E2BAEA74900441247 /* Ext_TabView.swift */; };
@@ -34,12 +34,12 @@
 		E848CFA72BC0E56A00441247 /* TodayMealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */; };
 		E848CFAB2BC0EDBB00441247 /* Ext_Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */; };
 		E848CFAD2BC0EEB400441247 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAC2BC0EEB400441247 /* Count.swift */; };
+		E87CF4A12D09134100893CA2 /* PlainList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87CF4A02D09133F00893CA2 /* PlainList.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
 		E89FE8D42B9BCA23004700B2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8D32B9BCA23004700B2 /* RootView.swift */; };
 		E89FE8D92B9BCAAA004700B2 /* FoodSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8D82B9BCAAA004700B2 /* FoodSheetCoordinator.swift */; };
 		E89FE8DC2B9BCB6A004700B2 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE8DB2B9BCB6A004700B2 /* ComposableArchitecture */; };
-		E89FE8DE2B9BCBA4004700B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8DD2B9BCBA4004700B2 /* GoogleService-Info.plist */; };
 		E89FE8E12B9BCC42004700B2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE8E02B9BCC42004700B2 /* FirebaseAnalytics */; };
 		E89FE8E32B9BCC42004700B2 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE8E22B9BCC42004700B2 /* FirebaseAnalyticsOnDeviceConversion */; };
 		E89FE8E52B9BCC42004700B2 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE8E42B9BCC42004700B2 /* FirebaseAnalyticsSwift */; };
@@ -87,6 +87,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8184E722D095A4C00A8ACDD /* AddFoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodCardView.swift; sourceTree = "<group>"; };
 		E848CF642BA1643600441247 /* ManualEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntryView.swift; sourceTree = "<group>"; };
 		E848CF662BA1643C00441247 /* ManualEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntry.swift; sourceTree = "<group>"; };
 		E848CF692BA16B7400441247 /* CardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonStyle.swift; sourceTree = "<group>"; };
@@ -103,9 +106,6 @@
 		E848CF862BA541EC00441247 /* IngredientEntryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEntryCard.swift; sourceTree = "<group>"; };
 		E848CF882BA5439100441247 /* Ext_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_String.swift; sourceTree = "<group>"; };
 		E848CF902BAD491C00441247 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		E848CF932BAD4A6400441247 /* TodayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCoordinator.swift; sourceTree = "<group>"; };
-		E848CF952BAD4A8F00441247 /* TodayPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPath.swift; sourceTree = "<group>"; };
-		E848CF972BAD4B0800441247 /* TodayCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCoordinatorView.swift; sourceTree = "<group>"; };
 		E848CF9A2BAEA3E800441247 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		E848CF9C2BAEA51400441247 /* CustomTabBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarModifier.swift; sourceTree = "<group>"; };
 		E848CF9E2BAEA74900441247 /* Ext_TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_TabView.swift; sourceTree = "<group>"; };
@@ -114,12 +114,12 @@
 		E848CFA62BC0E56A00441247 /* TodayMealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMealCardView.swift; sourceTree = "<group>"; };
 		E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Float.swift; sourceTree = "<group>"; };
 		E848CFAC2BC0EEB400441247 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
+		E87CF4A02D09133F00893CA2 /* PlainList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainList.swift; sourceTree = "<group>"; };
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E89FE8D32B9BCA23004700B2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E89FE8D82B9BCAAA004700B2 /* FoodSheetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSheetCoordinator.swift; sourceTree = "<group>"; };
-		E89FE8DD2B9BCBA4004700B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E89FE8E82B9BCE00004700B2 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		E89FE8EA2B9BD28E004700B2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E89FE8EC2B9BD294004700B2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -199,6 +199,7 @@
 		E848CF6B2BA2954C00441247 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */,
 				E89FE9322B9E6AB7004700B2 /* Configs */,
 				E89FE8C42B9BC97E004700B2 /* Assets.xcassets */,
 				E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */,
@@ -252,16 +253,6 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		E848CF922BAD49E900441247 /* TodayCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				E848CF932BAD4A6400441247 /* TodayCoordinator.swift */,
-				E848CF952BAD4A8F00441247 /* TodayPath.swift */,
-				E848CF972BAD4B0800441247 /* TodayCoordinatorView.swift */,
-			);
-			path = TodayCoordinator;
-			sourceTree = "<group>";
-		};
 		E848CF992BAEA3D700441247 /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,7 +291,7 @@
 			children = (
 				E848CF6B2BA2954C00441247 /* App */,
 				E89FE91E2B9E313C004700B2 /* Service */,
-				E89FE8DD2B9BCBA4004700B2 /* GoogleService-Info.plist */,
+				E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */,
 				E89FE8D72B9BCA56004700B2 /* Coordinators */,
 				E89FE8D22B9BC9EA004700B2 /* Keys */,
 				E89FE8D12B9BC9C1004700B2 /* Features */,
@@ -394,7 +385,6 @@
 		E89FE8D72B9BCA56004700B2 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				E848CF922BAD49E900441247 /* TodayCoordinator */,
 				E89FE8F72B9BDDD6004700B2 /* FoodPopoverCoordinator */,
 			);
 			path = Coordinators;
@@ -505,6 +495,7 @@
 		E89FE9442BA0178C004700B2 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				E87CF4A02D09133F00893CA2 /* PlainList.swift */,
 				E89FE8FE2B9BE43A004700B2 /* InputField */,
 				E89FE9452BA017AA004700B2 /* FloatingButton.swift */,
 				E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */,
@@ -515,6 +506,7 @@
 		E89FE94B2BA02329004700B2 /* AddFood */ = {
 			isa = PBXGroup;
 			children = (
+				E8184E722D095A4C00A8ACDD /* AddFoodCardView.swift */,
 				E848CF632BA1642700441247 /* ManualEntry */,
 				E89FE94C2BA02354004700B2 /* AddMealHome.swift */,
 				E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */,
@@ -608,7 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */,
-				E89FE8DE2B9BCBA4004700B2 /* GoogleService-Info.plist in Resources */,
+				E8184E712D0927AA00A8ACDD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,8 +617,8 @@
 				E89FE9352B9E7001004700B2 /* Image.swift in Sources */,
 				E89FE9482BA01B5B004700B2 /* AlignModifier.swift in Sources */,
 				E848CF822BA53C1900441247 /* Ingredient.swift in Sources */,
-				E848CF942BAD4A6400441247 /* TodayCoordinator.swift in Sources */,
 				E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */,
+				E8184E6F2D0925D500A8ACDD /* AppDelegate.swift in Sources */,
 				E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */,
 				E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */,
 				E848CFAD2BC0EEB400441247 /* Count.swift in Sources */,
@@ -661,14 +653,13 @@
 				E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */,
 				E89FE8F42B9BDCDB004700B2 /* Home.swift in Sources */,
 				E89FE9072B9C00AC004700B2 /* ApiClientKey.swift in Sources */,
-				E848CF962BAD4A8F00441247 /* TodayPath.swift in Sources */,
 				E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */,
 				E848CF792BA3F32600441247 /* History.swift in Sources */,
 				E8EC25002D059BDB00822B2F /* UpdateMealSheet.swift in Sources */,
+				E8184E732D095A5200A8ACDD /* AddFoodCardView.swift in Sources */,
 				E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */,
 				E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */,
 				E89FE9042B9BF35A004700B2 /* InputState.swift in Sources */,
-				E848CF982BAD4B0800441247 /* TodayCoordinatorView.swift in Sources */,
 				E8EC25022D059BE600822B2F /* UpdateMealSheetView.swift in Sources */,
 				E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */,
 				E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */,
@@ -677,6 +668,7 @@
 				E89FE8F12B9BD413004700B2 /* Sizing.swift in Sources */,
 				E89FE93F2BA00E84004700B2 /* SettingsView.swift in Sources */,
 				E848CFA32BB3DFF200441247 /* RegistrationView.swift in Sources */,
+				E87CF4A12D09134100893CA2 /* PlainList.swift in Sources */,
 				E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */,
 				E89FE8EB2B9BD28E004700B2 /* LoginView.swift in Sources */,
 				E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */,
@@ -828,7 +820,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rss-618.Macroist-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rss618.macroist-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -861,7 +853,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rss-618.Macroist-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rss618.macroist-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

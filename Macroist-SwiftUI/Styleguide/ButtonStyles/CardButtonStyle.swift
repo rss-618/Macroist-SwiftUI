@@ -19,7 +19,7 @@ struct CardButtonStyle: ButtonStyle {
                             .stroke(Color.black.opacity(Keys.Opactiy.pct33))
                     }
             }
-            .foregroundStyle(Color.black.opacity(Keys.Opactiy.pct87))
+            .foregroundStyle(Color.gray)
             .font(.title3)
             .fontWeight(.semibold)
             .scaleEffect(configuration.isPressed ? Keys.Scale.pct95 : Keys.Scale.pct100)

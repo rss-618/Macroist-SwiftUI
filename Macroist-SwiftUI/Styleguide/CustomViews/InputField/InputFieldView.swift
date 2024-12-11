@@ -21,17 +21,20 @@ public struct InputFieldView: View {
                     if store.isSecured {
                         SecureField(text: $store.text) {
                             Text(store.placeholder)
+                                .foregroundStyle(Color.black.opacity(Keys.Opactiy.pct33))
                         }
                         .focused($focusedField, equals: .secure)
                     } else {
                         TextField(text: $store.text) {
                             Text(store.placeholder)
+                                .foregroundStyle(Color.black.opacity(Keys.Opactiy.pct33))
                         }
                         .focused($focusedField, equals: .insecure)
                     }
                 }
                 .textInputAutocapitalization(.never)
                 .font(.callout)
+                .foregroundStyle(Color.black.opacity(Keys.Opactiy.pct90))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.vertical, Keys.Padding.px2)
                 .padding(.horizontal, Keys.Padding.px12)

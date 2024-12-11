@@ -16,41 +16,67 @@ public struct ManualEntryView: View {
     
     public var body: some View {
         WithPerceptionTracking {
-            ZStack {
+            Section {
                 Form {
-                    Section(header: Text("Meal Name (Optional)")) {
-                        InputFieldView(store: store.scope(state: \.mealNameInput, action: \.mealNameInput))
-                    }            
-                    .listRowBackground(Color.gray.opacity(Keys.Opactiy.pct10))
+                    mealNameCard
+                        .listRowBackground(Color.gray.opacity(Keys.Opactiy.pct10))
 
-                    ForEach(store.scope(state: \.ingredientCards, action: \.ingredientCards)) { store in
-                        IngredientEntryCardView(store: store)
+                    ForEach(store.scope(state: \.ingredientCards, action: \.ingredientCards)) { [removable = store.ingredientCards.count > 1] store in
+                        IngredientEntryCardView(removable: removable,
+                                                store: store)
                     }
+                    .listRowBackground(Color.gray.opacity(Keys.Opactiy.pct10))
                     
-                    Spacer()
-                        .frame(height: Keys.Height.px100) // TOOD: Get Keyboard height calculated here too
+                    addIngredientButton
+
+                    spacer
                 }
                 .scrollContentBackground(.hidden)
                 .formStyle(.grouped)
-                
-                Button {
-                    store.send(.addIngredient)
-                } label: {
-                    Text("Add Ingredient")
-                }
-                .padding(Keys.Padding.px32)
-                .buttonStyle(BorderedButtonStyle())
-                .align(x: .center, y: .bottom)
             }
             .animation(.default, value: store.ingredientCards)
-        }
-        .navigationTitle("Manual Entry")
-        .toolbar {
-            Button("Save") {
-                store.send(.savePressed)
+            .navigationTitle("Manual Entry")
+            .toolbar {
+                saveButton
             }
-            .padding()
+            .tapToDismissKeyboard()
         }
+    }
+    
+    var mealNameCard: some View {
+        Section {
+            InputFieldView(store: store.scope(state: \.mealNameInput, action: \.mealNameInput))
+        } header: {
+            Text("Meal Name (Optional)")
+        }
+    }
+    
+    var spacer: some View {
+        Spacer()
+            .listRowBackground(Color.clear)
+            .frame(height: Keys.Height.px100) // TOOD: Get Keyboard height calculated here too
+    }
+    
+    var saveButton: some View {
+        Button("Save") {
+            store.send(.savePressed)
+        }
+        .padding()
+    }
+    
+    var addIngredientButton: some View {
+        HStack {
+            Spacer()
+            Button {
+                store.send(.addIngredient)
+            } label: {
+                Text("Add Ingredient")
+            }
+            Spacer()
+        }
+        .buttonStyle(BorderedButtonStyle())
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
     }
     
     public init(store: StoreOf<ManualEntry>) {

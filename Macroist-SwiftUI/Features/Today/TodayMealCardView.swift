@@ -41,9 +41,13 @@ public struct TodayMealCardView: View {
         
     }
     
+    @ViewBuilder
     private var title: some View {
-        Text(meal.mealName)
-            .font(.title2)
+        if !meal.mealName.isEmpty {
+            Text(meal.mealName)
+                .font(.title2)
+                .foregroundStyle(Color.gray)
+        }
     }
     
     @ViewBuilder
@@ -54,5 +58,6 @@ public struct TodayMealCardView: View {
             Text(body)
                 .font(.body)
         }
+        .foregroundStyle(Color.gray)
     }
 }
