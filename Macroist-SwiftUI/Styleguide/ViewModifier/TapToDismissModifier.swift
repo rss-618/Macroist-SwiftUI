@@ -11,14 +11,12 @@ public struct TapToDismissModifier: ViewModifier {
     
     public func body(content: Content) -> some View {
         content
-            .simultaneousGesture(
-                TapGesture().onEnded {
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
-                                                    to: nil,
-                                                    from: nil,
-                                                    for: nil)
-                }
-            )
+            .onTapGesture(coordinateSpace: .global) { _ in
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                                to: nil,
+                                                from: nil,
+                                                for: nil)
+            }
     }
     
 }

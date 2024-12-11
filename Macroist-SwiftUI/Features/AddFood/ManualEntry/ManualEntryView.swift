@@ -39,7 +39,6 @@ public struct ManualEntryView: View {
             .toolbar {
                 saveButton
             }
-            .tapToDismissKeyboard()
         }
     }
     

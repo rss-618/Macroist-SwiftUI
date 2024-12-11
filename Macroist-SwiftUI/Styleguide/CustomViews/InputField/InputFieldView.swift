@@ -78,16 +78,16 @@ public struct InputFieldView: View {
                     }
                 }
             }
-            .overlay {
-                RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
-                    .stroke(store.inputState.borderColor)
-            }
             .background {
                 RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
                     .fill(.white)
-            }
-            .onTapGesture {
-                self.focusedField = store.type
+                    .overlay {
+                        RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
+                            .stroke(store.inputState.borderColor)
+                    }
+                    .simultaneousGesture(TapGesture().onEnded {
+                        self.focusedField = store.type
+                    })
             }
             .onChange(of: focusedField) { newVal in
                 let state: InputState = (newVal != .none) ? .focus : .unfocus
