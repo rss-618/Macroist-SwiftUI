@@ -15,16 +15,16 @@ extension FoodSheetCoordinator {
         
         @ObservableState
         public enum State: Equatable {
-            case manualEntry(ManualEntry.State)
+            case mealEntry(MealEntry.State)
         }
         
         public enum Action {
-            case manualEntry(ManualEntry.Action)
+            case mealEntry(MealEntry.Action)
         }
         
         public var body: some ReducerOf<Self> {
-            Scope(state: \.manualEntry, action: \.manualEntry) {
-                ManualEntry()
+            Scope(state: \.mealEntry, action: \.mealEntry) {
+                MealEntry()
             }
         }
     }

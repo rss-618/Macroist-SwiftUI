@@ -10,8 +10,8 @@
 		E8184E6F2D0925D500A8ACDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */; };
 		E8184E712D0927AA00A8ACDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */; };
 		E8184E732D095A5200A8ACDD /* AddFoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8184E722D095A4C00A8ACDD /* AddFoodCardView.swift */; };
-		E848CF652BA1643600441247 /* ManualEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF642BA1643600441247 /* ManualEntryView.swift */; };
-		E848CF672BA1643C00441247 /* ManualEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF662BA1643C00441247 /* ManualEntry.swift */; };
+		E848CF652BA1643600441247 /* MealEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF642BA1643600441247 /* MealEntryView.swift */; };
+		E848CF672BA1643C00441247 /* MealEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF662BA1643C00441247 /* MealEntry.swift */; };
 		E848CF6A2BA16B7400441247 /* CardButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF692BA16B7400441247 /* CardButtonStyle.swift */; };
 		E848CF6D2BA2965700441247 /* RuntimeVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF6C2BA2965700441247 /* RuntimeVariables.swift */; };
 		E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF6F2BA2979D00441247 /* RuntimeVariablesKey.swift */; };
@@ -82,16 +82,16 @@
 		E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */; };
 		E89FE9512BA023D0004700B2 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9502BA023D0004700B2 /* Today.swift */; };
 		E89FE9532BA02862004700B2 /* GenericBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */; };
-		E8EC25002D059BDB00822B2F /* UpdateMealSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EC24FF2D059BD500822B2F /* UpdateMealSheet.swift */; };
-		E8EC25022D059BE600822B2F /* UpdateMealSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EC25012D059BDF00822B2F /* UpdateMealSheetView.swift */; };
+		E8FD5A932D0ABB6100AEB4F5 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FD5A922D0ABB4400AEB4F5 /* Text.swift */; };
+		E8FD5A952D0ABC5400AEB4F5 /* PsuedoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FD5A942D0ABC4F00AEB4F5 /* PsuedoInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8184E722D095A4C00A8ACDD /* AddFoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodCardView.swift; sourceTree = "<group>"; };
-		E848CF642BA1643600441247 /* ManualEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntryView.swift; sourceTree = "<group>"; };
-		E848CF662BA1643C00441247 /* ManualEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntry.swift; sourceTree = "<group>"; };
+		E848CF642BA1643600441247 /* MealEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntryView.swift; sourceTree = "<group>"; };
+		E848CF662BA1643C00441247 /* MealEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntry.swift; sourceTree = "<group>"; };
 		E848CF692BA16B7400441247 /* CardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonStyle.swift; sourceTree = "<group>"; };
 		E848CF6C2BA2965700441247 /* RuntimeVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVariables.swift; sourceTree = "<group>"; };
 		E848CF6F2BA2979D00441247 /* RuntimeVariablesKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVariablesKey.swift; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 		E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealHomeView.swift; sourceTree = "<group>"; };
 		E89FE9502BA023D0004700B2 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericBackgroundView.swift; sourceTree = "<group>"; };
-		E8EC24FF2D059BD500822B2F /* UpdateMealSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMealSheet.swift; sourceTree = "<group>"; };
-		E8EC25012D059BDF00822B2F /* UpdateMealSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMealSheetView.swift; sourceTree = "<group>"; };
+		E8FD5A922D0ABB4400AEB4F5 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		E8FD5A942D0ABC4F00AEB4F5 /* PsuedoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsuedoInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				E848CF852BA541D400441247 /* IngredientEntryCard */,
-				E848CF642BA1643600441247 /* ManualEntryView.swift */,
-				E848CF662BA1643C00441247 /* ManualEntry.swift */,
+				E848CF642BA1643600441247 /* MealEntryView.swift */,
+				E848CF662BA1643C00441247 /* MealEntry.swift */,
 			);
 			path = ManualEntry;
 			sourceTree = "<group>";
@@ -304,6 +304,7 @@
 		E89FE8CE2B9BC99E004700B2 /* Styleguide */ = {
 			isa = PBXGroup;
 			children = (
+				E8FD5A942D0ABC4F00AEB4F5 /* PsuedoInputView.swift */,
 				E848CF992BAEA3D700441247 /* CustomTabBar */,
 				E848CF682BA16B6800441247 /* ButtonStyles */,
 				E89FE9442BA0178C004700B2 /* CustomViews */,
@@ -337,7 +338,6 @@
 		E89FE8D12B9BC9C1004700B2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				E8EC24FE2D059BCE00822B2F /* UpdateFood */,
 				E89FE94B2BA02329004700B2 /* AddFood */,
 				E89FE93B2BA00E57004700B2 /* History */,
 				E89FE93A2BA00E50004700B2 /* Settings */,
@@ -352,6 +352,7 @@
 		E89FE8D22B9BC9EA004700B2 /* Keys */ = {
 			isa = PBXGroup;
 			children = (
+				E8FD5A922D0ABB4400AEB4F5 /* Text.swift */,
 				E89FE8EE2B9BD3F8004700B2 /* Keys.swift */,
 				E89FE8F02B9BD413004700B2 /* Sizing.swift */,
 				E89FE9292B9E5783004700B2 /* Percentage.swift */,
@@ -514,15 +515,6 @@
 			path = AddFood;
 			sourceTree = "<group>";
 		};
-		E8EC24FE2D059BCE00822B2F /* UpdateFood */ = {
-			isa = PBXGroup;
-			children = (
-				E8EC25012D059BDF00822B2F /* UpdateMealSheetView.swift */,
-				E8EC24FF2D059BD500822B2F /* UpdateMealSheet.swift */,
-			);
-			path = UpdateFood;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -626,7 +618,7 @@
 				E89FE9382BA00E02004700B2 /* Tab.swift in Sources */,
 				E848CF872BA541EC00441247 /* IngredientEntryCard.swift in Sources */,
 				E89FE9022B9BE537004700B2 /* Colors.swift in Sources */,
-				E848CF652BA1643600441247 /* ManualEntryView.swift in Sources */,
+				E848CF652BA1643600441247 /* MealEntryView.swift in Sources */,
 				E89FE8FB2B9BDE00004700B2 /* FoodPopoverPath.swift in Sources */,
 				E848CFA52BB3DFFE00441247 /* Registration.swift in Sources */,
 				E89FE8D92B9BCAAA004700B2 /* FoodSheetCoordinator.swift in Sources */,
@@ -643,7 +635,8 @@
 				E89FE9412BA00EAB004700B2 /* TodayView.swift in Sources */,
 				E848CF772BA2A59500441247 /* Settings.swift in Sources */,
 				E89FE9092B9C00D3004700B2 /* ApiClient.swift in Sources */,
-				E848CF672BA1643C00441247 /* ManualEntry.swift in Sources */,
+				E8FD5A952D0ABC5400AEB4F5 /* PsuedoInputView.swift in Sources */,
+				E848CF672BA1643C00441247 /* MealEntry.swift in Sources */,
 				E848CF6A2BA16B7400441247 /* CardButtonStyle.swift in Sources */,
 				E848CF802BA40F0300441247 /* Ext_Date.swift in Sources */,
 				E89FE8F92B9BDDE7004700B2 /* FoodSheetCoordinatorView.swift in Sources */,
@@ -655,12 +648,11 @@
 				E89FE9072B9C00AC004700B2 /* ApiClientKey.swift in Sources */,
 				E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */,
 				E848CF792BA3F32600441247 /* History.swift in Sources */,
-				E8EC25002D059BDB00822B2F /* UpdateMealSheet.swift in Sources */,
 				E8184E732D095A5200A8ACDD /* AddFoodCardView.swift in Sources */,
 				E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */,
 				E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */,
 				E89FE9042B9BF35A004700B2 /* InputState.swift in Sources */,
-				E8EC25022D059BE600822B2F /* UpdateMealSheetView.swift in Sources */,
+				E8FD5A932D0ABB6100AEB4F5 /* Text.swift in Sources */,
 				E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */,
 				E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */,
 				E89FE8EF2B9BD3F8004700B2 /* Keys.swift in Sources */,

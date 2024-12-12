@@ -17,7 +17,7 @@ public struct Today {
     @ObservableState
     public struct State: Equatable {
         public var foodPopover: FoodSheetCoordinator.State = .init()
-        public var updateMeal: UpdateMealSheet.State?
+        public var updateMeal: MealEntry.State?
         
         public var isAddFoodShowing = false
         public var areMealsLoading = true
@@ -58,7 +58,7 @@ public struct Today {
         case loadMeals
         case loadMealsResponse([MacroMeal])
         case error(Error)
-        case updateMeal(UpdateMealSheet.Action)
+        case updateMeal(MealEntry.Action)
         case foodPopover(FoodSheetCoordinator.Action)
         case showFoodPopover
     }
@@ -75,7 +75,7 @@ public struct Today {
             switch action {
             case .selectMeal(let meal):
                 // Present Sheet
-                state.updateMeal = .init(meal: meal)
+                state.updateMeal = .init(variant: .edit, meal: meal)
             case .deleteMeal(let uuid):
                 state.pendingDelete(uuid)
                 return .run { send in
@@ -96,7 +96,7 @@ public struct Today {
             case .showFoodPopover:
                 state.foodPopover = .init()
                 state.isAddFoodShowing = true
-            case .foodPopover(.path(.element(_, .manualEntry(.saved)))):
+            case .foodPopover(.path(.element(_, .mealEntry(.saved)))):
                 state.isAddFoodShowing = false
                 return .send(.loadMeals)
             case .loadMeals:
@@ -121,7 +121,7 @@ public struct Today {
             return .none
         }
         .ifLet(\.updateMeal, action: \.updateMeal) {
-            UpdateMealSheet()
+            MealEntry()
         }
     }
 }

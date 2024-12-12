@@ -9,25 +9,42 @@ import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-public struct ManualEntry {
+public struct MealEntry {
     
     @Dependency(\.apiClient) var apiClient
     
     public enum Variant: Equatable {
         case new
-        case edit(MealEdit)
-    }
-    
-    public struct MealEdit: Equatable {
-        var isReadOnly = true
-        var meal: MacroMeal
+        case edit
+        
+        public var title: String {
+            switch self {
+            case .new:
+                "Manual Entry"
+            case .edit:
+                "Meal"
+            }
+        }
     }
     
     @ObservableState
-    public struct State: Equatable {
+    public struct State: Equatable, Identifiable {
+        public let id: UUID
         var variant: Variant
+        var isEditing: Bool
         var mealNameInput: InputField.State = .init(placeholder: "Meal Name")
-        var ingredientCards: IdentifiedArrayOf<IngredientEntryCard.State> = [.init(variant: .edit)]
+        var ingredientCards: IdentifiedArrayOf<IngredientEntryCard.State>
+        
+        public init(variant: Variant, meal: MacroMeal = .init(id: UUID())) {
+            self.variant = variant
+            self.id = meal.id
+            
+            let isEditing = variant == .new
+            self.isEditing = isEditing
+            let ingredientVariant: IngredientEntryCard.Variant = isEditing ? .edit : .read
+            self.ingredientCards = .init(uniqueElements: meal.ingredients.compactMap { .init(variant: ingredientVariant,
+                                                                                             ingredient: $0) })
+        }
         
         public mutating func getIngredients() throws -> [Ingredient] {
             var ingredients: [Ingredient] = .init()
@@ -39,10 +56,12 @@ public struct ManualEntry {
     }
     
     public enum Action: Equatable {
+        case toggleEditing
         case mealNameInput(InputField.Action)
         case ingredientCards(IdentifiedActionOf<IngredientEntryCard>)
         case addIngredient
         case savePressed
+        case updatePressed
         case saved
         case error
     }
@@ -55,13 +74,16 @@ public struct ManualEntry {
         
         Reduce { state, action in
             switch action {
+            case .toggleEditing:
+                state.isEditing.toggle()
             case .addIngredient:
                 state.ingredientCards.append(.init(variant: .edit))
             case .savePressed:
                 do {
                     // Attempt to build meal
-                    let meal = try MacroMeal(mealName: state.mealNameInput.text,
-                                              ingredients: state.getIngredients())
+                    let meal = try MacroMeal(id: state.id,
+                                             mealName: state.mealNameInput.text,
+                                             ingredients: state.getIngredients())
                     // Build is successful
                     return .run { send in
                         do {

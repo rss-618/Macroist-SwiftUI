@@ -85,7 +85,7 @@ public struct InputFieldView: View {
                         RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
                             .stroke(store.inputState.borderColor)
                     }
-                    .simultaneousGesture(TapGesture().onEnded {
+                    .gesture(TapGesture().onEnded {
                         self.focusedField = store.type
                     })
             }

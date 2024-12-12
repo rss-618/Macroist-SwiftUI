@@ -30,8 +30,8 @@ public struct FoodSheetCoordinator {
         
         Reduce { state, action in
             switch action {
-            case .home(.manualEntry):
-                state.path.append(.manualEntry(.init(variant: .new)))
+            case .home(.mealEntry):
+                state.path.append(.mealEntry(.init(variant: .new)))
             default:
                 break
             }

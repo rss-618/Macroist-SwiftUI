@@ -16,7 +16,7 @@ public struct Ingredient: Codable, Equatable, Hashable {
     public var carbs: CGFloat
     public var fat: CGFloat
     
-    public init(id: UUID = .init(),
+    public init(id: UUID,
                 name: String = .init(),
                 calories: CGFloat = .zero,
                 protein: CGFloat = .zero,

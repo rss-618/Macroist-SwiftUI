@@ -17,9 +17,9 @@ public struct AddMealHomeView: View {
         WithPerceptionTracking {
             ScrollView {
                 LazyVGrid(columns: Keys.Column.flexible2, spacing: Keys.Padding.px16) {
-                    // Manual Entry Button
+                    // Meal Entry Button
                     AddFoodCardView(text: "Manual Entry", systemImage: Keys.SystemIcon.PENCIL_SLASH) {
-                        store.send(.manualEntry)
+                        store.send(.mealEntry)
                     }
                 }
                 .padding(.horizontal, Keys.Padding.px16)

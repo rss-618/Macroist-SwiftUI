@@ -27,9 +27,9 @@ public struct MacroMeal: Equatable, Hashable, Codable {
     public private(set) var carbs: CGFloat = .zero
     public private(set) var fat: CGFloat = .zero
     
-    public init(id: UUID = .init(),
-                mealName: String,
-                ingredients: [Ingredient] = [.init()]) {
+    public init(id: UUID,
+                mealName: String = .init(),
+                ingredients: [Ingredient] = [.init(id: UUID())]) {
         self.id = id
         self.mealName = mealName
         self.ingredients = ingredients

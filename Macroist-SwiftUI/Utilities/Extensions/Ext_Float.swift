@@ -16,4 +16,10 @@ extension CGFloat {
         String(format: "%.\(places)f", self)
     }
     
+    
+    /// Gets a string representation of a CGFloat that is not zero, If zero it will return empty string
+    public var nonZeroString: String {
+        self == 0 ? .init() : self.description
+    }
+    
 }

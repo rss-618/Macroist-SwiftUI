@@ -55,7 +55,10 @@ public struct TodayView: View {
         }
         .sheet(item: $store.updateMeal) { _ in
             IfLetStore(store.scope(state: \.updateMeal, action: \.updateMeal)) { store in
-                UpdateMealSheetView(store: store)
+                // Included the navigation view to be able to use `.navigationTitle()`
+                NavigationView {
+                    MealEntryView(store: store)
+                }
             }
         }
         .task {

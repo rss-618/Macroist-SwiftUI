@@ -13,12 +13,13 @@ public struct IngredientEntryCard {
     
     public enum Variant: Equatable {
         case read
-        case edit    }
+        case edit
+    }
     
     @ObservableState
     public struct State: Equatable, Identifiable {
         
-        public var id = UUID()
+        public var id: UUID
         
         var variant: Variant
         var name: InputField.State = .init(placeholder: "Ingredient Name (Optional)")
@@ -26,6 +27,16 @@ public struct IngredientEntryCard {
         var protein: InputField.State = .init(placeholder: "Protein (Optional)")
         var carbs: InputField.State = .init(placeholder: "Carbs (Optional)")
         var fat: InputField.State = .init(placeholder: "Fat (Optional)")
+        
+        public init(variant: Variant, ingredient: Ingredient = .init(id: UUID())) {
+            self.variant = variant
+            self.id = ingredient.id
+            self.name.text = ingredient.name
+            self.calories.text = ingredient.calories.nonZeroString
+            self.protein.text = ingredient.protein.nonZeroString
+            self.carbs.text = ingredient.carbs.nonZeroString
+            self.fat.text = ingredient.fat.nonZeroString
+        }
         
         public var hasError: Bool {
             name.inputState == .error
@@ -72,7 +83,8 @@ public struct IngredientEntryCard {
                 throw AppError.technicalError
             }
             
-            return Ingredient(name: name,
+            return Ingredient(id: id,
+                              name: name,
                               calories: calories,
                               protein: protein,
                               carbs: carbs,
