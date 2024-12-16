@@ -83,7 +83,6 @@
 		E89FE9512BA023D0004700B2 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9502BA023D0004700B2 /* Today.swift */; };
 		E89FE9532BA02862004700B2 /* GenericBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */; };
 		E8F10DDE2D0D4165007014C6 /* AdaptiveSheet in Frameworks */ = {isa = PBXBuildFile; productRef = E8F10DDD2D0D4165007014C6 /* AdaptiveSheet */; };
-		E8F10DE12D0D445D007014C6 /* AdaptiveSheet in Frameworks */ = {isa = PBXBuildFile; productRef = E8F10DE02D0D445D007014C6 /* AdaptiveSheet */; };
 		E8FD5A932D0ABB6100AEB4F5 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FD5A922D0ABB4400AEB4F5 /* Text.swift */; };
 		E8FD5A952D0ABC5400AEB4F5 /* PsuedoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FD5A942D0ABC4F00AEB4F5 /* PsuedoInputView.swift */; };
 /* End PBXBuildFile section */
@@ -164,7 +163,6 @@
 			files = (
 				E89FE8E52B9BCC42004700B2 /* FirebaseAnalyticsSwift in Frameworks */,
 				E89FE90D2B9C08F4004700B2 /* FirebaseAuth in Frameworks */,
-				E8F10DE12D0D445D007014C6 /* AdaptiveSheet in Frameworks */,
 				E89FE9192B9C08F4004700B2 /* FirebasePerformance in Frameworks */,
 				E89FE8E12B9BCC42004700B2 /* FirebaseAnalytics in Frameworks */,
 				E89FE9152B9C08F4004700B2 /* FirebaseFirestore in Frameworks */,
@@ -549,7 +547,6 @@
 				E89FE9162B9C08F4004700B2 /* FirebaseFirestoreSwift */,
 				E89FE9182B9C08F4004700B2 /* FirebasePerformance */,
 				E8F10DDD2D0D4165007014C6 /* AdaptiveSheet */,
-				E8F10DE02D0D445D007014C6 /* AdaptiveSheet */,
 			);
 			productName = "Macroist-SwiftUI";
 			productReference = E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */;
@@ -582,7 +579,6 @@
 			packageReferences = (
 				E89FE8DA2B9BCB6A004700B2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				E89FE8DF2B9BCC42004700B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				E8F10DDF2D0D445D007014C6 /* XCRemoteSwiftPackageReference "AdaptiveSheet" */,
 			);
 			productRefGroup = E89FE8BE2B9BC97D004700B2 /* Products */;
 			projectDirPath = "";
@@ -819,7 +815,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rss618.macroist-tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rss618.macroist-tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -852,7 +848,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rss618.macroist-tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rss618.macroist-tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -902,14 +898,6 @@
 			requirement = {
 				kind = exactVersion;
 				version = 10.22.1;
-			};
-		};
-		E8F10DDF2D0D445D007014C6 /* XCRemoteSwiftPackageReference "AdaptiveSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rss-618/AdaptiveSheet";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -977,11 +965,6 @@
 		};
 		E8F10DDD2D0D4165007014C6 /* AdaptiveSheet */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = AdaptiveSheet;
-		};
-		E8F10DE02D0D445D007014C6 /* AdaptiveSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E8F10DDF2D0D445D007014C6 /* XCRemoteSwiftPackageReference "AdaptiveSheet" */;
 			productName = AdaptiveSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
