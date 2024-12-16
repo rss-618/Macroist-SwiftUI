@@ -1,6 +1,6 @@
 
 ### Firebase ###
-Macroist-SwiftUI/GoogleService-Info.plist
+**/GoogleService-Info.plist
 .idea
 **/node_modules/*
 **/.firebaserc
