@@ -82,7 +82,6 @@
 		E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE94E2BA02360004700B2 /* AddMealHomeView.swift */; };
 		E89FE9512BA023D0004700B2 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9502BA023D0004700B2 /* Today.swift */; };
 		E89FE9532BA02862004700B2 /* GenericBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9522BA02862004700B2 /* GenericBackgroundView.swift */; };
-		E8F10DDE2D0D4165007014C6 /* AdaptiveSheet in Frameworks */ = {isa = PBXBuildFile; productRef = E8F10DDD2D0D4165007014C6 /* AdaptiveSheet */; };
 		E8FD5A932D0ABB6100AEB4F5 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FD5A922D0ABB4400AEB4F5 /* Text.swift */; };
 		E8FD5A952D0ABC5400AEB4F5 /* PsuedoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FD5A942D0ABC4F00AEB4F5 /* PsuedoInputView.swift */; };
 /* End PBXBuildFile section */
@@ -166,7 +165,6 @@
 				E89FE9192B9C08F4004700B2 /* FirebasePerformance in Frameworks */,
 				E89FE8E12B9BCC42004700B2 /* FirebaseAnalytics in Frameworks */,
 				E89FE9152B9C08F4004700B2 /* FirebaseFirestore in Frameworks */,
-				E8F10DDE2D0D4165007014C6 /* AdaptiveSheet in Frameworks */,
 				E89FE9132B9C08F4004700B2 /* FirebaseDatabaseSwift in Frameworks */,
 				E89FE9172B9C08F4004700B2 /* FirebaseFirestoreSwift in Frameworks */,
 				E89FE90F2B9C08F4004700B2 /* FirebaseCrashlytics in Frameworks */,
@@ -546,7 +544,6 @@
 				E89FE9142B9C08F4004700B2 /* FirebaseFirestore */,
 				E89FE9162B9C08F4004700B2 /* FirebaseFirestoreSwift */,
 				E89FE9182B9C08F4004700B2 /* FirebasePerformance */,
-				E8F10DDD2D0D4165007014C6 /* AdaptiveSheet */,
 			);
 			productName = "Macroist-SwiftUI";
 			productReference = E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */;
@@ -962,10 +959,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E89FE8DF2B9BCC42004700B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
-		};
-		E8F10DDD2D0D4165007014C6 /* AdaptiveSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AdaptiveSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
