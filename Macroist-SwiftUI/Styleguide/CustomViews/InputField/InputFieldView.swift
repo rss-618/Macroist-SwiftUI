@@ -12,11 +12,9 @@ public struct InputFieldView: View {
     
     @Perception.Bindable var store: StoreOf<InputField>
     @FocusState var focusedField: InputField.Field?
-    @Dependency(\.fireAndForget) var fire
     
     public var body: some View {
         WithPerceptionTracking {
-            // TODO: Degross all of this bloat in the view body
             HStack(spacing: .zero) {
                 Group {
                     if store.isSecured {
