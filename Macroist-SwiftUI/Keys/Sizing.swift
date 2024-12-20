@@ -10,6 +10,7 @@ import Foundation
 extension Keys {
     
     public struct Padding {
+        public static let px1: CGFloat = 1
         public static let px2: CGFloat = 2
         public static let px8: CGFloat = 8
         public static let px12: CGFloat = 12
@@ -21,6 +22,7 @@ extension Keys {
     }
     
     public struct Height {
+        public static let px20: CGFloat = 20
         public static let px44: CGFloat = 44
         public static let px48: CGFloat = 48
         public static let px52: CGFloat = 52
@@ -29,6 +31,7 @@ extension Keys {
     }
     
     public struct Width {
+        public static let px20: CGFloat = 20
         public static let px48: CGFloat = 48
         public static let px52: CGFloat = 52
         public static let px100: CGFloat = 100
@@ -40,6 +43,11 @@ extension Keys {
     
     public struct Offset {
         public static let px2: CGFloat = 2
+    }
+    
+    public struct Scale {
+        public static let pct95: CGFloat = 0.95
+        public static let pct100: CGFloat = 1
     }
     
 }

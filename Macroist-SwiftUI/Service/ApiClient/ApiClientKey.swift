@@ -9,9 +9,9 @@ import ComposableArchitecture
 import Foundation
 
 private enum ApiClientKey: DependencyKey {
-  static let liveValue = ApiClient.liveValue
+    static let liveValue = ApiClient.liveValue
 }
 
-extension ApiClient: TestDependencyKey {
-  static let testValue = ApiClient.unimplemented
+extension ApiClientKey: TestDependencyKey {
+    static let testValue = ApiClient.testValue
 }

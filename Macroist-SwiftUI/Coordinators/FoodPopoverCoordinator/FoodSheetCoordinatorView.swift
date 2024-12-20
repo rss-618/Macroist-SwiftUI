@@ -8,9 +8,9 @@
 import ComposableArchitecture
 import SwiftUI
 
-public struct FoodPopoverCoordinatorView: View {
+public struct FoodSheetCoordinatorView: View {
     
-    @Perception.Bindable var store: StoreOf<FoodPopoverCoordinator>
+    @Perception.Bindable var store: StoreOf<FoodSheetCoordinator>
 
     public var body: some View {
         WithPerceptionTracking {
@@ -21,9 +21,9 @@ public struct FoodPopoverCoordinatorView: View {
                 AddMealHomeView(store: store.scope(state: \.home, action: \.home))
             } destination: { store in
                 switch store.state {
-                case .manualEntry:
-                    if let manualEntryStore = store.scope(state: \.manualEntry, action: \.manualEntry) {
-                        ManualEntryView(store: manualEntryStore)
+                case .mealEntry:
+                    if let mealEntryStore = store.scope(state: \.mealEntry, action: \.mealEntry) {
+                        MealEntryView(store: mealEntryStore)
                     }
                 }
             }

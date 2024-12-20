@@ -19,7 +19,7 @@ public struct AddMealHome {
     }
     
     public enum Action: Equatable {
-        case manualEntry // Parent Call
+        case mealEntry // Parent Call
     }
     
     public var body: some ReducerOf<Self> {

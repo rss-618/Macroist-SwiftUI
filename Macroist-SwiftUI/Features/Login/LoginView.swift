@@ -105,7 +105,7 @@ public struct LoginView: View {
             }
             .task {
                 // TODO: Make an additional view other than login for this check logic to avoid flashing view
-                await store.send(.onAppear).finish()
+                store.send(.onAppear)
             }
         }
     }

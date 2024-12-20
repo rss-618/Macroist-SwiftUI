@@ -10,5 +10,6 @@ import Foundation
 extension Keys {
     public struct ID {
         public static let DB = "meals"
+        public static let ID = "id"
     }
 }

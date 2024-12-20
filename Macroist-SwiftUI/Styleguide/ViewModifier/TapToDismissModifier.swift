@@ -11,7 +11,7 @@ public struct TapToDismissModifier: ViewModifier {
     
     public func body(content: Content) -> some View {
         content
-            .onTapGesture {
+            .onTapGesture(coordinateSpace: .global) { _ in
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
                                                 to: nil,
                                                 from: nil,

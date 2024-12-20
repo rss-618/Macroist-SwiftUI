@@ -18,6 +18,9 @@ public struct MacroMeal: Equatable, Hashable, Codable {
             calculateFields(ingredients)
         }
     }
+    public var dateKey: DateEntryKey {
+        .init(Date(timeIntervalSince1970: Double(timeStamp.seconds)))
+    }
     
     // Computed Values
     public private(set) var id: UUID
@@ -27,10 +30,12 @@ public struct MacroMeal: Equatable, Hashable, Codable {
     public private(set) var carbs: CGFloat = .zero
     public private(set) var fat: CGFloat = .zero
     
-    public init(id: UUID = .init(),
-                mealName: String,
-                ingredients: [Ingredient] = [.init()]) {
+    public init(id: UUID,
+                dateKey: DateEntryKey = .init(),
+                mealName: String = .init(),
+                ingredients: [Ingredient] = [.init(id: UUID())]) {
         self.id = id
+        self.timeStamp = Timestamp(date: dateKey.date)
         self.mealName = mealName
         self.ingredients = ingredients
         self.calculateFields(ingredients)

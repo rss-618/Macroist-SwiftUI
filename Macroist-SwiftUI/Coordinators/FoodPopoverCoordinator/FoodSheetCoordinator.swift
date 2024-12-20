@@ -9,12 +9,17 @@ import ComposableArchitecture
 import Foundation
 
 @Reducer
-public struct FoodPopoverCoordinator {
+public struct FoodSheetCoordinator {
         
     @ObservableState
-    public struct State: Equatable {
-        public var path = StackState<Path.State>()
-        public var home: AddMealHome.State = .init()
+    public struct State: Equatable, Identifiable {
+        public var id: UUID
+        var path = StackState<Path.State>()
+        var home: AddMealHome.State = .init()
+        
+        public init(_ id: UUID = .init()) {
+            self.id = id
+        }
     }
     
     public enum Action {
@@ -30,8 +35,8 @@ public struct FoodPopoverCoordinator {
         
         Reduce { state, action in
             switch action {
-            case .home(.manualEntry):
-                state.path.append(.manualEntry(.init()))
+            case .home(.mealEntry):
+                state.path.append(.mealEntry(.init(variant: .new)))
             default:
                 break
             }

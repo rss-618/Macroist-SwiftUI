@@ -13,33 +13,30 @@ public struct AddMealHomeView: View {
     @Environment(\.dismiss) var dismiss
     @Perception.Bindable var store: StoreOf<AddMealHome>
     
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-    ]
-    
     public var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: Keys.Padding.px16) {
-                // Manual Entry Button
-                Button {
-                    store.send(.manualEntry)
-                } label: {
-                    Label("Manual Entry", systemImage: Keys.SystemIcon.PENCIL_SLASH)
+        WithPerceptionTracking {
+            ScrollView {
+                LazyVGrid(columns: Keys.Column.flexible2, spacing: Keys.Padding.px16) {
+                    // Meal Entry Button
+                    AddFoodCardView(text: "Manual Entry", systemImage: Keys.SystemIcon.PENCIL_SLASH) {
+                        store.send(.mealEntry)
+                    }
                 }
-                .buttonStyle(CardButtonStyle())
-                .frame(idealHeight: Keys.Height.px100)
+                .padding(.horizontal, Keys.Padding.px16)
+                .padding(.vertical, Keys.Padding.px32)
             }
-            .padding(.horizontal, Keys.Padding.px16)
-            .padding(.vertical, Keys.Padding.px32)
-        }
-        .navigationTitle("Add Meal")
-        .toolbar {
-            Button("Cancel") {
-                dismiss()
+            .navigationTitle("Add Meal")
+            .toolbar {
+                dismissButton
             }
-            .padding()
         }
+    }
+    
+    public var dismissButton : some View {
+        Button("Cancel") {
+            dismiss()
+        }
+        .padding()
     }
     
     public init(store: StoreOf<AddMealHome>) {

@@ -16,15 +16,18 @@ public struct HomeView: View {
     
     public var body: some View {
         WithPerceptionTracking {
-            TabView(selection: $store.currentTab) {
-                HistoryView(store: store.scope(state: \.historyState, action: \.history))
-                    .tag(Tab.history)
-                
-                TodayCoordinatorView(store: store.scope(state: \.todayState, action: \.today))
-                    .tag(Tab.today)
-                
-                SettingsView(store: store.scope(state: \.settingsState, action: \.settings))
-                    .tag(Tab.settings)
+            Section {
+                switch(store.currentTab) {
+                case .history:
+                    HistoryView(store: store.scope(state: \.historyState, action: \.history))
+                        .tag(Tab.history)
+                case .today:
+                    TodayView(store: store.scope(state: \.todayState, action: \.today))
+                        .tag(Tab.today)
+                case .settings:
+                    SettingsView(store: store.scope(state: \.settingsState, action: \.settings))
+                        .tag(Tab.settings)
+                }
             }
             .customTabBar($store.currentTab)
         }

@@ -15,83 +15,98 @@ public struct InputFieldView: View {
     
     public var body: some View {
         WithPerceptionTracking {
-            // TODO: Degross all of this bloat in the view body
             HStack(spacing: .zero) {
                 Group {
                     if store.isSecured {
                         SecureField(text: $store.text) {
                             Text(store.placeholder)
+                                .foregroundStyle(Color.black.opacity(Keys.Opactiy.pct33))
                         }
                         .focused($focusedField, equals: .secure)
                     } else {
                         TextField(text: $store.text) {
                             Text(store.placeholder)
+                                .foregroundStyle(Color.black.opacity(Keys.Opactiy.pct33))
                         }
                         .focused($focusedField, equals: .insecure)
                     }
                 }
                 .textInputAutocapitalization(.never)
                 .font(.callout)
+                .foregroundStyle(Color.black.opacity(Keys.Opactiy.pct90))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.vertical, Keys.Padding.px2)
                 .padding(.horizontal, Keys.Padding.px12)
                 // Clear Input Button
                 if store.inputState == .focus && !store.text.isEmpty {
                     // Clear input button
-                    Button {
-                        store.send(.clearInput)
-                    } label: {
-                        Image(systemName: Keys.SystemIcon.X_CIRCLE)
-                            .resizable()
-                            .scaledToFit()
-                            .font(Font.body.weight(.light))
-                            .foregroundStyle(Color.black)
-                            .frame(maxHeight: .infinity)
-                            .padding(.trailing, Keys.Padding.px12)
-                            .padding(.vertical, Keys.Padding.px13)
-                    }
+                    clearInputButton
                 }
                 // Toggle Security Button (secure only)
                 if store.type == .secure {
-                    Button {
-                        // Toggle security value
-                        let isSecured = !store.isSecured
-                        if focusedField != .none {
-                            // Update focus if has focus
-                            focusedField = isSecured ? .secure : .insecure
-                        }
-                        store.send(.binding(.set(\.isSecured, isSecured)))
-                    } label: {
-                        Image(systemName: store.isSecured
-                              ? Keys.SystemIcon.EYE_CICLE
-                              : Keys.SystemIcon.EYE_SLASH_CIRCLE)
-                            .resizable()
-                            .scaledToFit()
-                            .font(Font.body.weight(.light))
-                            .foregroundStyle(Color.black)
-                            .frame(maxHeight: .infinity)
-                            .padding(.trailing, Keys.Padding.px12)
-                            .padding(.vertical, Keys.Padding.px13)
-                    }
+                    securityToggle
                 }
             }
+            .background {
+                background
+            }
+            .onAppear {
+                // TODO: Figure out better way to unfocus onDisappear, changed it to onAppear because we had issues with store.send firing when the reducer is also removed
+                // This way may cause complications with autofocus type stuff need to double check
+                store.send(.updateInputState(.unfocus))
+            }
+            .onChange(of: focusedField) { newVal in
+                store.send(.updateInputState((newVal != .none) ? .focus : .unfocus))
+            }
+            .frame(maxWidth: .infinity, idealHeight: Keys.Height.px52)
+            .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+    
+    var background: some View {
+        RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
+            .fill(.white)
             .overlay {
                 RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
                     .stroke(store.inputState.borderColor)
             }
-            .background {
-                RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
-                    .fill(.white)
+    }
+    
+    var clearInputButton: some View {
+        Button {
+            store.send(.clearInput)
+        } label: {
+            Image(systemName: Keys.SystemIcon.X_CIRCLE)
+                .resizable()
+                .scaledToFit()
+                .font(Font.body.weight(.light))
+                .foregroundStyle(Color.black)
+                .frame(maxHeight: .infinity)
+                .padding(.trailing, Keys.Padding.px12)
+                .padding(.vertical, Keys.Padding.px13)
+        }
+    }
+    
+    var securityToggle: some View {
+        Button {
+            // Toggle security value
+            let isSecured = !store.isSecured
+            if focusedField != .none {
+                // Update focus if has focus
+                focusedField = isSecured ? .secure : .insecure
             }
-            .onTapGesture {
-                self.focusedField = store.type
-            }
-            .onChange(of: focusedField) { newVal in
-                let state: InputState = (newVal != .none) ? .focus : .unfocus
-                store.send(.updateInputState(state))
-            }
-            .frame(maxWidth: .infinity, idealHeight: Keys.Height.px52)
-            .fixedSize(horizontal: false, vertical: true)
+            store.send(.binding(.set(\.isSecured, isSecured)))
+        } label: {
+            Image(systemName: store.isSecured
+                  ? Keys.SystemIcon.EYE_CICLE
+                  : Keys.SystemIcon.EYE_SLASH_CIRCLE)
+                .resizable()
+                .scaledToFit()
+                .font(Font.body.weight(.light))
+                .foregroundStyle(Color.black)
+                .frame(maxHeight: .infinity)
+                .padding(.trailing, Keys.Padding.px12)
+                .padding(.vertical, Keys.Padding.px13)
         }
     }
     

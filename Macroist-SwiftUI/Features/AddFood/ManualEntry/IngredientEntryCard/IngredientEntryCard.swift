@@ -11,10 +11,32 @@ import SwiftUI
 @Reducer
 public struct IngredientEntryCard {
     
+    public enum Variant: Equatable {
+        case read
+        case edit
+    }
+    
     @ObservableState
     public struct State: Equatable, Identifiable {
         
-        public var id = UUID()
+        public var id: UUID
+        
+        var variant: Variant
+        var name: InputField.State = .init(placeholder: "Ingredient Name (Optional)")
+        var calories: InputField.State = .init(placeholder: "Calories")
+        var protein: InputField.State = .init(placeholder: "Protein (Optional)")
+        var carbs: InputField.State = .init(placeholder: "Carbs (Optional)")
+        var fat: InputField.State = .init(placeholder: "Fat (Optional)")
+        
+        public init(variant: Variant, ingredient: Ingredient = .init(id: UUID())) {
+            self.variant = variant
+            self.id = ingredient.id
+            self.name.text = ingredient.name
+            self.calories.text = ingredient.calories.nonZeroString
+            self.protein.text = ingredient.protein.nonZeroString
+            self.carbs.text = ingredient.carbs.nonZeroString
+            self.fat.text = ingredient.fat.nonZeroString
+        }
         
         public var hasError: Bool {
             name.inputState == .error
@@ -24,13 +46,51 @@ public struct IngredientEntryCard {
             || fat.inputState == .error
         }
         
-        var name: InputField.State = .init(placeholder: "Ingredient Name (Optional)")
-        var calories: InputField.State = .init(placeholder: "Calories")
-        var carbs: InputField.State = .init(placeholder: "Protein (Optional)")
-        var protein: InputField.State = .init(placeholder: "Carbs (Optional)")
-        var fat: InputField.State = .init(placeholder: "Fat (Optional)")
-        
-        public var ingredient: Ingredient?
+        public mutating func getIngredient() throws -> Ingredient {
+            let name: String = name.text.trimWhiteSpaceAndNewline()
+            var calories: CGFloat = .init()
+            var carbs: CGFloat = .init()
+            var protein: CGFloat = .init()
+            var fat: CGFloat = .init()
+            
+            // Calories
+            if !self.calories.text.trimWhiteSpaceAndNewline().isEmpty,
+               let val = self.calories.text.trimWhiteSpaceAndNewline().toCGFloat() {
+                calories = val
+            } else {
+                self.calories.inputState = .error
+            }
+            // Carbs
+            if let val = self.carbs.text.trimWhiteSpaceAndNewline().toCGFloat() {
+                carbs = val
+            } else {
+                self.carbs.inputState = .error
+            }
+            // Protein
+            if let val = self.protein.text.trimWhiteSpaceAndNewline().toCGFloat() {
+                protein = val
+            } else {
+                self.protein.inputState = .error
+            }
+            // Fat
+            if let val = self.fat.text.trimWhiteSpaceAndNewline().toCGFloat() {
+                fat = val
+            } else {
+                self.fat.inputState = .error
+            }
+            
+            guard !self.hasError else {
+                throw AppError.technicalError
+            }
+            
+            return Ingredient(id: id,
+                              name: name,
+                              calories: calories,
+                              protein: protein,
+                              carbs: carbs,
+                              fat: fat)
+            
+        }
     }
     
     public enum Action: Equatable {
@@ -39,8 +99,8 @@ public struct IngredientEntryCard {
         case carbs(InputField.Action)
         case protein(InputField.Action)
         case fat(InputField.Action)
-        
-        case process
+                
+        case remove
     }
     
     public var body: some ReducerOf<Self> {
@@ -60,53 +120,6 @@ public struct IngredientEntryCard {
             InputField()
         }
         
-        Reduce { state, action in
-            switch action {
-            case .process:
-                let name: String = state.name.text.trimWhiteSpaceAndNewline()
-                var calories: CGFloat = .init()
-                var carbs: CGFloat = .init()
-                var protein: CGFloat = .init()
-                var fat: CGFloat = .init()
-                
-                // Calories
-                if !state.calories.text.trimWhiteSpaceAndNewline().isEmpty,
-                   let val = state.calories.text.trimWhiteSpaceAndNewline().toCGFloat() {
-                    calories = val
-                } else {
-                    state.calories.inputState = .error
-                }
-                // Carbs
-                if let val = state.carbs.text.trimWhiteSpaceAndNewline().toCGFloat() {
-                    carbs = val
-                } else {
-                    state.carbs.inputState = .error
-                }
-                // Protein
-                if let val = state.protein.text.trimWhiteSpaceAndNewline().toCGFloat() {
-                    protein = val
-                } else {
-                    state.protein.inputState = .error
-                }
-                // Fat
-                if let val = state.fat.text.trimWhiteSpaceAndNewline().toCGFloat() {
-                    fat = val
-                } else {
-                    state.fat.inputState = .error
-                }
-                
-                if !state.hasError {
-                    state.ingredient = Ingredient(name: name,
-                                                  calories: calories,
-                                                  protein: protein,
-                                                  carbs: carbs,
-                                                  fat: fat)
-                }
-            default:
-                break
-            }
-            return .none
-        }
-        
+        EmptyReducer()
     }
 }
