@@ -12,9 +12,14 @@ import Foundation
 public struct FoodSheetCoordinator {
         
     @ObservableState
-    public struct State: Equatable {
+    public struct State: Equatable, Identifiable {
+        public var id: UUID
         var path = StackState<Path.State>()
         var home: AddMealHome.State = .init()
+        
+        public init(_ id: UUID = .init()) {
+            self.id = id
+        }
     }
     
     public enum Action {

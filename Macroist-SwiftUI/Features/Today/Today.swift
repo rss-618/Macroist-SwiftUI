@@ -16,10 +16,9 @@ public struct Today {
     
     @ObservableState
     public struct State: Equatable {
-        public var foodPopover: FoodSheetCoordinator.State = .init()
         public var updateMeal: MealEntry.State?
+        public var addFood: FoodSheetCoordinator.State?
         
-        public var isAddFoodShowing = false
         public var areMealsLoading = true
         public var hasError = false
         var _meals: [MacroMeal] = .init()
@@ -59,15 +58,11 @@ public struct Today {
         case loadMealsResponse([MacroMeal])
         case error(Error)
         case updateMeal(MealEntry.Action)
-        case foodPopover(FoodSheetCoordinator.Action)
+        case addFood(FoodSheetCoordinator.Action)
         case showFoodPopover
     }
     
     public var body: some ReducerOf<Self> {
-        
-        Scope(state: \.foodPopover, action: \.foodPopover) {
-            FoodSheetCoordinator()
-        }
 
         BindingReducer()
         
@@ -93,11 +88,14 @@ public struct Today {
             case .updateMeal(.saved):
                 // Dismiss Sheet
                 state.updateMeal = nil
+                // Update Meals
+                return .send(.loadMeals)
             case .showFoodPopover:
-                state.foodPopover = .init()
-                state.isAddFoodShowing = true
-            case .foodPopover(.path(.element(_, .mealEntry(.saved)))):
-                state.isAddFoodShowing = false
+                state.addFood = .init()
+            case .addFood(.path(.element(_, .mealEntry(.saved)))):
+                // Dismiss Sheet
+                state.addFood = nil
+                // Update Meals
                 return .send(.loadMeals)
             case .loadMeals:
                 state.areMealsLoading = true
@@ -122,6 +120,9 @@ public struct Today {
         }
         .ifLet(\.updateMeal, action: \.updateMeal) {
             MealEntry()
+        }
+        .ifLet(\.addFood, action: \.addFood) {
+            FoodSheetCoordinator()
         }
     }
 }

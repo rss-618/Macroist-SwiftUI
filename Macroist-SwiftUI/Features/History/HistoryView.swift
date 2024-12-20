@@ -18,7 +18,7 @@ public struct HistoryView: View {
                 // Content
                 VStack {
                     Text("History View")
-                    Text("Meals for \(DateUtil.getMonthYearEntryKey())")
+                    Text("Meals for \(DateEntryKey().value)")
                     if let meals = store.meals {
                         // TOOD: needs real UI
                         ForEach(meals, id: \.self) { food in

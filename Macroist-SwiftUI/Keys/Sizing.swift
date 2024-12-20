@@ -10,6 +10,7 @@ import Foundation
 extension Keys {
     
     public struct Padding {
+        public static let px1: CGFloat = 1
         public static let px2: CGFloat = 2
         public static let px8: CGFloat = 8
         public static let px12: CGFloat = 12

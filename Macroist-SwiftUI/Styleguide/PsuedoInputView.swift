@@ -28,6 +28,6 @@ public struct PsuedoInputView: View {
     
     var background: some View {
         RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
-            .fill(.gray)
+            .stroke(.gray, lineWidth: Keys.Padding.px1)
     }
 }

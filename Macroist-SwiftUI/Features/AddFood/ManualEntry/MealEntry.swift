@@ -29,29 +29,42 @@ public struct MealEntry {
     
     @ObservableState
     public struct State: Equatable, Identifiable {
-        public let id: UUID
-        var variant: Variant
+        public var id: UUID {
+            initialMeal.id
+        }
+        let variant: Variant
+        let initialMeal: MacroMeal
         var isEditing: Bool
-        var mealNameInput: InputField.State = .init(placeholder: "Meal Name")
+        var mealNameInput: InputField.State
         var ingredientCards: IdentifiedArrayOf<IngredientEntryCard.State>
         
         public init(variant: Variant, meal: MacroMeal = .init(id: UUID())) {
             self.variant = variant
-            self.id = meal.id
-            
+            self.initialMeal = meal
             let isEditing = variant == .new
-            self.isEditing = isEditing
             let ingredientVariant: IngredientEntryCard.Variant = isEditing ? .edit : .read
+            self.isEditing = isEditing
+            self.mealNameInput = .init(text: meal.mealName, placeholder: "Meal Name")
             self.ingredientCards = .init(uniqueElements: meal.ingredients.compactMap { .init(variant: ingredientVariant,
                                                                                              ingredient: $0) })
         }
         
-        public mutating func getIngredients() throws -> [Ingredient] {
+        public mutating func resetInputs() {
+            let ingredientVariant: IngredientEntryCard.Variant = isEditing ? .edit : .read
+            self.mealNameInput = .init(text: initialMeal.mealName, placeholder: "Meal Name")
+            self.ingredientCards = .init(uniqueElements: initialMeal.ingredients.compactMap { .init(variant: ingredientVariant,
+                                                                                                    ingredient: $0) })
+        }
+        
+        public mutating func getMeal() throws -> MacroMeal {
             var ingredients: [Ingredient] = .init()
             for index in ingredientCards.indices {
                 try ingredients.append(ingredientCards[index].getIngredient())
             }
-            return ingredients
+            return MacroMeal(id: initialMeal.id,
+                             dateKey: initialMeal.dateKey,
+                             mealName: mealNameInput.text,
+                             ingredients: ingredients)
         }
     }
     
@@ -75,28 +88,37 @@ public struct MealEntry {
         Reduce { state, action in
             switch action {
             case .toggleEditing:
+                if state.isEditing {
+                    state.resetInputs()
+                }
                 state.isEditing.toggle()
             case .addIngredient:
                 state.ingredientCards.append(.init(variant: .edit))
             case .savePressed:
-                do {
-                    // Attempt to build meal
-                    let meal = try MacroMeal(id: state.id,
-                                             mealName: state.mealNameInput.text,
-                                             ingredients: state.getIngredients())
-                    // Build is successful
-                    return .run { send in
-                        do {
-                            try await apiClient.addMeal(meal)
-                            await send(.saved)
-                        } catch {
-                            // API Error
-                            await send(.error)
-                        }
-                    }
-                } catch {
-                    // Parsing Error
+                guard let meal = try? state.getMeal() else {
                     return .send(.error)
+                }
+                return .run { send in
+                    do {
+                        try await apiClient.addMeal(meal)
+                        await send(.saved)
+                    } catch {
+                        // API Error
+                        await send(.error)
+                    }
+                }
+            case .updatePressed:
+                guard let meal = try? state.getMeal() else {
+                    return .send(.error)
+                }
+                return .run { send in
+                    do {
+                        try await apiClient.updateMeal(meal)
+                        await send(.saved)
+                    } catch {
+                        // API Error
+                        await send(.error)
+                    }
                 }
             case .saved:
                 print("saved it")

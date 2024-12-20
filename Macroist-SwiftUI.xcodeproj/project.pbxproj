@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8032F572D1549590079BB32 /* Ext_Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8032F562D1549530079BB32 /* Ext_Encodable.swift */; };
+		E8032F592D154F880079BB32 /* ApiClientDependancyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8032F582D154F820079BB32 /* ApiClientDependancyValues.swift */; };
+		E8032F5B2D1550000079BB32 /* MonthEntryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8032F5A2D154FF70079BB32 /* MonthEntryKey.swift */; };
 		E8184E6F2D0925D500A8ACDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */; };
 		E8184E712D0927AA00A8ACDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */; };
 		E8184E732D095A5200A8ACDD /* AddFoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8184E722D095A4C00A8ACDD /* AddFoodCardView.swift */; };
@@ -15,11 +18,10 @@
 		E848CF6A2BA16B7400441247 /* CardButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF692BA16B7400441247 /* CardButtonStyle.swift */; };
 		E848CF6D2BA2965700441247 /* RuntimeVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF6C2BA2965700441247 /* RuntimeVariables.swift */; };
 		E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF6F2BA2979D00441247 /* RuntimeVariablesKey.swift */; };
-		E848CF722BA297DD00441247 /* DependancyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF712BA297DD00441247 /* DependancyValues.swift */; };
+		E848CF722BA297DD00441247 /* RuntimeVariablesDependancyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF712BA297DD00441247 /* RuntimeVariablesDependancyValues.swift */; };
 		E848CF772BA2A59500441247 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF762BA2A59500441247 /* Settings.swift */; };
 		E848CF792BA3F32600441247 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF782BA3F32600441247 /* History.swift */; };
 		E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF7A2BA3FB9C00441247 /* Ids.swift */; };
-		E848CF7D2BA40E2F00441247 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF7C2BA40E2F00441247 /* DateUtil.swift */; };
 		E848CF802BA40F0300441247 /* Ext_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF7F2BA40F0300441247 /* Ext_Date.swift */; };
 		E848CF822BA53C1900441247 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF812BA53C1900441247 /* Ingredient.swift */; };
 		E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF832BA5405F00441247 /* IngredientEntryCardView.swift */; };
@@ -87,19 +89,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8032F562D1549530079BB32 /* Ext_Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Encodable.swift; sourceTree = "<group>"; };
+		E8032F582D154F820079BB32 /* ApiClientDependancyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientDependancyValues.swift; sourceTree = "<group>"; };
+		E8032F5A2D154FF70079BB32 /* MonthEntryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthEntryKey.swift; sourceTree = "<group>"; };
 		E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8184E722D095A4C00A8ACDD /* AddFoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodCardView.swift; sourceTree = "<group>"; };
+		E82DD1082D152808009B102E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E848CF642BA1643600441247 /* MealEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntryView.swift; sourceTree = "<group>"; };
 		E848CF662BA1643C00441247 /* MealEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntry.swift; sourceTree = "<group>"; };
 		E848CF692BA16B7400441247 /* CardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonStyle.swift; sourceTree = "<group>"; };
 		E848CF6C2BA2965700441247 /* RuntimeVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVariables.swift; sourceTree = "<group>"; };
 		E848CF6F2BA2979D00441247 /* RuntimeVariablesKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVariablesKey.swift; sourceTree = "<group>"; };
-		E848CF712BA297DD00441247 /* DependancyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependancyValues.swift; sourceTree = "<group>"; };
+		E848CF712BA297DD00441247 /* RuntimeVariablesDependancyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVariablesDependancyValues.swift; sourceTree = "<group>"; };
 		E848CF762BA2A59500441247 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E848CF782BA3F32600441247 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		E848CF7A2BA3FB9C00441247 /* Ids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ids.swift; sourceTree = "<group>"; };
-		E848CF7C2BA40E2F00441247 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		E848CF7F2BA40F0300441247 /* Ext_Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Date.swift; sourceTree = "<group>"; };
 		E848CF812BA53C1900441247 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		E848CF832BA5405F00441247 /* IngredientEntryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEntryCardView.swift; sourceTree = "<group>"; };
@@ -212,23 +217,15 @@
 			children = (
 				E848CF6C2BA2965700441247 /* RuntimeVariables.swift */,
 				E848CF6F2BA2979D00441247 /* RuntimeVariablesKey.swift */,
+				E848CF712BA297DD00441247 /* RuntimeVariablesDependancyValues.swift */,
 			);
 			path = RuntimeVariables;
-			sourceTree = "<group>";
-		};
-		E848CF732BA298FD00441247 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				E848CF712BA297DD00441247 /* DependancyValues.swift */,
-				E89FE9052B9C008D004700B2 /* ApiClient */,
-				E848CF6E2BA2966300441247 /* RuntimeVariables */,
-			);
-			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		E848CF7E2BA40EF700441247 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E8032F562D1549530079BB32 /* Ext_Encodable.swift */,
 				E848CF7F2BA40F0300441247 /* Ext_Date.swift */,
 				E848CF882BA5439100441247 /* Ext_String.swift */,
 				E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */,
@@ -289,6 +286,7 @@
 		E89FE8BF2B9BC97D004700B2 /* Macroist-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E82DD1082D152808009B102E /* Info.plist */,
 				E848CF6B2BA2954C00441247 /* App */,
 				E89FE91E2B9E313C004700B2 /* Service */,
 				E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */,
@@ -320,8 +318,7 @@
 			children = (
 				E848CF8A2BA57F8800441247 /* Errors */,
 				E848CF7E2BA40EF700441247 /* Extensions */,
-				E848CF732BA298FD00441247 /* Dependencies */,
-				E848CF7C2BA40E2F00441247 /* DateUtil.swift */,
+				E848CF6E2BA2966300441247 /* RuntimeVariables */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -424,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				E89FE9062B9C00AC004700B2 /* ApiClientKey.swift */,
+				E8032F582D154F820079BB32 /* ApiClientDependancyValues.swift */,
 				E89FE9082B9C00D3004700B2 /* ApiClient.swift */,
 			);
 			path = ApiClient;
@@ -432,7 +430,9 @@
 		E89FE91E2B9E313C004700B2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				E89FE9052B9C008D004700B2 /* ApiClient */,
 				E89FE8D02B9BC9B8004700B2 /* Models */,
+				E8032F5A2D154FF70079BB32 /* MonthEntryKey.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -576,6 +576,7 @@
 			packageReferences = (
 				E89FE8DA2B9BCB6A004700B2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				E89FE8DF2B9BCC42004700B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E82DD1052D113B65009B102E /* XCLocalSwiftPackageReference "../Toolbox" */,
 			);
 			productRefGroup = E89FE8BE2B9BC97D004700B2 /* Products */;
 			projectDirPath = "";
@@ -605,7 +606,6 @@
 			files = (
 				E89FE9262B9E4FEB004700B2 /* Ext_View.swift in Sources */,
 				E848CF9D2BAEA51400441247 /* CustomTabBarModifier.swift in Sources */,
-				E848CF7D2BA40E2F00441247 /* DateUtil.swift in Sources */,
 				E89FE9352B9E7001004700B2 /* Image.swift in Sources */,
 				E89FE9482BA01B5B004700B2 /* AlignModifier.swift in Sources */,
 				E848CF822BA53C1900441247 /* Ingredient.swift in Sources */,
@@ -640,7 +640,7 @@
 				E848CF6A2BA16B7400441247 /* CardButtonStyle.swift in Sources */,
 				E848CF802BA40F0300441247 /* Ext_Date.swift in Sources */,
 				E89FE8F92B9BDDE7004700B2 /* FoodSheetCoordinatorView.swift in Sources */,
-				E848CF722BA297DD00441247 /* DependancyValues.swift in Sources */,
+				E848CF722BA297DD00441247 /* RuntimeVariablesDependancyValues.swift in Sources */,
 				E89FE8ED2B9BD294004700B2 /* Login.swift in Sources */,
 				E89FE94A2BA01E8F004700B2 /* MacroMeal.swift in Sources */,
 				E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */,
@@ -652,6 +652,7 @@
 				E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */,
 				E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */,
 				E89FE9042B9BF35A004700B2 /* InputState.swift in Sources */,
+				E8032F592D154F880079BB32 /* ApiClientDependancyValues.swift in Sources */,
 				E8FD5A932D0ABB6100AEB4F5 /* Text.swift in Sources */,
 				E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */,
 				E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */,
@@ -662,8 +663,10 @@
 				E848CFA32BB3DFF200441247 /* RegistrationView.swift in Sources */,
 				E87CF4A12D09134100893CA2 /* PlainList.swift in Sources */,
 				E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */,
+				E8032F572D1549590079BB32 /* Ext_Encodable.swift in Sources */,
 				E89FE8EB2B9BD28E004700B2 /* LoginView.swift in Sources */,
 				E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */,
+				E8032F5B2D1550000079BB32 /* MonthEntryKey.swift in Sources */,
 				E89FE8D42B9BCA23004700B2 /* RootView.swift in Sources */,
 				E89FE92A2B9E5783004700B2 /* Percentage.swift in Sources */,
 			);
@@ -801,11 +804,11 @@
 				DEVELOPMENT_TEAM = XGJ29R7G4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Macroist-SwiftUI/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Macroist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -834,11 +837,11 @@
 				DEVELOPMENT_TEAM = XGJ29R7G4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Macroist-SwiftUI/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Macroist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -879,6 +882,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E82DD1052D113B65009B102E /* XCLocalSwiftPackageReference "../Toolbox" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Toolbox;
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		E89FE8DA2B9BCB6A004700B2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {

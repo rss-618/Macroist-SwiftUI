@@ -50,8 +50,10 @@ public struct TodayView: View {
         .overlay {
             floatingButtonOverlay
         }
-        .sheet(isPresented: $store.isAddFoodShowing) {
-            FoodSheetCoordinatorView(store: store.scope(state: \.foodPopover, action: \.foodPopover))
+        .sheet(item: $store.addFood) { _ in
+            IfLetStore(store.scope(state: \.addFood, action: \.addFood)) { store in
+                FoodSheetCoordinatorView(store: store)
+            }
         }
         .sheet(item: $store.updateMeal) { _ in
             IfLetStore(store.scope(state: \.updateMeal, action: \.updateMeal)) { store in
