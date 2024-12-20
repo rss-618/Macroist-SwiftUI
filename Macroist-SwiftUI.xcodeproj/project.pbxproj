@@ -95,7 +95,6 @@
 		E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8184E722D095A4C00A8ACDD /* AddFoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodCardView.swift; sourceTree = "<group>"; };
-		E82DD1082D152808009B102E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E848CF642BA1643600441247 /* MealEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntryView.swift; sourceTree = "<group>"; };
 		E848CF662BA1643C00441247 /* MealEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntry.swift; sourceTree = "<group>"; };
 		E848CF692BA16B7400441247 /* CardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonStyle.swift; sourceTree = "<group>"; };
@@ -286,7 +285,6 @@
 		E89FE8BF2B9BC97D004700B2 /* Macroist-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				E82DD1082D152808009B102E /* Info.plist */,
 				E848CF6B2BA2954C00441247 /* App */,
 				E89FE91E2B9E313C004700B2 /* Service */,
 				E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */,
