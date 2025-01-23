@@ -19,7 +19,7 @@ struct RuntimeVariables: DependencyKey {
     )
     
     static let testValue: RuntimeVariables = Self(
-        getAuthInstance: unimplemented("RuntimeVariables.getAuthInstance")
+        getAuthInstance: unimplemented("RuntimeVariables.getAuthInstance", placeholder: Auth.auth())
     )
     
     var getAuthInstance: () -> Auth
