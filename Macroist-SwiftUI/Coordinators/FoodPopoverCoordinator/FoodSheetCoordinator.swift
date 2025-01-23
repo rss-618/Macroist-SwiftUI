@@ -29,7 +29,7 @@ public struct FoodSheetCoordinator {
     
     public var body: some ReducerOf<Self> {
         
-        Scope(state: \.home, action: /Action.home) {
+        Scope(state: \.home, action: \.home) {
             AddMealHome()
         }
         

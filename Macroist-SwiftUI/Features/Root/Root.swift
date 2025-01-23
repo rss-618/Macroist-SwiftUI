@@ -33,11 +33,11 @@ public struct Root {
     
     public var body: some ReducerOf<Self> {
         
-        Scope(state: \.loginState, action: /Action.login) {
+        Scope(state: \.loginState, action: \.login) {
             Login()
         }
         
-        Scope(state: \.homeState, action: /Action.home) {
+        Scope(state: \.homeState, action: \.home) {
             Home()
         }
         

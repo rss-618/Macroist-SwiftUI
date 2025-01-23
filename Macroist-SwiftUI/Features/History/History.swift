@@ -36,8 +36,6 @@ public struct History {
                 }
             case .loadFoodResponse(let meals):
                 state.meals = meals
-            default:
-                break
             }
             return .none
         }
