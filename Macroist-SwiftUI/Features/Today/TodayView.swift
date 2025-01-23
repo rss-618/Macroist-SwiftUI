@@ -17,6 +17,8 @@ public struct TodayView: View {
             VStack(spacing: Keys.Padding.px8) {
                 titleText
                 
+                totalView(totalMeals: store.meals)
+                
                 PlainList(spacing: Keys.Padding.px8, horizontalPadding: Keys.Padding.px12) {
                     if store.areMealsLoading {
                         loadingSpinner
@@ -68,6 +70,54 @@ public struct TodayView: View {
             if store.areMealsLoading && store.meals.isEmpty {
                 store.send(.loadMeals)
             }
+        }
+    }
+    
+    @ViewBuilder
+    private func totalView(totalMeals: [MacroMeal]) -> some View {
+        HStack {
+            totalCell(title: "Calories",
+                      total: totalMeals.reduce(.zero) {
+                $0 + $1.calories
+            },
+                      color: .red)
+            totalCell(title: "Protein",
+                      total: totalMeals.reduce(.zero) {
+                $0 + $1.protein
+            },
+                      color: .green)
+            totalCell(title: "Carbs",
+                      total: totalMeals.reduce(.zero) {
+                $0 + $1.carbs
+            },
+                      color: .blue)
+            totalCell(title: "Fat",
+                      total: totalMeals.reduce(.zero) {
+                $0 + $1.fat
+            },
+                      color: .yellow)
+        }
+    }
+    
+    @ViewBuilder
+    func totalCell(title: String, total: CGFloat, color: Color) -> some View {
+        VStack {
+            Text(title)
+                .font(.title)
+                .fontWeight(.ultraLight)
+            
+            Text(String(format: "%.2f", total))
+                .font(.subheadline)
+        }
+        .padding(Keys.Padding.px2)
+        .padding(.horizontal, Keys.Padding.px2)
+        .background {
+            RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
+                .fill(color.opacity(Keys.Opactiy.pct33))
+                .overlay {
+                    RoundedRectangle(cornerRadius: Keys.CornerRadius.px10)
+                        .stroke(lineWidth: Keys.Width.px1)
+                }
         }
     }
     

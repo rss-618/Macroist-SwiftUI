@@ -4,6 +4,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 protocol ApiServiceProtocol {
+    // -- Authentication --
     func createUser(email: String,
                     password: String) async throws
     func login(email: String,
