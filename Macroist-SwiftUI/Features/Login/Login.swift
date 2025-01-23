@@ -38,7 +38,6 @@ public struct Login: Reducer {
     public enum Action: Equatable, BindableAction {
         case onAppear
         case loginAttempted
-        case loginAttemptResponse(AuthDataResult?)
         case loginError(AuthErrorCode)
         case login
         case register
@@ -87,7 +86,8 @@ public struct Login: Reducer {
                 return .run { send in
                     do {
                         // Attempt login
-                        try await send.callAsFunction(.loginAttemptResponse(apiClient.login(email, password)))
+                        try await apiClient.login(email, password)
+                        await send(.login)
                     } catch let e as AuthErrorCode {
                         // Login Error
                         await send.callAsFunction(.loginError(e))
@@ -95,13 +95,6 @@ public struct Login: Reducer {
                         // Client Error
                         await send.callAsFunction(.loginError(.init(.networkError)))
                     }
-                }
-            case .loginAttemptResponse(let response):
-                state.isLoggingIn = false
-                if response != nil {
-                    return .send(.login)
-                } else {
-                    return .send(.loginError(.init(.networkError)))
                 }
             case .loginError(let error):
                 state.isLoggingIn = false

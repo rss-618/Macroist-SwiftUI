@@ -18,6 +18,8 @@ struct Macroist_SwiftUIApp: App {
             WindowGroup {
                 RootView(store: Store(initialState: .init(), reducer: {
                     Root()
+                }, withDependencies: {
+                    $0.apiClient = EnvironmentConfig.shared.IS_MOCKED ? .mockValue : .liveValue
                 }))
                 .maxFrame()
             }
