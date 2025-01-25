@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E8032F572D1549590079BB32 /* Ext_Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8032F562D1549530079BB32 /* Ext_Encodable.swift */; };
-		E8032F592D154F880079BB32 /* ApiClientDependancyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8032F582D154F820079BB32 /* ApiClientDependancyValues.swift */; };
 		E8032F5B2D1550000079BB32 /* MonthEntryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8032F5A2D154FF70079BB32 /* MonthEntryKey.swift */; };
 		E8184E6F2D0925D500A8ACDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */; };
 		E8184E712D0927AA00A8ACDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */; };
@@ -17,8 +16,6 @@
 		E848CF672BA1643C00441247 /* MealEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF662BA1643C00441247 /* MealEntry.swift */; };
 		E848CF6A2BA16B7400441247 /* CardButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF692BA16B7400441247 /* CardButtonStyle.swift */; };
 		E848CF6D2BA2965700441247 /* RuntimeVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF6C2BA2965700441247 /* RuntimeVariables.swift */; };
-		E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF6F2BA2979D00441247 /* RuntimeVariablesKey.swift */; };
-		E848CF722BA297DD00441247 /* RuntimeVariablesDependancyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF712BA297DD00441247 /* RuntimeVariablesDependancyValues.swift */; };
 		E848CF772BA2A59500441247 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF762BA2A59500441247 /* Settings.swift */; };
 		E848CF792BA3F32600441247 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF782BA3F32600441247 /* History.swift */; };
 		E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CF7A2BA3FB9C00441247 /* Ids.swift */; };
@@ -37,6 +34,9 @@
 		E848CFAB2BC0EDBB00441247 /* Ext_Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */; };
 		E848CFAD2BC0EEB400441247 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CFAC2BC0EEB400441247 /* Count.swift */; };
 		E87CF4A12D09134100893CA2 /* PlainList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87CF4A02D09133F00893CA2 /* PlainList.swift */; };
+		E893FCD02D41AE8C006CBCA8 /* DependencyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E893FCCF2D41AE87006CBCA8 /* DependencyValues.swift */; };
+		E893FCD22D41AEFE006CBCA8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E893FCD12D41AEE2006CBCA8 /* ApiService.swift */; };
+		E893FCD52D41ED9D006CBCA8 /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E893FCD42D41ED99006CBCA8 /* EnvironmentConfig.swift */; };
 		E89FE8C12B9BC97D004700B2 /* Macroist_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */; };
 		E89FE8C52B9BC97E004700B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89FE8C42B9BC97E004700B2 /* Assets.xcassets */; };
 		E89FE8D42B9BCA23004700B2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8D32B9BCA23004700B2 /* RootView.swift */; };
@@ -59,7 +59,6 @@
 		E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE8FF2B9BE44C004700B2 /* InputFieldView.swift */; };
 		E89FE9022B9BE537004700B2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9012B9BE537004700B2 /* Colors.swift */; };
 		E89FE9042B9BF35A004700B2 /* InputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9032B9BF35A004700B2 /* InputState.swift */; };
-		E89FE9072B9C00AC004700B2 /* ApiClientKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9062B9C00AC004700B2 /* ApiClientKey.swift */; };
 		E89FE9092B9C00D3004700B2 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9082B9C00D3004700B2 /* ApiClient.swift */; };
 		E89FE90D2B9C08F4004700B2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE90C2B9C08F4004700B2 /* FirebaseAuth */; };
 		E89FE90F2B9C08F4004700B2 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = E89FE90E2B9C08F4004700B2 /* FirebaseCrashlytics */; };
@@ -71,7 +70,6 @@
 		E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9232B9E4FB2004700B2 /* TapToDismissModifier.swift */; };
 		E89FE9262B9E4FEB004700B2 /* Ext_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9252B9E4FEB004700B2 /* Ext_View.swift */; };
 		E89FE92A2B9E5783004700B2 /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9292B9E5783004700B2 /* Percentage.swift */; };
-		E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9312B9E6AB7004700B2 /* EnvironmentConfig.swift */; };
 		E89FE9352B9E7001004700B2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9342B9E7001004700B2 /* Image.swift */; };
 		E89FE9382BA00E02004700B2 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE9372BA00E02004700B2 /* Tab.swift */; };
 		E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FE93C2BA00E65004700B2 /* HistoryView.swift */; };
@@ -90,7 +88,6 @@
 
 /* Begin PBXFileReference section */
 		E8032F562D1549530079BB32 /* Ext_Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Encodable.swift; sourceTree = "<group>"; };
-		E8032F582D154F820079BB32 /* ApiClientDependancyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientDependancyValues.swift; sourceTree = "<group>"; };
 		E8032F5A2D154FF70079BB32 /* MonthEntryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthEntryKey.swift; sourceTree = "<group>"; };
 		E8184E6E2D0925D100A8ACDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -99,8 +96,6 @@
 		E848CF662BA1643C00441247 /* MealEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntry.swift; sourceTree = "<group>"; };
 		E848CF692BA16B7400441247 /* CardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonStyle.swift; sourceTree = "<group>"; };
 		E848CF6C2BA2965700441247 /* RuntimeVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVariables.swift; sourceTree = "<group>"; };
-		E848CF6F2BA2979D00441247 /* RuntimeVariablesKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVariablesKey.swift; sourceTree = "<group>"; };
-		E848CF712BA297DD00441247 /* RuntimeVariablesDependancyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVariablesDependancyValues.swift; sourceTree = "<group>"; };
 		E848CF762BA2A59500441247 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E848CF782BA3F32600441247 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		E848CF7A2BA3FB9C00441247 /* Ids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ids.swift; sourceTree = "<group>"; };
@@ -119,6 +114,9 @@
 		E848CFAA2BC0EDBB00441247 /* Ext_Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Float.swift; sourceTree = "<group>"; };
 		E848CFAC2BC0EEB400441247 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		E87CF4A02D09133F00893CA2 /* PlainList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainList.swift; sourceTree = "<group>"; };
+		E893FCCF2D41AE87006CBCA8 /* DependencyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyValues.swift; sourceTree = "<group>"; };
+		E893FCD12D41AEE2006CBCA8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		E893FCD42D41ED99006CBCA8 /* EnvironmentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfig.swift; sourceTree = "<group>"; };
 		E89FE8BD2B9BC97D004700B2 /* Macroist-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macroist-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FE8C02B9BC97D004700B2 /* Macroist_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macroist_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E89FE8C42B9BC97E004700B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,12 +135,10 @@
 		E89FE8FF2B9BE44C004700B2 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		E89FE9012B9BE537004700B2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E89FE9032B9BF35A004700B2 /* InputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputState.swift; sourceTree = "<group>"; };
-		E89FE9062B9C00AC004700B2 /* ApiClientKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientKey.swift; sourceTree = "<group>"; };
 		E89FE9082B9C00D3004700B2 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		E89FE9232B9E4FB2004700B2 /* TapToDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToDismissModifier.swift; sourceTree = "<group>"; };
 		E89FE9252B9E4FEB004700B2 /* Ext_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_View.swift; sourceTree = "<group>"; };
 		E89FE9292B9E5783004700B2 /* Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Percentage.swift; sourceTree = "<group>"; };
-		E89FE9312B9E6AB7004700B2 /* EnvironmentConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentConfig.swift; sourceTree = "<group>"; };
 		E89FE9342B9E7001004700B2 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E89FE9372BA00E02004700B2 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		E89FE93C2BA00E65004700B2 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -215,8 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				E848CF6C2BA2965700441247 /* RuntimeVariables.swift */,
-				E848CF6F2BA2979D00441247 /* RuntimeVariablesKey.swift */,
-				E848CF712BA297DD00441247 /* RuntimeVariablesDependancyValues.swift */,
 			);
 			path = RuntimeVariables;
 			sourceTree = "<group>";
@@ -286,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				E848CF6B2BA2954C00441247 /* App */,
-				E89FE91E2B9E313C004700B2 /* Service */,
+				E89FE91E2B9E313C004700B2 /* Dependancies */,
 				E8184E702D0927AA00A8ACDD /* GoogleService-Info.plist */,
 				E89FE8D72B9BCA56004700B2 /* Coordinators */,
 				E89FE8D22B9BC9EA004700B2 /* Keys */,
@@ -316,7 +310,6 @@
 			children = (
 				E848CF8A2BA57F8800441247 /* Errors */,
 				E848CF7E2BA40EF700441247 /* Extensions */,
-				E848CF6E2BA2966300441247 /* RuntimeVariables */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -326,6 +319,7 @@
 			children = (
 				E89FE9492BA01E8F004700B2 /* MacroMeal.swift */,
 				E848CF812BA53C1900441247 /* Ingredient.swift */,
+				E8032F5A2D154FF70079BB32 /* MonthEntryKey.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -418,21 +412,21 @@
 		E89FE9052B9C008D004700B2 /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
-				E89FE9062B9C00AC004700B2 /* ApiClientKey.swift */,
-				E8032F582D154F820079BB32 /* ApiClientDependancyValues.swift */,
+				E89FE8D02B9BC9B8004700B2 /* Models */,
+				E893FCD12D41AEE2006CBCA8 /* ApiService.swift */,
 				E89FE9082B9C00D3004700B2 /* ApiClient.swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
 		};
-		E89FE91E2B9E313C004700B2 /* Service */ = {
+		E89FE91E2B9E313C004700B2 /* Dependancies */ = {
 			isa = PBXGroup;
 			children = (
+				E893FCCF2D41AE87006CBCA8 /* DependencyValues.swift */,
+				E848CF6E2BA2966300441247 /* RuntimeVariables */,
 				E89FE9052B9C008D004700B2 /* ApiClient */,
-				E89FE8D02B9BC9B8004700B2 /* Models */,
-				E8032F5A2D154FF70079BB32 /* MonthEntryKey.swift */,
 			);
-			path = Service;
+			path = Dependancies;
 			sourceTree = "<group>";
 		};
 		E89FE9212B9E4F9F004700B2 /* Extensions */ = {
@@ -457,7 +451,7 @@
 		E89FE9322B9E6AB7004700B2 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				E89FE9312B9E6AB7004700B2 /* EnvironmentConfig.swift */,
+				E893FCD42D41ED99006CBCA8 /* EnvironmentConfig.swift */,
 			);
 			name = Configs;
 			path = "Macroist-SwiftUI/App/Configs";
@@ -606,11 +600,11 @@
 				E848CF9D2BAEA51400441247 /* CustomTabBarModifier.swift in Sources */,
 				E89FE9352B9E7001004700B2 /* Image.swift in Sources */,
 				E89FE9482BA01B5B004700B2 /* AlignModifier.swift in Sources */,
+				E893FCD02D41AE8C006CBCA8 /* DependencyValues.swift in Sources */,
 				E848CF822BA53C1900441247 /* Ingredient.swift in Sources */,
 				E89FE9002B9BE44C004700B2 /* InputFieldView.swift in Sources */,
 				E8184E6F2D0925D500A8ACDD /* AppDelegate.swift in Sources */,
 				E89FE94F2BA02360004700B2 /* AddMealHomeView.swift in Sources */,
-				E848CF702BA2979D00441247 /* RuntimeVariablesKey.swift in Sources */,
 				E848CFAD2BC0EEB400441247 /* Count.swift in Sources */,
 				E848CF9B2BAEA3E800441247 /* CustomTabBarView.swift in Sources */,
 				E89FE9382BA00E02004700B2 /* Tab.swift in Sources */,
@@ -638,20 +632,19 @@
 				E848CF6A2BA16B7400441247 /* CardButtonStyle.swift in Sources */,
 				E848CF802BA40F0300441247 /* Ext_Date.swift in Sources */,
 				E89FE8F92B9BDDE7004700B2 /* FoodSheetCoordinatorView.swift in Sources */,
-				E848CF722BA297DD00441247 /* RuntimeVariablesDependancyValues.swift in Sources */,
 				E89FE8ED2B9BD294004700B2 /* Login.swift in Sources */,
 				E89FE94A2BA01E8F004700B2 /* MacroMeal.swift in Sources */,
 				E89FE8FD2B9BE42B004700B2 /* InputField.swift in Sources */,
 				E89FE8F42B9BDCDB004700B2 /* Home.swift in Sources */,
-				E89FE9072B9C00AC004700B2 /* ApiClientKey.swift in Sources */,
 				E848CF842BA5405F00441247 /* IngredientEntryCardView.swift in Sources */,
 				E848CF792BA3F32600441247 /* History.swift in Sources */,
 				E8184E732D095A5200A8ACDD /* AddFoodCardView.swift in Sources */,
+				E893FCD52D41ED9D006CBCA8 /* EnvironmentConfig.swift in Sources */,
 				E89FE93D2BA00E65004700B2 /* HistoryView.swift in Sources */,
 				E89FE9462BA017AA004700B2 /* FloatingButton.swift in Sources */,
 				E89FE9042B9BF35A004700B2 /* InputState.swift in Sources */,
-				E8032F592D154F880079BB32 /* ApiClientDependancyValues.swift in Sources */,
 				E8FD5A932D0ABB6100AEB4F5 /* Text.swift in Sources */,
+				E893FCD22D41AEFE006CBCA8 /* ApiService.swift in Sources */,
 				E848CF7B2BA3FB9C00441247 /* Ids.swift in Sources */,
 				E848CF9F2BAEA74900441247 /* Ext_TabView.swift in Sources */,
 				E89FE8EF2B9BD3F8004700B2 /* Keys.swift in Sources */,
@@ -663,7 +656,6 @@
 				E89FE9242B9E4FB2004700B2 /* TapToDismissModifier.swift in Sources */,
 				E8032F572D1549590079BB32 /* Ext_Encodable.swift in Sources */,
 				E89FE8EB2B9BD28E004700B2 /* LoginView.swift in Sources */,
-				E89FE9332B9E6AB7004700B2 /* EnvironmentConfig.swift in Sources */,
 				E8032F5B2D1550000079BB32 /* MonthEntryKey.swift in Sources */,
 				E89FE8D42B9BCA23004700B2 /* RootView.swift in Sources */,
 				E89FE92A2B9E5783004700B2 /* Percentage.swift in Sources */,

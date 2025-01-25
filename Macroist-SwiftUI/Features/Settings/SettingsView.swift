@@ -21,12 +21,14 @@ public struct SettingsView: View {
                 VStack {
                     Text("Settings View")
                     Button {
-                        do {
-                            try apiClient.logout()
-                        } catch {
-                            print("No current user")
+                        Task { @MainActor in
+                            do {
+                                try await apiClient.logout()
+                            } catch {
+                                print("No current user?")
+                            }
+                            store.send(.logout)
                         }
-                        store.send(.logout)
                     } label: {
                         Text("Logout")
                     }

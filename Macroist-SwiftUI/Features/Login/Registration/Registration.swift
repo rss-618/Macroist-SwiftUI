@@ -31,7 +31,7 @@ public struct Registration {
         case password(InputField.Action)
         case binding(BindingAction<State>)
         case registerAttempted
-        case registerResponse(AuthDataResult)
+        case registerSuccess
         case error(AuthErrorCode)
         case login
     }
@@ -54,8 +54,9 @@ public struct Registration {
                 state.isRegistering = true
                 return .run { [state] send in
                     do {
-                        try await send(.registerResponse(apiClient.createUser(state.email.text.trimWhiteSpaceAndNewline(),
-                                                  state.password.text.trimWhiteSpaceAndNewline())))
+                        try await apiClient.createUser(state.email.text.trimWhiteSpaceAndNewline(),
+                                                       state.password.text.trimWhiteSpaceAndNewline())
+                        await send(.registerSuccess)
                     } catch let e as AuthErrorCode {
                         // Server Response Error
                         await send(.error(e))
@@ -64,7 +65,7 @@ public struct Registration {
                         await send.callAsFunction(.error(.init(.networkError)))
                     }
                 }
-            case .registerResponse:
+            case .registerSuccess:
                 state.showSuccess = true
             case .error(let error):
                 state.isRegistering = false

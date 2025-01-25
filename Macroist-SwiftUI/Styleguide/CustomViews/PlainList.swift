@@ -5,6 +5,7 @@
 //  Created by Ryan Schildknecht on 12/10/24.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 public struct PlainList<Content: View>: View {
@@ -27,11 +28,13 @@ public struct PlainList<Content: View>: View {
     
     public var body: some View {
         List {
-            Group {
-                content
+            WithPerceptionTracking {
+                Group {
+                    content
+                }
+                .listRowSeparator(.hidden)
+                .listRowInsets(padding)
             }
-            .listRowSeparator(.hidden)
-            .listRowInsets(padding)
         }
         .listRowSpacing(spacing)
         .listStyle(PlainListStyle())

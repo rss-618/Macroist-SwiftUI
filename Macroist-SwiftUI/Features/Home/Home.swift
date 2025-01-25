@@ -30,15 +30,15 @@ public struct Home {
     
     public var body: some ReducerOf<Self> {
         
-        Scope(state: \.historyState, action: /Action.history) {
+        Scope(state: \.historyState, action: \.history) {
             History()
         }
         
-        Scope(state: \.todayState, action: /Action.today) {
+        Scope(state: \.todayState, action: \.today) {
             Today()
         }
         
-        Scope(state: \.settingsState, action: /Action.settings) {
+        Scope(state: \.settingsState, action: \.settings) {
             Settings()
         }
         

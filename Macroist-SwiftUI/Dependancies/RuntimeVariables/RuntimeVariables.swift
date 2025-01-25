@@ -10,25 +10,18 @@ import Foundation
 import XCTestDynamicOverlay
 import FirebaseAuth
 
-// Protocol
-struct RuntimeVariables {
-    var getAuthInstance: () -> Auth
-}
-
-// Implementaton
-extension RuntimeVariables: DependencyKey {
-        
+struct RuntimeVariables: DependencyKey {
+    
     static let liveValue: RuntimeVariables = Self(
         getAuthInstance: {
             return Auth.auth()
         }
     )
     
-}
-
-// Test Errors
-extension RuntimeVariables {
-  static let unimplemented = Self(
-    getAuthInstance: XCTUnimplemented("RuntimeVariables.getAuthInstance")
-  )
+    static let testValue: RuntimeVariables = Self(
+        getAuthInstance: unimplemented("RuntimeVariables.getAuthInstance", placeholder: Auth.auth())
+    )
+    
+    var getAuthInstance: () -> Auth
+    
 }
