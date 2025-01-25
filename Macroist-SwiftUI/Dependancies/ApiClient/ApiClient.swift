@@ -70,7 +70,6 @@ struct ApiClient: DependencyKey {
     )
     
     // --- Firebase Calls ---
-    // Included within a dependancy for testing and abstraction purposes\
     // -- Auth --
     var createUser: (_ email: String,
                      _ password: String) async throws -> Void
